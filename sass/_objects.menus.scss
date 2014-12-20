@@ -1,0 +1,215 @@
+/*------------------------------------*\
+    #MENUS
+\*------------------------------------*/
+
+.menu a {
+  color: #fff;
+}
+/*  Display a caret after each dropdown link.
+ *  You can remove this or change it to a different symbol.
+ *  (For example, a "+" symbol.) */
+.js-drop .menu-item-has-children > a:after {
+  content: " +";
+  font-size: .8em;
+}
+
+/*  When a dropdown is active, display a caret pointing up instead.
+ *  You can remove this or change it to a different symbol.
+ *  (For example, a "-" symbol.) */
+.js-drop .menu-item-has-children > a.active:after {
+  content: " –";
+}
+
+/*  Styling for the dropdown content.
+ *  Hides the content by default. */
+.sub-menu {
+  position: absolute;
+  display: none;
+  visibility: hidden;
+  float: left;
+  right: 0;
+  width: 100%;
+  margin-top: 0.5em;
+  text-align: left;
+  z-index: 1000;
+  @include md {
+  background-color: $color-grey-ui;
+}
+}
+
+/*  When a dropdown is active, display it. */
+.sub-menu.active {
+  display: block;
+  visibility: visible;
+  padding-top: 1.5em;
+  padding-bottom: 1.5em;
+}
+
+/*  Optional small screen styling for use
+ *  with collapse-and-toggle navigation menus.
+ *  Learn more - http://cferdinandi.github.com/astro/ */
+@media (max-width: 40em) {
+  /*  Switch dropdown content to relative positioning.
+   *  Add a border-radius. */
+  .js-drop .sub-menu {
+    position: relative;
+    float: none;
+    border-radius: 0.25em;
+  }
+
+  /*  Add padding to active dropdown content */
+  .js-drop .sub-menu.active {
+    padding: 0.5em;
+  }
+
+  /*  For use with the Kraken Grid.
+   *  If using the .container class for
+   *  dropdown content, give it a width of 100%. */
+  .js-drop .sub-menu .container {
+    width: 100%;
+  }
+}
+
+// From _s
+.menu-toggle:before {
+color: #fff;
+content: "\f0c9";
+font-family: FontAwesome;
+line-height: 42px;
+position: relative;
+top: -1px;
+left: 0;
+}
+
+.toggled .menu-toggle:before {
+content: "\f00d";
+}
+
+// .menu__primary {
+//   width: 100%;
+// }
+
+//   > ul > li > a {
+//     padding: $base-spacing-unit-sm $base-spacing-unit-sm;
+//     min-height: $base-spacing-unit * 3;
+//   }
+
+  ul {
+    list-style: none;
+
+  }
+
+  li {
+    display: inline-block;
+  }
+
+  a {
+    //display: block;
+  }
+
+.nav-menu, .sub-menu {
+  margin: 0;
+  float:left;
+}
+/* Small menu */
+.menu-toggle {
+  display: none;
+  background: none;
+  float: right;
+  margin: 0;
+  &:hover, &:active, &:focus:not(:active) {
+    background: none;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .menu-toggle,
+  .menu__primary.toggled .nav-menu {
+    display: block;
+  }
+
+  .menu__primary {
+    a {
+      color: white;
+    }
+    li {
+      display: block;
+      width: 100%;
+    }
+  ul {
+    display: none;
+  }
+}
+}
+
+
+
+a.page-numbers,
+span.page-numbers {
+  @extend .btn;
+}
+
+.pagination {
+  text-align: center;
+  margin: $base-spacing-unit;
+  .page-numbers{
+    border-radius: 0;
+
+    &.current {
+      background-color: $btn-bg-hover;
+    }
+
+    &.dots, &.dots:hover {
+      background-color: transparent;
+      cursor: default;
+    }
+
+    &.next, &.prev {
+      @include font-icon();
+    }
+
+    &:first-child {
+      margin-left: 0;
+      border-top-left-radius: $base-radius;
+      border-bottom-left-radius: $base-radius;
+      }
+
+    &:last-child {
+      margin-left: 0;
+      border-top-right-radius: $base-radius;
+      border-bottom-right-radius: $base-radius;
+      }
+  }
+}
+
+
+.post-navigation {
+  position: relative;
+  width: 100%;
+  padding: 0 $base-spacing-unit-sm $base-spacing-unit-sm 0;
+  @include md {
+    padding: 0 $base-spacing-unit $base-spacing-unit 0;
+  }
+
+  .nav-links {
+    text-align: right;
+    }
+      .meta-nav {
+      @include font-icon();
+    }
+    span {
+      font-family: $font-body;
+    }
+
+    .nav-previous {
+      display: inline-block;
+      float: left;
+      margin: 2px;
+    }
+    .nav-next {
+      display: inline-block;
+      margin: 2px;
+    }
+
+
+}

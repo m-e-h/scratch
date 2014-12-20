@@ -1,0 +1,91 @@
+/*
+Theme Name: Scratch
+Theme URI: http://martyhelmick.com/
+Author: Marty Helmick
+Author URI: http://martyhelmick.com/
+Description: Hi. I'm a starter theme called <code>Scratch</code>.
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: Scratch
+Tags:
+*/
+
+/**
+ * SETTINGS             GLOBAL CONFIG AND SETTINGS
+ * ========             ==========================
+ * Global...............Site-wide settings and config.
+ * Colors...............Color schemes and settings.
+ *
+ *
+ * TOOLS                GLOBAL PREPROCESSOR TOOLING
+ * =====                ===========================
+ * Functions............Globally-available helper functions.
+ * Mixins...............Globally-available mixins.
+ *
+ *
+ * GENERIC              SITE-WIDE STARTING-POINT STYLES
+ * =======              ===============================
+ * Box-sizing...........Apply global `border-box`.
+ * Normalize.css........Use @necolas’ Normalize.css for consistency.
+ * Reset................Remove default margins.
+ * Shared...............High-level shared traits (mainly for vertical rhythm).
+ *
+ *
+ * BASE                 TYPE (I.E. BARE ELEMENT) SELECTORS
+ * ====                 ==================================
+ * Page.................Page-level (e.g. `html`, `body`) styles.
+ * Headings.............Headings 1–6.
+ * Links................Default hyperlink styles.
+ *
+ *
+ * OBJECTS              DESIGN-FREE DESIGN PATTERNS
+ * =======              ===========================
+ * Buttons..............Unstyled button objects.
+ *
+ *
+ * COMPONENTS           DESIGNED, COMPLETE COMPONENTS
+ * ==========           =============================
+ * Buttons..............Fully styled buttons and their variants.
+ *
+ *
+ * TRUMPS               HELPERS AND OVERRIDES
+ * ======               =====================
+ * Widths...............Width helper classes.
+ */
+
+@import "settings.responsive";
+@import "settings.global";
+@import "settings.colors";
+@import "settings.icon-font";
+
+@import "tools.functions";
+@import "tools.mixins";
+
+@import "generic.normalize";
+@import "generic.wp";
+@import "generic.plugins";
+
+@import "base.grid";
+@import "base.page";
+@import "base.typography";
+@import "base.links";
+@import "base.lists";
+@import "base.layouts";
+@import "base.headings";
+
+@import "objects.icons";
+@import "objects.media";
+@import "objects.forms";
+@import "objects.menus";
+@import "objects.tables";
+@import "objects.footer";
+@import "objects.header";
+
+@import "components.buttons";
+@import "components.quotes";
+@import "components.breadcrumbs";
+
+@import "trumps.widths";
+
+@import "generic.shared";

@@ -1,0 +1,35 @@
+/*------------------------------------*\
+    #LINKS
+\*------------------------------------*/
+
+a {
+	color: $color-links;
+	text-decoration: none;
+
+	&:visited {
+		color: $color-links-visited;
+	}
+	&:hover,
+	&:focus,
+	&:active {
+		color: $color-links-hover;
+	}
+}
+
+a,
+button,
+input:focus,
+input[type="button"],
+input[type="reset"],
+input[type="submit"],
+textarea:focus,
+.button,
+.gallery img {
+	//@include base-transition;
+}
+
+p {
+a {
+  font-weight: bold;
+}
+}

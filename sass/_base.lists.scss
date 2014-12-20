@@ -1,0 +1,29 @@
+/*------------------------------------*\
+    #LISTS
+\*------------------------------------*/
+
+ul, ol, dd {
+    @extend %margin-left;
+}
+
+ul, ol, dl {
+    @extend %margin-bottom;
+}
+
+ul {
+	list-style: disc;
+}
+
+ol {
+	list-style: decimal;
+}
+
+li > ul,
+li > ol {
+	margin-bottom: 0;
+}
+
+dt {
+	font-weight: bold;
+}
+

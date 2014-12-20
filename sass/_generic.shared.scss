@@ -1,0 +1,15 @@
+/*------------------------------------*\
+    #SHARED
+\*------------------------------------*/
+
+p, address, 
+table, 
+fieldset, figure, 
+pre, 
+%margin-bottom {
+    margin-bottom: $base-spacing-unit;
+}
+
+%margin-left {
+    margin-left: $base-spacing-unit;
+}

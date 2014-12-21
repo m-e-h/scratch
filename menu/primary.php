@@ -5,7 +5,11 @@
 			<?php wp_nav_menu(
 					array(
 						'theme_location'  => 'primary',
-						'menu_class'      => 'nav-menu'
+						'container'       => 'div',
+						'container_class' => 'main-navigation',
+						'menu_id'         => 'menu-primary-items',
+						'menu_class'      => 'menu-items nav-menu',
+						'fallback_cb'     => ''
 					)
 			); ?>
 		</nav><!-- #site-navigation -->

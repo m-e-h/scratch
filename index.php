@@ -22,20 +22,21 @@ get_header(); ?>
 
 				<?php hybrid_get_content_template(); // Loads the content/*.php template. ?>
 
-				<?php if ( is_singular() ) : ?>
-
-					<?php comments_template( '', true ); // Loads the comments.php template. ?>
-
-				<?php endif; // End check for single post. ?>
+				<?php 
+  				  // If comments are open or we have at least one comment, load up the comment template
+    				if ( is_singular() && ( comments_open() || get_comments_number() )) :
+    					comments_template();
+    				endif; 
+				?>
 
 			<?php endwhile; // End loop. ?>
 
 			<?php 
-				if ( is_singular( 'post' ) ) :
-					the_post_navigation();
-				elseif ( is_home() || is_archive() || is_search() ) :
-					the_posts_pagination();
-				endif; // End nav-loop. 
+  				if ( is_singular( 'post' ) ) :
+  					the_post_navigation();
+  				elseif ( is_home() || is_archive() || is_search() ) :
+  					the_posts_pagination();
+  				endif; // End nav-loop. 
 			?>
 
 		<?php else : //If no content found. ?>

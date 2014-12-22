@@ -21,10 +21,12 @@ function scratch_entry_meta() {  ?>
 	<span class="entry-date">
 		<time <?php hybrid_attr( 'entry-published' ); ?>><?php echo get_the_date(); ?></time>
 	</span>
-	<span class="comments-link">
-		<?php comments_popup_link( false, false, false, false ); ?>
-	</span>
-	<?php edit_post_link( esc_html__( 'Edit', 'twentyfifteen' ), '<span class="edit-link">', '</span>' ); ?>
+  <?php if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
+		echo '<span class="comments-link">';
+		comments_popup_link( __( 'Leave a comment', '_s' ), __( '1 Comment', '_s' ), __( '% Comments', '_s' ) );
+		echo '</span>';
+	} ?>
+	<?php edit_post_link( esc_html__( 'Edit', 'scratch' ), '<span class="edit-link">', '</span>' ); ?>
 
 	<?php
 		hybrid_post_terms( array( 
@@ -40,6 +42,7 @@ function scratch_entry_meta() {  ?>
 	?>
 <?php }
 endif;
+
 
 if ( ! function_exists( 'scratch_loop_meta' ) ) :
 /**

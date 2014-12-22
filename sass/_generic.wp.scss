@@ -14,14 +14,14 @@
 .left {
 	display: inline;
 	float: left;
-	margin-right: 1.5em;
+	margin-right: $base-spacing-unit;
 }
 
 .alignright,
 .right {
 	display: inline;
 	float: right;
-	margin-left: 1.5em;
+	margin-left: $base-spacing-unit;
 }
 
 .aligncenter,
@@ -153,7 +153,7 @@ iframe {
 \*------------------------------------*/
 
 .wp-caption {
-	margin-bottom: 1.5em;
+	margin-bottom: $base-spacing-unit;
 	max-width: 100%;
 }
 
@@ -167,5 +167,5 @@ iframe {
 }
 
 .wp-caption .wp-caption-text {
-	margin: 0.8075em 0;
+	margin: $base-spacing-unit-sm 0;
 }

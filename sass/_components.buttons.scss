@@ -2,18 +2,6 @@
     #BUTTONS
 \*------------------------------------*/
 
-// Default button colors
-$default-btn-color: rgba(#999999, 0.20);
-$default-btn-hover-color: rgba($default-btn-color, 0.15);
-$default-btn-active-color: rgba($default-btn-color, 0.40);
-$default-btn-text-color: #000;
-$default-flat-btn-focus-color: rgba(black, 0.12);
-
-// Focus shadow
-@mixin focus-shadow() {
-  box-shadow: 0 0 8px rgba(0,0,0,.18),0 8px 16px rgba(0,0,0,.36);
-}
-
 .btn,
 button,
 input[type="button"],

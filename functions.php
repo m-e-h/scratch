@@ -36,9 +36,6 @@ function scratch_setup() {
 	/* Breadcrumbs. */
 	add_theme_support( 'breadcrumb-trail' );
 
-	/* Pagination. */
-	add_theme_support( 'loop-pagination' );
-
 	/* Nicer [gallery] shortcode implementation. */
 	add_theme_support( 'cleaner-gallery' );
 

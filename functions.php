@@ -39,9 +39,6 @@ function scratch_setup() {
 	/* Nicer [gallery] shortcode implementation. */
 	add_theme_support( 'cleaner-gallery' );
 
-	/* Better captions for themes to style. */
-	add_theme_support( 'cleaner-caption' );
-
 	/* Automatically add feed links to <head>. */
 	add_theme_support( 'automatic-feed-links' );
 

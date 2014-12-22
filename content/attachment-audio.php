@@ -1,3 +1,9 @@
+<?php
+/**
+ * @package Scratch
+ */
+?>
+
 <?php if ( is_attachment() ) : // If viewing a single attachment. ?>
 
 	<article <?php hybrid_attr( 'post' ); ?>>

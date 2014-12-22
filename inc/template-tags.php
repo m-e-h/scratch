@@ -13,22 +13,24 @@ if ( ! function_exists( 'scratch_entry_meta' ) ) :
  * Prints HTML with meta information for the categories, tags and comments.
  */
 function scratch_entry_meta() {  ?>
-	<span class="entry-format">
-		<?php hybrid_post_format_link(); ?>
-	</span>
-	<span <?php hybrid_attr( 'entry-author' ); ?>><?php the_author_posts_link(); ?>
-	</span>
-	<span class="entry-date">
-		<time <?php hybrid_attr( 'entry-published' ); ?>><?php echo get_the_date(); ?></time>
-	</span>
+	<span class="entry-format"><?php hybrid_post_format_link(); ?></span>
+	<?php hybrid_post_author(); ?>
+	<time <?php hybrid_attr( 'entry-published' ); ?>><?php echo get_the_date(); ?></time>
   <?php if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
 		echo '<span class="comments-link">';
 		comments_popup_link( __( 'Leave a comment', '_s' ), __( '1 Comment', '_s' ), __( '% Comments', '_s' ) );
 		echo '</span>';
-	} ?>
-	<?php edit_post_link( esc_html__( 'Edit', 'scratch' ), '<span class="edit-link">', '</span>' ); ?>
+	}
+	edit_post_link( esc_html__( 'Edit', 'scratch' ), '<span class="edit-link">', '</span>' );
+}
+endif;
 
-	<?php
+
+if ( ! function_exists( 'scratch_post_terms' ) ) :
+/**
+ * Loop Title and Description
+ */
+function scratch_post_terms() {
 		hybrid_post_terms( array( 
 			'taxonomy'	=> 'category',
 			'sep' 		=> ' ',
@@ -39,8 +41,7 @@ function scratch_entry_meta() {  ?>
 			'sep' 		=> ' ',
 			'before' 	=> '<br />' 
 			) );
-	?>
-<?php }
+}
 endif;
 
 

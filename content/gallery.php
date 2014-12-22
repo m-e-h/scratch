@@ -33,14 +33,8 @@
 <?php endif; // End single post check. ?>
 
 	<footer class="entry-footer">
-		<?php hybrid_post_format_link(); ?>
-		<span <?php hybrid_attr( 'entry-author' ); ?>><?php the_author_posts_link(); ?></span>
-		<time <?php hybrid_attr( 'entry-published' ); ?>><?php echo get_the_date(); ?></time>
-		<?php comments_popup_link( false, false, false, 'comments-link' ); ?>
-		<?php edit_post_link(); ?>
-
-		<?php hybrid_post_terms( array( 'taxonomy' => 'category', 'sep' => ' ','before' => '<br />'	) ); ?>
-		<?php hybrid_post_terms( array( 'taxonomy' => 'post_tag', 'sep' => ' ','before' => '<br />'	) ); ?>
+	  <?php scratch_entry_meta(); ?>
+	  <?php scratch_post_terms(); ?>
 	</footer><!-- .entry-footer -->
 	
 </article><!-- .entry -->

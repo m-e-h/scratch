@@ -16,6 +16,7 @@ input[type="number"],
 input[type="search"],
 input[type="tel"],
 input[type="color"],
+input:not([type]),
 select,
 textarea {
     box-sizing: border-box;
@@ -27,61 +28,22 @@ textarea {
     border-radius: $base-radius;
     box-shadow: none;
     background: #fff;
-}
 
-/*
-Need to separate out the :not() selector from the rest of the CSS 2.1 selectors
-since IE8 won't execute CSS that contains a CSS3 selector.
-*/
-input:not([type]) {
-    border: 1px solid $color-grey-ui;
-    height: $base-spacing-unit-lg;
-    padding: 7px 10px;
-    border-radius: 4px;
-    box-shadow: none;
-    background: #fff;
+    &:focus {
+    outline: thin dotted \9; /* IE6-9 */
+    border-color: lighten($color-links, 20);
+    outline: 0; 
+    }
+
+    &[disabled] {
+    cursor: not-allowed;
+    background-color: $color-grey-lighter;
+    color: $color-gray;
+    }
 }
 
 textarea {
   min-height: $base-spacing-unit-lg * 3;
-}
-
-
-/* Chrome (as of v.32/34 on OS X) needs additional room for color to display. */
-/* May be able to remove this tweak as color inputs become more standardized across browsers. */
-input[type="color"] {
-    padding: 0.2em 0.5em;
-}
-
-input[type="text"]:focus,
-input[type="password"]:focus,
-input[type="email"]:focus,
-input[type="url"]:focus,
-input[type="date"]:focus,
-input[type="month"]:focus,
-input[type="time"]:focus,
-input[type="datetime"]:focus,
-input[type="datetime-local"]:focus,
-input[type="week"]:focus,
-input[type="number"]:focus,
-input[type="search"]:focus,
-input[type="tel"]:focus,
-input[type="color"]:focus,
-select:focus,
-textarea:focus {
-    outline: thin dotted \9; /* IE6-9 */
-    border-color: lighten($color-links, 20);
-    outline: 0; 
-}
-
-/*
-Need to separate out the :not() selector from the rest of the CSS 2.1 selectors
-since IE8 won't execute CSS that contains a CSS3 selector.
-*/
-input:not([type]):focus {
-    outline: 0;
-    outline: thin dotted \9; /* IE6-9 */
-    border-color: lighten($color-links, 20);
 }
 
 input[type="file"]:focus,
@@ -91,42 +53,11 @@ input[type="checkbox"]:focus {
     outline: 1px auto lighten($color-links, 20);
 }
 
-
-input[type="text"][disabled],
-input[type="password"][disabled],
-input[type="email"][disabled],
-input[type="url"][disabled],
-input[type="date"][disabled],
-input[type="month"][disabled],
-input[type="time"][disabled],
-input[type="datetime"][disabled],
-input[type="datetime-local"][disabled],
-input[type="week"][disabled],
-input[type="number"][disabled],
-input[type="search"][disabled],
-input[type="tel"][disabled],
-input[type="color"][disabled],
-select[disabled],
-textarea[disabled] {
-    cursor: not-allowed;
-    background-color: $color-grey-lighter;
-    color: $color-gray;
-}
-
-/*
-Need to separate out the :not() selector from the rest of the CSS 2.1 selectors
-since IE8 won't execute CSS that contains a CSS3 selector.
-*/
-input:not([type])[disabled] {
-    cursor: not-allowed;
-    background-color: $color-grey-lighter;
-    color: $color-gray;
-}
 input[readonly],
 select[readonly],
 textarea[readonly] {
-    background: $color-grey-lighter; /* menu hover bg color */
-    color: $color-text; /* menu text color */
+    background: $color-grey-lighter;
+    color: $color-text;
     border-color: $color-grey-lighter;
 }
 
@@ -142,20 +73,24 @@ select:focus:invalid {
     color: #b94a48;
     border-color: $color-error;
 }
+
 input:focus:invalid:focus,
 textarea:focus:invalid:focus,
 select:focus:invalid:focus {
     border-color: $color-error;
 }
+
 input[type="file"]:focus:invalid:focus,
 input[type="radio"]:focus:invalid:focus,
 input[type="checkbox"]:focus:invalid:focus {
-    outline-color: #e9322d;
+    outline-color: $color-error;
 }
+
 select {
     border: 1px solid $color-grey-lighter;
     background-color: white;
 }
+
 select[multiple] {
     height: auto;
 }

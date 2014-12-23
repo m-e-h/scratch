@@ -52,12 +52,6 @@ Tags:
  * ======               =====================
  * Widths...............Width helper classes.
  */
-/*------------------------------------*\
-    #STRUCTURE
-\*------------------------------------*/
-/*------------------------------------*\
-    #FONT-AWESOME
-\*------------------------------------*/
 /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
 /**
  * 1. Set default font family to sans-serif.
@@ -1203,7 +1197,6 @@ textarea {
 \*------------------------------------*/
 a {
     color: #2962ff;
-    text-decoration: none;
 }
 a:visited {
     color: #0034c2;
@@ -1416,8 +1409,7 @@ h5 a:active,
 h6 a:hover,
 h6 a:focus,
 h6 a:active {
-    opacity: 0.8; 
-    color: inherit;
+    color: #9e9e9e;
 }
 
 /**
@@ -1654,6 +1646,7 @@ input[type="number"],
 input[type="search"],
 input[type="tel"],
 input[type="color"],
+input:not([type]),
 select,
 textarea {
     display: inline-block;
@@ -1667,30 +1660,6 @@ textarea {
     background: #fff; 
     box-shadow: none;
 }
-
-/*
-Need to separate out the :not() selector from the rest of the CSS 2.1 selectors
-since IE8 won't execute CSS that contains a CSS3 selector.
-*/
-input:not([type]) {
-    height: 48px;
-    padding: 7px 10px;
-    border: 1px solid #cfd8dc;
-    border-radius: 4px;
-    background: #fff; 
-    box-shadow: none;
-}
-
-textarea {
-    min-height: 144px;
-}
-
-/* Chrome (as of v.32/34 on OS X) needs additional room for color to display. */
-/* May be able to remove this tweak as color inputs become more standardized across browsers. */
-input[type="color"] {
-    padding: 0.2em 0.5em;
-}
-
 input[type="text"]:focus,
 input[type="password"]:focus,
 input[type="email"]:focus,
@@ -1705,6 +1674,7 @@ input[type="number"]:focus,
 input[type="search"]:focus,
 input[type="tel"]:focus,
 input[type="color"]:focus,
+input:not([type]):focus,
 select:focus,
 textarea:focus {
     /* IE6-9 */
@@ -1712,25 +1682,6 @@ textarea:focus {
     outline: thin dotted \9;
     outline: 0;
 }
-
-/*
-Need to separate out the :not() selector from the rest of the CSS 2.1 selectors
-since IE8 won't execute CSS that contains a CSS3 selector.
-*/
-input:not([type]):focus {
-    /* IE6-9 */
-    border-color: #8fadff; 
-    outline: 0;
-    outline: thin dotted \9;
-}
-
-input[type="file"]:focus,
-input[type="radio"]:focus,
-input[type="checkbox"]:focus {
-    outline: thin dotted #9e9e9e;
-    outline: 1px auto #8fadff;
-}
-
 input[type="text"][disabled],
 input[type="password"][disabled],
 input[type="email"][disabled],
@@ -1745,6 +1696,7 @@ input[type="number"][disabled],
 input[type="search"][disabled],
 input[type="tel"][disabled],
 input[type="color"][disabled],
+input:not([type])[disabled],
 select[disabled],
 textarea[disabled] {
     color: #9e9e9e; 
@@ -1752,22 +1704,21 @@ textarea[disabled] {
     cursor: not-allowed;
 }
 
-/*
-Need to separate out the :not() selector from the rest of the CSS 2.1 selectors
-since IE8 won't execute CSS that contains a CSS3 selector.
-*/
-input:not([type])[disabled] {
-    color: #9e9e9e; 
-    background-color: #eee;
-    cursor: not-allowed;
+textarea {
+    min-height: 144px;
+}
+
+input[type="file"]:focus,
+input[type="radio"]:focus,
+input[type="checkbox"]:focus {
+    outline: thin dotted #9e9e9e;
+    outline: 1px auto #8fadff;
 }
 
 input[readonly],
 select[readonly],
 textarea[readonly] {
-    /* menu text color */
     border-color: #eee; 
-    /* menu hover bg color */
     color: #263238;
     background: #eee;
 }
@@ -1794,7 +1745,7 @@ select:focus:invalid:focus {
 input[type="file"]:focus:invalid:focus,
 input[type="radio"]:focus:invalid:focus,
 input[type="checkbox"]:focus:invalid:focus {
-    outline-color: #e9322d;
+    outline-color: #ff1744;
 }
 
 select {
@@ -1841,7 +1792,6 @@ label > .label-body {
     left: auto;
 }
 .main-navigation li {
-    float: left;
     position: relative;
 }
 .main-navigation a {
@@ -2051,31 +2001,88 @@ span.comments-link:before {
 /*------------------------------------*\
     #HEADER
 \*------------------------------------*/
+body.open {
+    overflow: hidden;
+}
+
+#header {
+    display: block;
+    overflow: hidden;
+    position: fixed;
+    z-index: 1; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #2196f3;
+}
+
 .site-branding {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    flex-direction: row;
     position: relative;
     width: 100%;
-    margin: 0 auto;
-    padding-left: 70px; 
+    height: 60px;
+    margin: 0 auto; 
+
+    -webkit-box-direction: normal;
+    -webkit-box-orient: horizontal;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+}
+
+#header.open,
+#header.open ~ .site-container {
+    -webkit-transform: translate(250px, 0);
+    -ms-transform: translate(250px, 0);
+    transform: translate(250px, 0);
+}
+
+#site-title {
+    display: initial; 
+    float: none;
+    max-width: none;
+    margin: 0 16px;
+    padding: 0;
+    color: #fafafa;
+    font-weight: 300;
+    line-height: 60px;
+
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+}
+
+#site-title a {
+    color: inherit;
+    font-weight: normal; 
     text-decoration: none;
 }
-@media only screen and (min-width: 48em) {
-    .site-branding {
-        max-width: 1080px;
-        height: 130px;
-        min-height: 230px;
-        padding: 0 16px;
-    }
+
+.app-bar-actions {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    flex-direction: row;
+    z-index: 2; 
+
+    -webkit-box-direction: normal;
+    -webkit-box-orient: horizontal;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
 }
 
 .menu-toggle {
-    position: fixed;
-    z-index: 8;
-    top: 0; 
+    display: inline-block;
     width: 60px;
     height: 60px;
     padding: 20px;
     border: none;
-    background-color: grey;
+    background-color: transparent;
     background-image: none;
     font-size: 11px;
     -webkit-transition: background-color 0.2s ease-out;
@@ -2106,39 +2113,169 @@ span.comments-link:before {
 .menu-toggle span:after {
     top: 0.55em;
 }
-.menu-toggle.active span {
+
+.open .menu-toggle span {
     background: transparent;
 }
-.menu-toggle.active span:before {
+.open .menu-toggle span:before {
     -webkit-transform: rotate(45deg) translate(0.5em, 0.4em);
     -ms-transform: rotate(45deg) translate(0.5em, 0.4em);
     transform: rotate(45deg) translate(0.5em, 0.4em);
 }
-.menu-toggle.active span:after {
+.open .menu-toggle span:after {
     -webkit-transform: rotate(-45deg) translate(0.4em, -0.3em);
     -ms-transform: rotate(-45deg) translate(0.4em, -0.3em);
     transform: rotate(-45deg) translate(0.4em, -0.3em);
 }
 
+.menu-toggle img {
+    width: 24px; 
+    height: 24px;
+}
+
+.menu-toggle:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.menu-toggle:focus:not(:active) {
+    outline: 0; 
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.menu-toggle:active {
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
 .menu {
-    overflow-y: auto;
+    overflow-y: auto; 
     position: fixed;
     z-index: 1;
     top: 0;
     bottom: 0;
     width: 250px;
     height: 100%;
-    color: #fefefe;
-    background-color: #3367d6;
-    -webkit-transition: -webkit-transform 0.3s ease-out;
-    transition: transform 0.3s ease-out; 
+    color: #fafafa;
+    background-color: #1976d2;
     -webkit-transform: translate(-250px, 0);
     -ms-transform: translate(-250px, 0);
     transform: translate(-250px, 0);
 }
+
+.menu.open {
+    -webkit-transform: translate(0, 0);
+    -ms-transform: translate(0, 0);
+    transform: translate(0, 0);
+}
+
+#header,
+.menu.opened,
+.site-container {
+    -webkit-transition: -webkit-transform 0.3s ease-out;
+    transition: transform 0.3s ease-out;
+}
+
+.menu h4,
+.menu ul li a {
+    height: 60px;
+    padding: 17px 20px;
+    line-height: 1.4;
+}
+
+.menu h4 {
+    color: #1976d2; 
+    background-color: white;
+}
+
+.menu ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.menu ul li a {
+    display: block;
+    color: white;
+    white-space: nowrap; 
+    text-decoration: none;
+    -webkit-transition: background-color 0.2s ease-out;
+    transition: background-color 0.2s ease-out;
+}
+
+.menu ul li {
+    padding: 0; 
+    border-width: 1px;
+    border-color: white;
+    border-bottom-style: solid;
+}
+
+.menu ul li::before {
+    content: none;
+}
+
+.menu ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.menu ul li a:focus {
+    outline: 0; 
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.menu ul li a:active {
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+.site-container {
+    min-height: 100%; 
+    padding-top: 60px;
+}
+
+/** Larger Screens - desktops and tablets **/
 @media only screen and (min-width: 48em) {
+    #header {
+        position: relative;
+    }
+
+    #header.open,
+    #header.open ~ .site-container {
+        -webkit-transform: translate(0px, 0);
+        -ms-transform: translate(0px, 0);
+        transform: translate(0px, 0);
+    }
+
+    .site-branding {
+        display: block;
+        box-sizing: border-box;
+        max-width: 1400px;
+        height: 130px;
+        padding: 0 16px;
+        background-color: #2196f3;
+    }
+
+    #site-title {
+        float: left;
+        margin: 0;
+        padding: 0;
+    }
+
+    .app-bar-actions {
+        float: right;
+    }
+
+    #header::after {
+        display: block;
+        clear: both; 
+        overflow: hidden;
+        height: 0;
+        content: " ";
+    }
+
+    .menu-toggle {
+        display: none;
+    }
+
     .menu {
-        overflow-y: auto; 
+        overflow-y: visible; 
         position: relative;
         width: 100%;
         height: auto;
@@ -2149,39 +2286,43 @@ span.comments-link:before {
         -ms-transform: translate(0, 0);
         transform: translate(0, 0);
     }
-}
 
-.site.active {
-    overflow: hidden;
-}
-
-.menu.active {
-    -webkit-transform: translate(0, 0);
-    -ms-transform: translate(0, 0);
-    transform: translate(0, 0);
-}
-
-#header,
-.menu.active,
-.site-container {
-    -webkit-transition: -webkit-transform 0.3s ease-out;
-    transition: transform 0.3s ease-out;
-}
-
-#header.active,
-#header.active ~ .site-container {
-    -webkit-transform: translate(250px, 0);
-    -ms-transform: translate(250px, 0);
-    transform: translate(250px, 0);
-}
-
-@media only screen and (min-width: 48em) {
-    #header.active,
-    #header.active ~ .site-container {
-        -webkit-transform: translate(0px, 0);
-        -ms-transform: translate(0px, 0);
-        transform: translate(0px, 0);
+    .menu h4 {
+        display: none;
     }
+
+    .menu ul {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        flex-direction: row; 
+        max-width: 1400px;
+        margin: 0 auto;
+
+        -webkit-box-direction: normal;
+        -webkit-box-orient: horizontal;
+        -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+    }
+
+    .menu ul li {
+        border: none;
+    }
+
+    .site-container {
+        max-width: 1400px;
+        min-height: initial; 
+        padding-top: 0;
+    }
+
+    body {
+        overflow-y: scroll;
+    }
+}
+
+.main-navigation {
+    height: 60px;
 }
 
 /*------------------------------------*\
@@ -2309,82 +2450,85 @@ blockquote.alignright {
 /*------------------------------------*\
     #BREADCRUMBS
 \*------------------------------------*/
-0.1-12 {
+/*------------------------------------*\
+    #WIDTHS
+\*------------------------------------*/
+.all-1-12 {
     width: 8.3333%;
 
     *width: 8.3023%;
 }
 
-0.1-6,
-0.2-12 {
+.all-1-6,
+.all-2-12 {
     width: 16.6667%;
 
     *width: 16.6357%;
 }
 
-0.1-4,
-0.3-12 {
+.all-1-4,
+.all-3-12 {
     width: 25%;
 
     *width: 24.969%;
 }
 
-0.1-3,
-0.4-12 {
+.all-1-3,
+.all-4-12 {
     width: 33.3333%;
 
     *width: 33.3023%;
 }
 
-0.5-12 {
+.all-5-12 {
     width: 41.6667%;
 
     *width: 41.6357%;
 }
 
-0.1-2,
-0.6-12 {
+.all-1-2,
+.all-6-12 {
     width: 50%;
 
     *width: 49.969%;
 }
 
-0.7-12 {
+.all-7-12 {
     width: 58.3333%;
 
     *width: 58.3023%;
 }
 
-0.2-3,
-0.8-12 {
+.all-2-3,
+.all-8-12 {
     width: 66.6667%;
 
     *width: 66.6357%;
 }
 
-0.3-4,
-0.9-12 {
+.all-3-4,
+.all-9-12 {
     width: 75%;
 
     *width: 74.969%;
 }
 
-0.5-6,
-0.10-12 {
+.all-5-6,
+.all-10-12 {
     width: 83.3333%;
 
     *width: 83.3023%;
 }
 
-0.11-12 {
+.all-11-12 {
     width: 91.6667%;
 
     *width: 91.6357%;
 }
 
-0.1,
-0.1-1,
-0.12-12 {
+.all-1,
+.all-1-1,
+.all-12-12 {
     width: 100%;
 }
 

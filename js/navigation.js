@@ -3,40 +3,44 @@
  *
  * Handles toggling the navigation menu for small screens.
  */
-(function (window, document) {
+(function() {
+  var appbarElement, body, closeMenu, main, menuBtn, navdrawerContainer, querySelector, toggleMenu;
 
-    var layout   = document.getElementById('page'),
-        menu     = document.getElementById('menu-primary'),
-        header   = document.getElementById('header'),
-        menuLink = document.getElementById('menu-toggle');
+  closeMenu = function() {
+    body.classList.remove('open');
+    appbarElement.classList.remove('open');
+    navdrawerContainer.classList.remove('open');
+  };
 
-    function toggleClass(element, className) {
-        var classes = element.className.split(/\s+/),
-            length = classes.length,
-            i = 0;
+  toggleMenu = function() {
+    body.classList.toggle('open');
+    appbarElement.classList.toggle('open');
+    navdrawerContainer.classList.toggle('open');
+    navdrawerContainer.classList.add('opened');
+  };
 
-        for(; i < length; i++) {
-          if (classes[i] === className) {
-            classes.splice(i, 1);
-            break;
-          }
-        }
-        // The className is not found
-        if (length === classes.length) {
-            classes.push(className);
-        }
+  'use strict';
 
-        element.className = classes.join(' ');
+  querySelector = document.querySelector.bind(document);
+
+  navdrawerContainer = querySelector('.menu');
+
+  body = document.body;
+
+  appbarElement = querySelector('#header');
+
+  menuBtn = querySelector('.menu-toggle');
+
+  main = querySelector('.site-container');
+
+  main.addEventListener('click', closeMenu);
+
+  menuBtn.addEventListener('click', toggleMenu);
+
+  navdrawerContainer.addEventListener('click', function(event) {
+    if (event.target.nodeName === 'A' || event.target.nodeName === 'LI') {
+      closeMenu();
     }
+  });
 
-    menuLink.onclick = function (e) {
-        var active = 'active';
-
-        e.preventDefault();
-        toggleClass(layout, active);
-        toggleClass(menu, active);
-        toggleClass(header, active);
-        toggleClass(menuLink, active);
-    };
-
-}(this, this.document));
+}).call(this);

@@ -14,8 +14,8 @@
 		<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'scratch' ); ?></a>
 
 		<header <?php hybrid_attr( 'header' ); ?>>
-		<button id="menu-toggle" class="menu-toggle" aria-controls="menu" aria-expanded="false"><span></span></button>
 			<div class="site-branding">
+				<button class="menu-toggle" aria-controls="menu" aria-expanded="false"><span></span></button>
 				<?php hybrid_site_title(); ?>
 				<?php hybrid_site_description(); ?>
 			</div><!-- .site-branding -->

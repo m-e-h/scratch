@@ -3,17 +3,27 @@
 \*------------------------------------*/
 
 .site-container {
-	display: block;
+  @extend .grid;
 	max-width: 1400px;
 	margin: 0 auto;
-	padding: 0;
-	width: 100%;
-	text-align: left;
 	padding-left: $base-spacing-unit-sm;
 	padding-top: $base-spacing-unit * 4;
 		@include md {
 		padding-left: $base-spacing-unit;
 	}
+}
+
+#sidebar-subsidiary {
+  @extend .grid;
+  padding-left: $base-spacing-unit-sm;
+    @include md {
+    padding-left: $base-spacing-unit;
+  }
+
+  .widget {
+    @extend .grid-item;
+    @extend .md-1-3;
+  }
 }
 
 .comment-respond, .widget, .entry {

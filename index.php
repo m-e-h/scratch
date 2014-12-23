@@ -22,21 +22,21 @@ get_header(); ?>
 
 				<?php hybrid_get_content_template(); // Loads the content/*.php template. ?>
 
-				<?php 
+				<?php
   				  // If comments are open or we have at least one comment, load up the comment template
     				if ( is_singular() && ( comments_open() || get_comments_number() )) :
     					comments_template();
-    				endif; 
+    				endif;
 				?>
 
 			<?php endwhile; // End loop. ?>
 
-			<?php 
+			<?php
   				if ( is_singular( 'post' ) ) :
   					the_post_navigation();
   				elseif ( is_home() || is_archive() || is_search() ) :
   					the_posts_pagination();
-  				endif; // End nav-loop. 
+  				endif; // End nav-loop.
 			?>
 
 		<?php else : //If no content found. ?>

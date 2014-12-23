@@ -3,42 +3,40 @@
  *
  * Handles toggling the navigation menu for small screens.
  */
-( function() {
-	var container, button, menu;
+(function (window, document) {
 
-	container = document.getElementById( 'menu-primary' );
-	if ( ! container ) {
-		return;
-	}
+    var layout   = document.getElementById('page'),
+        menu     = document.getElementById('menu-primary'),
+        header   = document.getElementById('header'),
+        menuLink = document.getElementById('menu-toggle');
 
-	button = container.getElementsByTagName( 'button' )[0];
-	if ( 'undefined' === typeof button ) {
-		return;
-	}
+    function toggleClass(element, className) {
+        var classes = element.className.split(/\s+/),
+            length = classes.length,
+            i = 0;
 
-	menu = container.getElementsByTagName( 'ul' )[0];
+        for(; i < length; i++) {
+          if (classes[i] === className) {
+            classes.splice(i, 1);
+            break;
+          }
+        }
+        // The className is not found
+        if (length === classes.length) {
+            classes.push(className);
+        }
 
-	// Hide menu toggle button if menu is empty and return early.
-	if ( 'undefined' === typeof menu ) {
-		button.style.display = 'none';
-		return;
-	}
+        element.className = classes.join(' ');
+    }
 
-	menu.setAttribute( 'aria-expanded', 'false' );
+    menuLink.onclick = function (e) {
+        var active = 'active';
 
-	if ( -1 === menu.className.indexOf( 'nav-menu' ) ) {
-		menu.className += ' nav-menu';
-	}
+        e.preventDefault();
+        toggleClass(layout, active);
+        toggleClass(menu, active);
+        toggleClass(header, active);
+        toggleClass(menuLink, active);
+    };
 
-	button.onclick = function() {
-		if ( -1 !== container.className.indexOf( 'toggled' ) ) {
-			container.className = container.className.replace( ' toggled', '' );
-			button.setAttribute( 'aria-expanded', 'false' );
-			menu.setAttribute( 'aria-expanded', 'false' );
-		} else {
-			container.className += ' toggled';
-			button.setAttribute( 'aria-expanded', 'true' );
-			menu.setAttribute( 'aria-expanded', 'true' );
-		}
-	};
-} )();
+}(this, this.document));

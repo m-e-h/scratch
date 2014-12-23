@@ -466,14 +466,14 @@ th {
 .left {
     display: inline;
     float: left;
-    margin-right: 1.5em;
+    margin-right: 24px;
 }
 
 .alignright,
 .right {
     display: inline;
     float: right;
-    margin-left: 1.5em;
+    margin-left: 24px;
 }
 
 .aligncenter,
@@ -574,7 +574,7 @@ iframe {
 \*------------------------------------*/
 .wp-caption {
     max-width: 100%; 
-    margin-bottom: 1.5em;
+    margin-bottom: 24px;
 }
 
 .wp-caption img[class*="wp-image-"] {
@@ -587,7 +587,7 @@ iframe {
 }
 
 .wp-caption .wp-caption-text {
-    margin: 0.8075em 0;
+    margin: 12px 0;
 }
 
 /*------------------------------------*\
@@ -604,11 +604,30 @@ iframe {
     display: block;
     clear: both;
     overflow: hidden;
-    margin: 0 auto 24px;
+    margin: 0 auto;
+}
+
+.gallery-row {
+    display: block;
+    clear: both;
+    overflow: hidden;
+    margin: 0;
+}
+
+.gallery-item {
+    float: left;
+    overflow: hidden;
+    box-sizing: border-box; 
+    margin: 0;
+    padding: 0;
+    border: none;
+    background: transparent;
     text-align: center;
+    list-style: none;
 }
 
 .gallery-icon img {
+    box-sizing: border-box; 
     width: auto;
     max-width: 89%;
     height: auto;
@@ -617,8 +636,8 @@ iframe {
 }
 
 .gallery-caption {
+    box-sizing: border-box; 
     margin-left: 0;
-    text-align: center;
 }
 
 /* Gallery item sizes depending on the number of columns */
@@ -628,6 +647,18 @@ iframe {
 
 .gallery-col-1 .gallery-item {
     width: 100%;
+}
+
+.gallery-col-2 .gallery-item {
+    width: 50%;
+}
+
+.gallery-col-3 .gallery-item {
+    width: 33.33%;
+}
+
+.gallery-col-4 .gallery-item {
+    width: 25%;
 }
 
 .gallery-col-5 .gallery-item {
@@ -656,6 +687,10 @@ iframe {
 
 .gallery-col-11 .gallery-item {
     width: 9.09%;
+}
+
+.gallery-col-12 .gallery-item {
+    width: 8.33%;
 }
 
 .gallery-col-13 .gallery-item {
@@ -738,19 +773,33 @@ iframe {
  *
  * 1. Account for browser defaults of elements that might be the root node of
  *    the component.
- * 2. Ensure consistent default alignment.
+ * 2. Remove inter-cell whitespace that appears between `inline-block` child
+ *    elements.
+ * 3. Ensure consistent default alignment.
  */
 .grid,
-.gallery-row,
+.site-container,
+#sidebar-subsidiary,
 .sidebar__subsidiary {
     display: block;
-    /* 1 */
+    /* 3 */
+    width: 100%; 
+    /* 2 */
     margin: 0;
     /* 1 */
     padding: 0;
     /* 1 */
+    font-size: 0;
+    /* 1 */
     text-align: left;
-    /* 2 */
+}
+.grid > *,
+.site-container > *,
+#sidebar-subsidiary > *,
+.sidebar__subsidiary > * {
+    font-size: 16px;
+    font-size: 1rem;
+    line-height: 1.5;
 }
 
 /**
@@ -771,11 +820,11 @@ iframe {
  * Modifier: middle-align grid items
  */
 .grid--middle > .grid-item,
-.grid--middle > .gallery-item,
+#sidebar-subsidiary .grid--middle > .widget,
 .layout-2c-l .grid--middle > .content-area,
-.layout-2c-l .grid--middle > .sidebar__primary,
-.layout-2c-r .site-content .grid--middle > .content-area,
-.layout-2c-r .site-content .grid--middle > .sidebar__primary {
+.layout-2c-l .grid--middle > #sidebar-primary,
+.layout-2c-r .site-container .grid--middle > .content-area,
+.layout-2c-r .site-container .grid--middle > #sidebar-primary {
     vertical-align: middle;
 }
 
@@ -783,11 +832,11 @@ iframe {
  * Modifier: bottom-align grid items
  */
 .grid--bottom > .grid-item,
-.grid--bottom > .gallery-item,
+#sidebar-subsidiary .grid--bottom > .widget,
 .layout-2c-l .grid--bottom > .content-area,
-.layout-2c-l .grid--bottom > .sidebar__primary,
-.layout-2c-r .site-content .grid--bottom > .content-area,
-.layout-2c-r .site-content .grid--bottom > .sidebar__primary {
+.layout-2c-l .grid--bottom > #sidebar-primary,
+.layout-2c-r .site-container .grid--bottom > .content-area,
+.layout-2c-r .site-container .grid--bottom > #sidebar-primary {
     vertical-align: bottom;
 }
 
@@ -801,11 +850,11 @@ iframe {
     direction: rtl;
 }
 .grid--rev > .grid-item,
-.grid--rev > .gallery-item,
+#sidebar-subsidiary .grid--rev > .widget,
 .layout-2c-l .grid--rev > .content-area,
-.layout-2c-l .grid--rev > .sidebar__primary,
-.layout-2c-r .site-content .grid--rev > .content-area,
-.layout-2c-r .site-content .grid--rev > .sidebar__primary {
+.layout-2c-l .grid--rev > #sidebar-primary,
+.layout-2c-r .site-container .grid--rev > .content-area,
+.layout-2c-r .site-container .grid--rev > #sidebar-primary {
     text-align: left; 
 
     direction: ltr;
@@ -822,11 +871,11 @@ iframe {
     margin: -12px;
 }
 .grid--with-gutter > .grid-item,
-.grid--with-gutter > .gallery-item,
+#sidebar-subsidiary .grid--with-gutter > .widget,
 .layout-2c-l .grid--with-gutter > .content-area,
-.layout-2c-l .grid--with-gutter > .sidebar__primary,
-.layout-2c-r .site-content .grid--with-gutter > .content-area,
-.layout-2c-r .site-content .grid--with-gutter > .sidebar__primary {
+.layout-2c-l .grid--with-gutter > #sidebar-primary,
+.layout-2c-r .site-container .grid--with-gutter > .content-area,
+.layout-2c-r .site-container .grid--with-gutter > #sidebar-primary {
     padding: 0 12px;
 }
 
@@ -844,11 +893,11 @@ iframe {
  * 5. Make cells full-width by default.
  */
 .grid-item,
-.gallery-item,
+#sidebar-subsidiary .widget,
 .layout-2c-l .content-area,
-.layout-2c-l .sidebar__primary,
-.layout-2c-r .site-content .content-area,
-.layout-2c-r .site-content .sidebar__primary {
+.layout-2c-l #sidebar-primary,
+.layout-2c-r .site-container .content-area,
+.layout-2c-r .site-container #sidebar-primary {
     display: inline-block;
     box-sizing: border-box;
     /* 4 */
@@ -856,13 +905,16 @@ iframe {
     /* 2 */
     margin: 0;
     padding: 0;
+    /* 5 */
+    font-size: 16px;
+    font-size: 1rem;
+    line-height: 1.5; 
     text-align: left;
     /* 3 */
     vertical-align: top;
     /* 1 */
 
     *display: inline;
-    /* 5 */
 }
 
 /**
@@ -961,20 +1013,6 @@ hr {
     padding: 0; 
     border: 0;
     border-top: 1px solid #ccc;
-}
-
-/**
- * Remove the gap between audio, canvas, iframes,
- * images, videos and the bottom of their containers:
- * https://github.com/h5bp/html5-boilerplate/issues/440
- */
-audio,
-canvas,
-iframe,
-img,
-svg,
-video {
-    vertical-align: middle;
 }
 
 /**
@@ -1203,18 +1241,23 @@ dt {
 /*------------------------------------*\
     #LAYOUTS
 \*------------------------------------*/
-.site-content {
-    display: block;
-    width: 100%;
+.site-container {
     max-width: 1400px;
     margin: 0 auto;
-    padding: 0;
     padding-top: 96px; 
     padding-left: 12px;
-    text-align: left;
 }
 @media only screen and (min-width: 48em) {
-    .site-content {
+    .site-container {
+        padding-left: 24px;
+    }
+}
+
+#sidebar-subsidiary {
+    padding-left: 12px;
+}
+@media only screen and (min-width: 48em) {
+    #sidebar-subsidiary {
         padding-left: 24px;
     }
 }
@@ -1252,7 +1295,7 @@ dt {
 .layout-1c .content-area {
     width: 100%;
 }
-.layout-1c .sidebar__primary {
+.layout-1c #sidebar-primary {
     width: 100%;
 }
 
@@ -1262,17 +1305,17 @@ dt {
 /*------------------------------------*\
     ##Layout 2 Column Right
 \*------------------------------------*/
-.layout-2c-r .site-content {
+.layout-2c-r .site-container {
     text-align: left; 
 
     direction: rtl;
 }
-.layout-2c-r .site-content .content-area {
+.layout-2c-r .site-container .content-area {
     text-align: left; 
 
     direction: ltr;
 }
-.layout-2c-r .site-content .sidebar__primary {
+.layout-2c-r .site-container #sidebar-primary {
     text-align: left; 
 
     direction: ltr;
@@ -1292,7 +1335,6 @@ p {
     padding: 0;
 }
 
-.home #site-title,
 h1 {
     font-size: 44px;
     font-size: 2.75rem;
@@ -1307,7 +1349,7 @@ h2 {
     line-height: 1.3714285714;
 }
 
-#site-title,
+#site-description,
 h3 {
     font-size: 26px;
     font-size: 1.625rem;
@@ -1459,6 +1501,20 @@ dt {
     letter-spacing: 0.04em;
 }
 
+.menu-link {
+    display: block;
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    width: 2em;
+    height: auto;
+    padding: 2.1em 1.6em; 
+    background: #000;
+    background: rgba(0, 0, 0, 0.7);
+    font-size: 10px;
+}
+
 /*------------------------------------*\
     #ICONS
 \*------------------------------------*/
@@ -1491,6 +1547,20 @@ img {
     min-width: 150px;
     max-width: 50%;
     margin-right: 0;
+}
+
+/**
+ * Remove the gap between audio, canvas, iframes,
+ * images, videos and the bottom of their containers:
+ * https://github.com/h5bp/html5-boilerplate/issues/440
+ */
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+    vertical-align: middle;
 }
 
 /* Make sure embeds and iframes fit their containers */
@@ -1762,14 +1832,6 @@ label > .label-body {
 /*------------------------------------*\
     #MENUS
 \*------------------------------------*/
-#menu-primary,
-.main-navigation {
-    display: block;
-    float: left;
-    clear: both;
-    width: 100%;
-}
-
 .main-navigation ul {
     margin: 0;
     padding-left: 0; 
@@ -1812,10 +1874,18 @@ label > .label-body {
     display: none;
 }
 
-@media screen and (max-width: 600px) {
+@media only screen and (max-width: 47em) {
+    #site-title {
+        font-size: 2em;
+    }
+
+    #site-description {
+        font-size: 1em;
+    }
+
     .menu-toggle,
     #menu-primary.toggled .nav-menu {
-        display: block;
+        display: inline-block;
     }
 
     .menu-item-has-children:hover > ul {
@@ -1833,10 +1903,6 @@ label > .label-body {
     .menu-item {
         display: block;
         width: 100%;
-    }
-
-    .main-navigation ul {
-        display: none;
     }
 }
 
@@ -1985,71 +2051,137 @@ span.comments-link:before {
 /*------------------------------------*\
     #HEADER
 \*------------------------------------*/
-.site-header {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    position: fixed;
-    z-index: 5;
-    width: 100%;
-    min-height: 72px;
-    margin: 0;
-    padding: 0 24px;
-    border: 0;
-    color: #eee;
-    background-color: #2962ff;
-    box-shadow: 0 1px 1.5px 0 rgba(0, 0, 0, 0.12), 0 1px 1px 0 rgba(0, 0, 0, 0.24);
-    -webkit-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    -webkit-transition-duration: 0.2s;
-    transition-duration: 0.2s;
-    -webkit-transition-property: min-height, box-shadow;
-    transition-property: min-height, box-shadow;
-
-    -webkit-box-pack: justify;
-    -ms-flex-pack: justify;
-    -webkit-justify-content: space-between;
-    justify-content: space-between;
-}
-
 .site-branding {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    font-size: 26px;
-    font-size: 1.625rem;
-    line-height: 1.8461538462;
-
-    -webkit-align-items: center;
-    align-items: center; 
-    -webkit-box-align: center;
-    -webkit-box-flex: 1;
-    -webkit-flex: 1;
-    -ms-flex: 1;
-    flex: 1;
-    -ms-flex-align: center;
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    padding-left: 70px; 
+    text-decoration: none;
 }
-@media only screen and (max-width: 47em) {
+@media only screen and (min-width: 48em) {
     .site-branding {
-        display: block; 
-        font-size: 16px;
-        font-size: 1rem;
-        font-weight: 400;
-        line-height: 1.5;
-        letter-spacing: 0.04em;
-    }
-    .site-branding .trail-begin {
-        display: inline-block;
+        max-width: 1080px;
+        height: 130px;
+        min-height: 230px;
+        padding: 0 16px;
     }
 }
 
-.menu__primary {
-    -webkit-box-flex: 1;
-    -webkit-flex: 1;
-    -ms-flex: 1;
-    flex: 1;
+.menu-toggle {
+    position: fixed;
+    z-index: 8;
+    top: 0; 
+    width: 60px;
+    height: 60px;
+    padding: 20px;
+    border: none;
+    background-color: grey;
+    background-image: none;
+    font-size: 11px;
+    -webkit-transition: background-color 0.2s ease-out;
+    transition: background-color 0.2s ease-out;
+
+    -webkit-tap-highlight-color: transparent;
+}
+.menu-toggle span {
+    display: block;
+    position: relative;
+    padding-right: 20px;
+}
+.menu-toggle span,
+.menu-toggle span:before,
+.menu-toggle span:after {
+    width: 100%;
+    height: 2px;
+    background-color: #fff;
+    -webkit-transition: all 0.4s;
+    transition: all 0.4s;
+}
+.menu-toggle span:before,
+.menu-toggle span:after {
+    position: absolute;
+    top: -0.55em;
+    content: " ";
+}
+.menu-toggle span:after {
+    top: 0.55em;
+}
+.menu-toggle.active span {
+    background: transparent;
+}
+.menu-toggle.active span:before {
+    -webkit-transform: rotate(45deg) translate(0.5em, 0.4em);
+    -ms-transform: rotate(45deg) translate(0.5em, 0.4em);
+    transform: rotate(45deg) translate(0.5em, 0.4em);
+}
+.menu-toggle.active span:after {
+    -webkit-transform: rotate(-45deg) translate(0.4em, -0.3em);
+    -ms-transform: rotate(-45deg) translate(0.4em, -0.3em);
+    transform: rotate(-45deg) translate(0.4em, -0.3em);
+}
+
+.menu {
+    overflow-y: auto;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    bottom: 0;
+    width: 250px;
+    height: 100%;
+    color: #fefefe;
+    background-color: #3367d6;
+    -webkit-transition: -webkit-transform 0.3s ease-out;
+    transition: transform 0.3s ease-out; 
+    -webkit-transform: translate(-250px, 0);
+    -ms-transform: translate(-250px, 0);
+    transform: translate(-250px, 0);
+}
+@media only screen and (min-width: 48em) {
+    .menu {
+        overflow-y: auto; 
+        position: relative;
+        width: 100%;
+        height: auto;
+        margin-top: 0;
+        -webkit-transition: none;
+        transition: none;
+        -webkit-transform: translate(0, 0);
+        -ms-transform: translate(0, 0);
+        transform: translate(0, 0);
+    }
+}
+
+.site.active {
+    overflow: hidden;
+}
+
+.menu.active {
+    -webkit-transform: translate(0, 0);
+    -ms-transform: translate(0, 0);
+    transform: translate(0, 0);
+}
+
+#header,
+.menu.active,
+.site-container {
+    -webkit-transition: -webkit-transform 0.3s ease-out;
+    transition: transform 0.3s ease-out;
+}
+
+#header.active,
+#header.active ~ .site-container {
+    -webkit-transform: translate(250px, 0);
+    -ms-transform: translate(250px, 0);
+    transform: translate(250px, 0);
+}
+
+@media only screen and (min-width: 48em) {
+    #header.active,
+    #header.active ~ .site-container {
+        -webkit-transform: translate(0px, 0);
+        -ms-transform: translate(0px, 0);
+        transform: translate(0px, 0);
+    }
 }
 
 /*------------------------------------*\
@@ -2175,7 +2307,7 @@ blockquote.alignright {
 }
 
 /*------------------------------------*\
-    #BUTTONS
+    #BREADCRUMBS
 \*------------------------------------*/
 0.1-12 {
     width: 8.3333%;
@@ -2291,7 +2423,6 @@ blockquote.alignright {
     }
 
     .sm-1-2,
-    .gallery-col-4 .gallery-item,
     .sidebar-col-2 .widget,
     .sm-6-12 {
         width: 50%;
@@ -2428,7 +2559,6 @@ blockquote.alignright {
     }
 
     .md-1-6,
-    .gallery-col-12 .gallery-item,
     .md-2-12 {
         width: 16.6667%;
 
@@ -2443,9 +2573,9 @@ blockquote.alignright {
     }
 
     .md-1-3,
-    .gallery-col-3 .gallery-item,
-    .layout-2c-l .sidebar__primary,
-    .layout-2c-r .site-content .sidebar__primary,
+    #sidebar-subsidiary .widget,
+    .layout-2c-l #sidebar-primary,
+    .layout-2c-r .site-container #sidebar-primary,
     .sidebar-col-3 .widget,
     .md-4-12 {
         width: 33.3333%;
@@ -2460,7 +2590,6 @@ blockquote.alignright {
     }
 
     .md-1-2,
-    .gallery-col-2 .gallery-item,
     .md-6-12 {
         width: 50%;
 
@@ -2475,7 +2604,7 @@ blockquote.alignright {
 
     .md-2-3,
     .layout-2c-l .content-area,
-    .layout-2c-r .site-content .content-area,
+    .layout-2c-r .site-container .content-area,
     .md-8-12 {
         width: 66.6667%;
 
@@ -2591,8 +2720,7 @@ blockquote.alignright {
 }
 
 @media only screen and (min-width: 64em) {
-    .lg-1-12,
-    .gallery-col-12 .gallery-item {
+    .lg-1-12 {
         width: 8.3333%;
 
         *width: 8.3023%;
@@ -2606,7 +2734,6 @@ blockquote.alignright {
     }
 
     .lg-1-4,
-    .gallery-col-4 .gallery-item,
     .lg-3-12 {
         width: 25%;
 

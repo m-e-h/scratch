@@ -7,14 +7,22 @@
  *
  * 1. Account for browser defaults of elements that might be the root node of
  *    the component.
- * 2. Ensure consistent default alignment.
+ * 2. Remove inter-cell whitespace that appears between `inline-block` child
+ *    elements.
+ * 3. Ensure consistent default alignment.
  */
 
 .grid {
   display: block; /* 1 */
+  font-size: 0; /* 2 */
   margin: 0; /* 1 */
   padding: 0; /* 1 */
-  text-align: left; /* 2 */
+  text-align: left; /* 3 */
+  width: 100%;
+
+  > * {
+    @include font-size($base-font-size);
+  }
 }
 
 /**
@@ -106,6 +114,7 @@
   text-align: left; /* 3 */
   vertical-align: top; /* 4 */
   width: 100%; /* 5 */
+  @include font-size($base-font-size);
 }
 
 /**

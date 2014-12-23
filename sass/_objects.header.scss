@@ -2,44 +2,130 @@
     #HEADER
 \*------------------------------------*/
 
-.site-header {
-    margin: 0;
-    border: 0;
-    position: fixed;
-    width: 100%;
-    //height: $base-spacing-unit * 3;
-    min-height: $base-spacing-unit * 3;
-    background-color: $color-header;
-    color: #eeeeee;
-    z-index: 5;
-    -webkit-transition-property: min-height, box-shadow;
-    transition-property: min-height, box-shadow;
-    -webkit-transition-duration: 0.2s;
-    transition-duration: 0.2s;
-    @include shadow-z1();
-    -webkit-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    padding: 0 $base-spacing-unit;
-
-    display: flex;
-    justify-content: space-between;
-}
-
 .site-branding {
-@include typo-display-1();
-display: flex;
-flex: 1;
-align-items: center;
-    @include sm-only {
-        @include typo-body-1();
-        display: block;
-        .trail-begin {
-            display: inline-block;
-        }
-    }
+width: 100%;
+//height: 60px;
+position: relative;
+margin: 0 auto;
+text-decoration: none;
+padding-left: 70px;
+
+@include md {
+max-width: 1080px;
+min-height: 230px;
+height: 130px;
+padding: 0 16px;
+}
 }
 
 
-.menu__primary {
-    flex: 1;
+.menu-toggle {
+width: 60px;
+height: 60px;
+background-image: none;
+background-color: grey;
+border: none;
+padding: 20px;
+position: fixed;
+-webkit-transition: background-color .2s ease-out;
+transition: background-color .2s ease-out;
+-webkit-tap-highlight-color: transparent;
+font-size: 11px;
+z-index: 8;
+top: 0;
+//left: 0;
+
+span {
+position: relative;
+display: block;
+padding-right: 20px;
+}
+
+span, span:before, span:after {
+background-color: #fff;
+width: 100%;
+height: 2px;
+-webkit-transition: all 0.4s;
+-moz-transition: all 0.4s;
+-ms-transition: all 0.4s;
+-o-transition: all 0.4s;
+transition: all 0.4s;
+}
+
+span:before, span:after {
+position: absolute;
+top: -.55em;
+content: " ";
+}
+
+span:after {
+top: .55em;
+}
+
+&.active span {
+background: transparent;
+
+&:before {
+-webkit-transform: rotate(45deg) translate(.5em, .4em);
+-moz-transform: rotate(45deg) translate(.5em, .4em);
+-ms-transform: rotate(45deg) translate(.5em, .4em);
+-o-transform: rotate(45deg) translate(.5em, .4em);
+transform: rotate(45deg) translate(.5em, .4em);
+}
+
+&:after {
+-webkit-transform: rotate(-45deg) translate(.4em, -.3em);
+-moz-transform: rotate(-45deg) translate(.4em, -.3em);
+-ms-transform: rotate(-45deg) translate(.4em, -.3em);
+-o-transform: rotate(-45deg) translate(.4em, -.3em);
+transform: rotate(-45deg) translate(.4em, -.3em);
+}
+}
+}
+
+.menu {
+z-index: 1;
+position: fixed;
+top: 0;
+bottom: 0;
+width: 250px;
+height: 100%;
+background-color: #3367D6;
+color: #fefefe;
+transform: translate(-250px,0);
+overflow-y: auto;
+transition: transform 0.3s ease-out;
+
+@include md {
+position: relative;
+width: 100%;
+height: auto;
+margin-top: 0;
+transform: translate(0,0);
+transition: none;
+overflow-y: auto;
+  }
+}
+
+.site.active {
+  overflow: hidden;
+}
+
+.menu.active {
+transform: translate(0,0);
+}
+
+#header, .menu.active, .site-container {
+transition: transform .3s ease-out;
+}
+
+#header.active, #header.active ~ .site-container {
+transform: translate(250px,0);
+}
+
+
+@include md {
+#header.active, #header.active ~ .site-container {
+transform: translate(0px,0);
+}
 }

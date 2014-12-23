@@ -3,10 +3,10 @@
 \*------------------------------------*/
 
 #menu-primary, .main-navigation {
-  clear: both;
-  display: block;
-  float: left;
-  width: 100%;
+  // clear: both;
+  // display: block;
+  // float: left;
+  // width: 100%;
 }
 
 .main-navigation {
@@ -63,10 +63,17 @@
   display: none;
 }
 
-@media screen and (max-width: 600px) {
+@include sm-only {
+  #site-title {
+    font-size: 2em;
+  }
+  #site-description {
+    font-size: 1em;
+  }
+
   .menu-toggle,
   #menu-primary.toggled .nav-menu {
-    display: block;
+    display: inline-block;
   }
 
   .menu-item-has-children:hover > ul {
@@ -89,7 +96,7 @@
   }
 
   .main-navigation ul {
-    display: none;
+    //display: none;
   }
 }
 

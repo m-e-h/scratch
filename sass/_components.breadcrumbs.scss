@@ -13,8 +13,19 @@
   display: inline-block;
   }
   
+  a {
+  text-decoration: none;
+  color: $grey-600;
+  }
+  
   .sep {
     padding: 0 5px;
-    color: $grey-400;
+    color: $grey-500;
+  }
+  
+  .trail-end {
+    font-weight: bold;
+    color: $grey-700;
+    
   }
 }

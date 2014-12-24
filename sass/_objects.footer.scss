@@ -2,6 +2,25 @@
     #FOOTER
 \*------------------------------------*/
 
+#footer {
+  background-color: $color-secondary;
+  color: #fff;
+  
+  a {
+    color: inherit;
+  }
+}
+
+.site-info {
+line-height: 50px;
+color: rgba(255, 255, 255, 0.8);
+background-color: rgba(51, 51, 51, 0.08);
+
+a {
+    color: inherit;
+  }
+}
+
 .site-footer {
     display: block;
     margin: 0;

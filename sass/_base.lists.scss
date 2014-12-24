@@ -2,28 +2,28 @@
     #LISTS
 \*------------------------------------*/
 
-ul, ol, dd {
-    @extend %margin-left;
+ul { 
+  list-style: circle inside; 
 }
 
-ul, ol, dl {
-    @extend %margin-bottom;
+ol { 
+  list-style: decimal inside; 
 }
 
-ul {
-	list-style: disc;
+ol, ul {
+  padding-left: 0;
+  margin-top: 0; 
 }
 
-ol {
-	list-style: decimal;
+ul ul, 
+ul ol,
+ol ol, 
+ol ul { 
+  margin: $base-spacing-unit 0 $base-spacing-unit $base-spacing-unit-lg; 
+  font-size: 90%; 
 }
 
-li > ul,
-li > ol {
-	margin-bottom: 0;
-}
-
-dt {
-	font-weight: bold;
+li {
+  margin-bottom: $base-spacing-unit; 
 }
 

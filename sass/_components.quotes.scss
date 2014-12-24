@@ -14,11 +14,14 @@ q {
 	quotes: "" "";
 }
 
-blockquote {
-	margin: 0 $base-spacing-unit;
-}
-
 blockquote.alignleft,
 blockquote.alignright {
 	width: 33%;
+}
+
+
+blockquote {
+border-left: 4px solid $color-grey-ui;
+padding-left: $base-spacing-unit;
+margin: $base-spacing-unit 0;
 }

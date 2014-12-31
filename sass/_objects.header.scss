@@ -34,7 +34,6 @@ body.open {
 #site-title {
   flex: 1;
   line-height: 60px;
-  margin: 0 16px;
   padding: 0;
   color: $grey-50;
   float: none;
@@ -62,7 +61,7 @@ body.open {
 }
 
 .site-container {
-  padding-top: 60px;
+  //padding-top: 60px;
   min-height: 100%;
 }
 
@@ -81,7 +80,7 @@ body.open {
     display: block;
     height: 130px;
     max-width: 1400px;
-    padding: 0 16px;
+  @include padding-space(n $base-spacing-unit-sm);
     box-sizing: border-box;
     background-color: $blue-500;
   }
@@ -96,15 +95,5 @@ body.open {
     height: 0;
     overflow: hidden;
     clear: both;
-  }
-
-  .site-container {
-    max-width: 1400px;
-    padding-top: 0;
-    min-height: initial;
-  }
-
-  body {
-    overflow-y: scroll;
   }
 }

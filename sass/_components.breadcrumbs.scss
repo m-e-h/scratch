@@ -4,7 +4,7 @@
 
 .breadcrumbs {
   padding: 8px 15px;
-  margin-bottom: 20px;
+  @include margin-space(n n $base-spacing-unit-sm);
   list-style: none;
   background-color: $grey-100;
   border-radius: $base-radius;
@@ -13,20 +13,29 @@
   &>span {
   display: inline-block;
   }
-  
+
   a {
   text-decoration: none;
   color: $grey-600;
   }
-  
+
   .sep {
     padding: 0 5px;
     color: $grey-500;
   }
-  
+
   .trail-end {
     font-weight: bold;
     color: $grey-700;
-    
+
   }
 }
+
+
+// .breadcrumbs {
+// height: 40px;
+// display: flex;
+// align-items: center;
+// padding: 0 16px;
+// margin-bottom: 16px;
+// }

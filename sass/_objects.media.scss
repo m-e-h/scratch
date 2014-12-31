@@ -30,6 +30,31 @@ min-width: 150px;
 margin-right: 0;
 }
 
+figure {
+    margin: 0;
+}
+
+.gallery {
+  font-size: 0;
+
+  >* {
+    font-size: 16px;
+    font-size: 1rem;
+  }
+}
+
+.gallery-item {
+  margin: $base-spacing-unit 0;
+  font-size: 16px;
+  font-size: 1rem;
+  }
+
+.gallery-icon img {
+  width:     auto;
+  height:    auto;
+  margin:    0 auto;
+  }
+
 /**
  * Remove the gap between audio, canvas, iframes,
  * images, videos and the bottom of their containers:

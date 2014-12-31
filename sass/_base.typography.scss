@@ -2,154 +2,137 @@
 //     #TYPOGRAPHY
 // \*------------------------------------*/
 
-@mixin typo-display-4($colorContrast:false) {
-  @include font-size($base-font-size + 70px);
-  font-weight: 300;
-  letter-spacing: -0.04em;
-
-  @if $colorContrast {
-    opacity: 0.54;
-  }
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+  padding: 0;
 }
 
-@mixin typo-display-3($colorContrast:false) {
-  @include font-size($base-font-size + 28px);
+h1 {
+  @include font-size(56px);
   font-weight: 400;
   letter-spacing: -0.02em;
-
-  @if $colorContrast {
-    opacity: 0.54;
-  }
 }
 
-@mixin typo-display-2($colorContrast:false) {
-  @include font-size($base-font-size + 19px);
-
-  @if $colorContrast {
-    opacity: 0.54;
-  }
-}
-
-@mixin typo-display-1($colorContrast:false) {
-  @include font-size($base-font-size + 10px);
-
-  @if $colorContrast {
-    opacity: 0.54;
-  }
-}
-
-@mixin typo-headline($colorContrast:false) {
-  @include font-size($base-font-size + 6px);
+h2 {
+  @include font-size(45px);
   font-weight: 400;
-  -moz-osx-font-smoothing: grayscale;
-
-  @if $colorContrast {
-    opacity: 0.87;
-  }
 }
 
-@mixin typo-title($colorContrast:false) {
-  @include font-size($base-font-size + 4px);
-  font-weight: 700;
+#site-description, h3 {
+  @include font-size(34px);
+  font-weight: 400;
+}
+
+h4 {
+  @include font-size(24px);
+  font-weight: 400;
+}
+
+h5 {
+  @include font-size(20px);
+  font-weight: 500;
   letter-spacing: 0.02em;
-
-  @if $colorContrast {
-    opacity: 0.87;
-  }
 }
 
-@mixin typo-subhead($colorContrast:false) {
-
-  @include font-size($base-font-size + 2px);
+h6 {
+  @include font-size(16px);
   font-weight: 400;
   letter-spacing: 0.04em;
+}
 
-  @if $colorContrast {
-    opacity: 0.87;
+
+h1, h2, h3, h4, h5, h6 {
+
+  a {
+    text-decoration: none;
+    font-weight: inherit;
+    color: inherit;
+
+    &:visited {
+      color: inherit;
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+      color: $grey-500;
+      text-decoration: none;
+    }
   }
 }
 
-@mixin typo-body-2($colorContrast:false) {
+
+/**
+ * Styles for HTML elements
+ */
+
+body {
+    font-family: $font-body;
+}
+
+p {
   @include font-size($base-font-size);
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  margin-bottom: $base-spacing-unit;
+}
+
+blockquote {
+  @include typo-blockquote();
+  margin: 0 $base-spacing-unit;
+}
+
+dt {
   font-weight: 700;
-  letter-spacing: 0.04em;
-
-  @if $colorContrast {
-    opacity: 0.87;
-  }
 }
 
-@mixin typo-body-1($colorContrast:false) {
-	@include font-size($base-font-size);
-  font-weight: 400;
-  letter-spacing: 0.04em;
-
-  @if $colorContrast {
-    opacity: 0.87;
-  }
+.wp-caption-text {
+  @include typo-caption();
 }
 
-@mixin typo-caption($colorContrast:false) {
-	@include font-size($base-font-size - 1px);
-  font-weight: 400;
-  letter-spacing: 0.08em;
-
-  @if $colorContrast {
-    opacity: 0.54;
-  }
+.entry-meta {
+  @include typo-menu($colorContrast:true);
 }
 
-@mixin typo-blockquote($colorContrast:false) {
-	@include font-size($base-font-size + 10px);
-  font-weight: 300;
+.menu-item {
+  @include typo-menu();
+}
+
+b,
+strong {
+  font-weight: bold;
+}
+
+dfn,
+cite,
+em,
+i {
   font-style: italic;
-  letter-spacing: 0.08em;
-  &:before {
-    content: '“';
-    opacity: 0.54;
-  }
-
-  &:after {
-    content: '”';
-    opacity: 0.54;
-  }
-
-  @if $colorContrast {
-    opacity: 0.54;
-  }
 }
 
-@mixin typo-menu($colorContrast:false) {
-
-  @include font-size($base-font-size);
-  font-weight: 700;
-  letter-spacing: 0.04em;
-
-  @if $colorContrast {
-    opacity: 0.87;
-  }
+address {
+  margin: 0 0 $base-spacing-unit;
 }
 
-@mixin typo-button($colorContrast:false) {
 
-  @include font-size($base-font-size);
-  font-weight: 400;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
 
-  @if $colorContrast {
-    opacity: 0.87;
-  }
+abbr,
+acronym {
+  border-bottom: 1px dotted $color-grey-ui;
+  cursor: help;
 }
 
-@mixin typo-button-sm($colorContrast:false) {
-
-  @include font-size($base-font-size - 1px);
-  font-weight: 400;
-  text-transform: capitalize;
-  letter-spacing: 0.04em;
-
-  @if $colorContrast {
-    opacity: 0.87;
-  }
+mark,
+ins {
+  background: $yellow-100;
+  text-decoration: none;
 }
+
+small {
+  font-size: 75%;
+}
+
+big {
+  font-size: 125%;
+}
+

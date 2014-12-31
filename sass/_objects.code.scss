@@ -2,17 +2,23 @@
     #CODE
 \*------------------------------------*/
 
-code {
-  padding: 2px 5px;
-  margin: 0 2px;
-  white-space: nowrap;
-  background: $grey-100;
-  border: 1px solid #E0E0E0;
-  border-radius: $base-radius; 
+pre {
+  background: $grey-800;
+  font-family: "Courier 10 Pitch", Courier, monospace;
+  @include font-size(15px);
+  margin-bottom: $base-spacing-unit;
+  max-width: 100%;
+  overflow: auto;
+  padding: $base-spacing-unit;
+  color: #fff;
 }
 
-pre > code {
-  display: block;
-  padding: $base-spacing-unit;
-  white-space: pre; 
+code,
+kbd,
+tt,
+var {
+  font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+  @include font-size(15px);
+  background: $grey-800;
+  color: $grey-300;
 }

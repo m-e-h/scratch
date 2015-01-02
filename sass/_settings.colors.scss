@@ -19,7 +19,7 @@ $grey-flat-100:     #CFD8DC;
 $grey-flat-200:     #B0BEC5;
 $grey-flat-400:     #78909C;
 $grey-flat-700:     #455A64;
-$grey-flat-900:     #263238;     
+$grey-flat-900:     #263238;
 
 
 // Reds
@@ -84,7 +84,7 @@ $green-flat-700:    #00C853;
 $yellow-50:         #FFFDE7;
 $yellow-100:        #FFF9C4;
 $yellow-200:        #FFF59D;
-$yellow-300:        #FFF176;  
+$yellow-300:        #FFF176;
 $yellow-400:        #FFEE58;
 $yellow-500:        #FFEB3B;
 $yellow-600:        #FDD835;
@@ -100,18 +100,18 @@ $yellow-flat-700:   #FFD600;
 
 // Brand
 
-$color-primary:         	$blue-flat-700;
+$color-primary:         	$blue-500;
 $color-secondary:       	$green-800;
 
 
 // Accents
 
-$color-grey-ui: 			$grey-flat-100;
+$color-grey-ui: 			$grey-200;
 
 
 // Text
 
-$color-text:            	$grey-flat-900;
+$color-text:            	$grey-900;
 
 $color-links:           	$color-primary;
 $color-links-hover:     	darken($color-links, 10);

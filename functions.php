@@ -15,6 +15,7 @@ require_once( $scratch_dir . 'inc/custom-header.php'     );
 require_once( $scratch_dir . 'inc/customizer.php'        );
 require_once( $scratch_dir . 'inc/template-tags.php'     );
 require_once( $scratch_dir . 'inc/theme.php'             );
+require_once( $scratch_dir . 'inc/hybrid-mods.php'       );
 
 /* Launch the Hybrid Core framework. */
 new Hybrid();

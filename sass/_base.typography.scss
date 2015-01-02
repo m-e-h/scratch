@@ -9,34 +9,34 @@ h1, h2, h3, h4, h5, h6, p {
 
 h1 {
   @include font-size(56px);
-  font-weight: 400;
+  font-weight: 3300;
   letter-spacing: -0.02em;
 }
 
 h2 {
   @include font-size(45px);
-  font-weight: 400;
+  font-weight: 300;
 }
 
 #site-description, h3 {
   @include font-size(34px);
-  font-weight: 400;
+  font-weight: 300;
 }
 
 h4 {
   @include font-size(24px);
-  font-weight: 400;
+  font-weight: 300;
 }
 
 h5 {
   @include font-size(20px);
-  font-weight: 500;
+  font-weight: 400;
   letter-spacing: 0.02em;
 }
 
 h6 {
   @include font-size(16px);
-  font-weight: 400;
+  font-weight: 300;
   letter-spacing: 0.04em;
 }
 

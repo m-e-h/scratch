@@ -22,21 +22,35 @@ a {
 .site-footer {
     display: block;
     margin: 0;
-    padding: 0;
     width: 100%;
     text-align: left;
+    background-color: $color-primary;
 }
 
     .sidebar__subsidiary {
     @extend .grid;
-
+    display: flex;
+    flex-wrap: wrap;
+    @include padding-space($base-spacing-unit-sm n n);
         .widget {
           display: inline-block;
           *display: inline;
+          display: flex;
           margin: 0;
           text-align: left;
           vertical-align: top;
-          width: 100%;
+
+
+
+          > * {
+            background-color: rgba(51, 51, 51, 0.2);
+            color: #fff;
+          }
+
+          .widget-title {
+            background-color: rgba(51, 51, 51, 0.5);
+          }
+
         }
     }
 
@@ -65,7 +79,7 @@ a {
 }
 
 
-.entry-footer span {
+.entry-footer span, .entry-footer .entry-published {
 margin-right: $base-spacing-unit;
 &:before {
   @include font-icon();
@@ -82,7 +96,7 @@ span.entry-author:before {
   content: $user;
 }
 
-span.entry-date:before {
+.entry-published:before {
   content: $calendar;
 }
 

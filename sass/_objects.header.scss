@@ -29,6 +29,7 @@ body.open {
 #header.open,
 #header.open ~ .site-container {
   transform: translate(250px, 0);
+  cursor: default;
 }
 
 #site-title {

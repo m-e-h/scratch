@@ -2,51 +2,130 @@
     #MENUS
 \*------------------------------------*/
 
-.main-navigation {
-  ul {
-    list-style: none;
-    margin: 0;
-    padding-left: 0;
+.menu__primary {
+  z-index: 1;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 250px;
+  height: 100%;
+  background-color: #3367D6;
+  color: #fefefe;
+  -webkit-transform: translate(-250px,0);
+  transform: translate(-250px,0);
+  overflow-y: auto;
+}
 
+.menu__primary.open {
+-webkit-transform: translate(0,0);
+transform: translate(0,0);
+}
 
-    li:hover > ul {
-      left: auto;
-    }
-  }
-  li {
-    //float: left;
-    position: relative;
+.menu__primary--items {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
 
-    &:hover > a {
-    }
-  }
+.menu-item {
+  border-bottom-style: solid;
+  border-width: 1px;
+  border-color: #fff;
+  padding: 0;
+  position: relative;
+
   a {
     display: block;
     text-decoration: none;
+    color: #fff;
+    background-color: transparent;
+    transition: background-color .2s ease-out;
+    white-space: nowrap;
+    height: 60px;
+    padding: 17px 20px;
+    line-height: 1.4;
+
+    &:hover{
+      background-color: rgba(216, 216, 216, 0.5);
+    }
   }
+}
+
+.menu-item-has-children > a:after {
+  content: "\f0d7";
+  right: 5%;
+  top: 36%;
+  font-size: .8em;
+
+  display: inline-block;
+font: normal 10px/1 FontAwesome;
+position: absolute;
+vertical-align: text-bottom;
 }
 
 .sub-menu {
-  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-  float: left;
-  position: absolute;
-  top: 1.5em;
-  left: -999em;
-  z-index: 99999;
-  background-color: #fff;
-
-  ul {
-    left: -999em;
-    top: 0;
-  }
-
-  a {
-    width: 200px;
-  }
-
-  .menu-item-has-children:hover > ul {
-  left: 100%;
+  margin: 0;
 }
+.menu-toggle {
+  width: 60px;
+  height: 60px;
+  background-image: none;
+  background-color: transparent;
+  border: none;
+  padding: 20px;
+  font-size: 11px;
+  display: inline-block;
+  transition: background-color 0.2s ease-out;
+  -webkit-tap-highlight-color: transparent;
+
+  span {
+    position: relative;
+    display: block;
+    padding-right: 20px;
+  }
+
+  span, span:before, span:after {
+    background-color: #fff;
+    width: 100%;
+    height: 2px;
+    transition: all 0.4s;
+  }
+
+  span:before, span:after {
+    position: absolute;
+    top: -.55em;
+    content: " ";
+  }
+
+  span:after {
+    top: .55em;
+  }
+
+}
+
+.open .menu-toggle span {
+  background: transparent;
+
+  &:before {
+    transform: rotate(45deg) translate(.5em, .4em);
+  }
+
+  &:after {
+    transform: rotate(-45deg) translate(.4em, -.3em);
+  }
+}
+
+.menu-toggle:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.menu-toggle:focus:not(:active) {
+  background-color: rgba(255, 255, 255, 0.2);
+  outline: 0;
+}
+
+.menu-toggle:active {
+  background-color: rgba(255, 255, 255, 0.4);
 }
 
 /* Small menu */
@@ -66,264 +145,89 @@
   #menu-primary.toggled .nav-menu {
     display: inline-block;
   }
-
-  .menu-item-has-children:hover > ul {
-      display: block;
-      position: relative;
-      top: 0;
-      padding-left: 10px;
-      left: 0;
-    }
-
-.sub-menu {
-    .menu-item-has-children:hover > ul {
-      left: 0;
-    }
 }
-
-  .menu-item {
-    display: block;
-    width: 100%;
-  }
-
-  .main-navigation ul {
-    //display: none;
-  }
-}
-
-
-.menu-toggle {
-  width: 60px;
-  height: 60px;
-  background-image: none;
-  background-color: transparent;
-  border: none;
-  padding: 20px;
-  font-size: 11px;
-  display: inline-block;
-  transition: background-color 0.2s ease-out;
-  -webkit-tap-highlight-color: transparent;
-
-  span {
-    position: relative;
-    display: block;
-    padding-right: 20px;
-  }
-  
-  span, span:before, span:after {
-    background-color: #fff;
-    width: 100%;
-    height: 2px;
-    transition: all 0.4s;
-  }
-  
-  span:before, span:after {
-    position: absolute;
-    top: -.55em;
-    content: " ";
-  }
-  
-  span:after {
-    top: .55em;
-  }
-
-}
-
-.open .menu-toggle span {
-  background: transparent;
-
-  &:before {
-    transform: rotate(45deg) translate(.5em, .4em);
-  }
-  
-  &:after {
-    transform: rotate(-45deg) translate(.4em, -.3em);
-  }
-}
-
-.menu-toggle:hover {
-  background-color: rgba(255, 255, 255, 0.1);
-}
-
-.menu-toggle:focus:not(:active) {
-  background-color: rgba(255, 255, 255, 0.2);
-  outline: 0;
-}
-
-.menu-toggle:active {
-  background-color: rgba(255, 255, 255, 0.4);
-}
-
-.menu {
-  z-index: 1;
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  width: 250px;
-  height: 100%;
-  background-color: $blue-700;
-  color: $grey-50;
-  transform: translate(-250px, 0);
-  overflow-y: auto;
-}
-
-.menu.open {
-  transform: translate(0, 0);
-}
-
-.menu h4,
-.menu ul li a {
-  height: 60px;
-  padding: 17px 20px;
-  line-height: 1.4;
-}
-
-.menu h4 {
-  background-color: white;
-  color: $blue-700;
-}
-
-.menu ul {
-  padding: 0;
-  margin: 0;
-  list-style-type: none;
-}
-
-.menu ul li a {
-  display: block;
-  text-decoration: none;
-  color: white;
-  transition: background-color 0.2s ease-out;
-  white-space: nowrap;
-}
-
-.menu ul li {
-  border-bottom-style: solid;
-  border-width: 1px;
-  border-color: white;
-  padding: 0;
-}
-
-.menu ul li::before {
-  content: none;
-}
-
-.menu ul li a:hover {
-  background-color: rgba(255, 255, 255, 0.2);
-}
-
-.menu ul li a:focus {
-  background-color: rgba(255, 255, 255, 0.3);
-  outline: 0;
-}
-
-.menu ul li a:active {
-  background-color: rgba(255, 255, 255, 0.4);
-}
-
-@include md {
-  .menu-toggle {
-    display: none;
-  }
-
-  .menu {
+@include md{
+  .menu__primary {
     position: relative;
     width: 100%;
     height: auto;
     margin-top: 0;
-    transform: translate(0, 0);
+    transform: translate(0,0);
     transition: none;
     overflow-y: visible;
   }
 
-  .menu h4 {
-    display: none;
-  }
-
-  .menu ul {
+  .menu__primary--items {
+    display: -webkit-flex;
+    display: -ms-flexbox;
     display: flex;
-    max-width: 1400px;
+    max-width: 864px;
     margin: 0 auto;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
     flex-direction: row;
   }
 
-  .menu ul li {
+  .menu-item {
     border: none;
+
+    &:hover > ul, &.focus > ul {
+      left: auto;
+      opacity: 1;
+      }
+  }
+
+  .sub-menu {
+    background-color: #fff;
+    float: left;
+    border-radius: $base-radius;
+
+    display: inline-block;
+    min-width: 124px;
+
+    margin: 0 0 0 -1px;
+    position: absolute;
+    top: 60px;
+    left: -999em;
+    z-index: 99999;
+    opacity: 0;
+    @include shadow-z2();
+    transition: opacity 0.2s ease-out;
+
+    a {
+      color: $color-text;
+      padding: 0 20px;
+      font: inherit;
+      font-weight: 400;
+      letter-spacing: 0.04em;
+      height: auto;
+      line-height: 50px;
+      &:hover, &:focus {
+        background-color: $color-grey-ui;
+      }
+    }
+  }
+
+
+  .sub-menu li {
+    border: 0;
+    display: block;
+    height: auto;
+    line-height: 1.2;
+  }
+
+}
+
+.sub-menu .menu-item-has-children {
+
+&:hover > ul, &.focus > ul {
+  left: 100%;
+  margin-left: 0;
+  top: 0;
+  }
+  > a:after {
+    content: "\f0da";
   }
 }
 
-.main-navigation {
-height: 60px;
-}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-.pagination {
-  text-align: center;
-  margin: $base-spacing-unit;
-  .page-numbers{
-    	display: inline;
-	    margin: 0 4px 0 0;
-	    padding: 3px 8px;
-    	font-weight: bold;
-    	border: 1px solid #ddd;
-      background: #fff;
-    	border-radius: $base-radius;
-
-    &.current {
-      background-color: $btn-bg-hover;
-    }
-
-    &.dots, &.dots:hover {
-      background-color: transparent;
-      cursor: default;
-    }
-
-    &.next, &.prev {
-      @include font-icon();
-    }
-  }
-}
-
-
-.post-navigation {
-  position: relative;
-  width: 100%;
-  padding: 0 $base-spacing-unit-sm $base-spacing-unit-sm 0;
-  @include md {
-    padding: 0 $base-spacing-unit $base-spacing-unit 0;
-  }
-
-  .nav-links {
-    text-align: right;
-    }
-      .meta-nav {
-      @include font-icon();
-    }
-    span {
-      font-family: $font-body;
-    }
-
-    .nav-previous {
-      display: inline-block;
-      float: left;
-      margin: 2px;
-    }
-    .nav-next {
-      display: inline-block;
-      margin: 2px;
-    }
-
-
-}

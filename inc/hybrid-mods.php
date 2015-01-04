@@ -14,9 +14,9 @@ class Doc_Attributes {
 	public $content_1c            	= '  site-content'; 	// content
 	public $content_2cl           	= '  site-content  md-18-24'; 	// content
 	public $content_2cr           	= '  site-content  md-5-8'; 	// content
-	public $sidebar_1c     		  	  = ' ';	// sidebar sidebar__{$context}
-	public $sidebar_2cl    			    = ' ';	// sidebar sidebar__{$context}
-	public $sidebar_2cr    			    = ' ';	// sidebar sidebar__{$context}
+	public $sidebar_1c              = ' ';	// sidebar sidebar__{$context}
+	public $sidebar_2cl             = ' ';	// sidebar sidebar__{$context}
+	public $sidebar_2cr             = ' ';	// sidebar sidebar__{$context}
 	public $menu                  	= '  navdrawer';	// menu menu__{$context}
 	
 	/* Header attributes. */

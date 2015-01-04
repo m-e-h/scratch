@@ -141,11 +141,6 @@ class Doc_Attributes {
   	return $attr;
   }
   
-  public function archive_wrap( $attr ) {
-  	$attr['class']    = $this->archive_wrap;
-  	return $attr;
-  }
-  
   
   /* === HEADER === */
   public function branding( $attr ) {

@@ -74,3 +74,10 @@ function scratch_setup() {
 if ( ! isset( $content_width ) ) {
 	$content_width = 660;
 }
+
+
+
+	function scratch_excerpt_more( $more ) {
+		return '... <div class="read-more__fade"><a href="'. get_permalink( get_the_ID() ) . '">' . __('Continue Reading...', 'scratch') . '</a></div>';
+	}
+	add_filter( 'excerpt_more', 'scratch_excerpt_more' );

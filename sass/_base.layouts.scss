@@ -18,6 +18,29 @@
 //     ##Layout 2 Column Left
 // \*------------------------------------*/
 
+.layout-2c-l {
+  @include lg {
+    .sidebar__primary {
+      width: 33.33%;
+      max-width: 100%;
+      display: inline-block;
+      margin: 0;
+      padding: 0;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .content-area {
+      width: 66.66%;
+      display: inline-block;
+      margin: 0;
+      padding: 0;
+      text-align: left;
+      vertical-align: top;
+    }
+  }
+
+}
 
 
 
@@ -27,62 +50,29 @@
 //     ##Layout 2 Column Right
 // \*------------------------------------*/
 
+.layout-2c-r {
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-@include lg {
-// .custom-background #container > .wrap {
-// margin-top: 40px;
-// }
-
-// .main {
-//   padding-top: 40px;
-// }
-
-
-
-
-
-// .breadcrumbs, .comment-respond, .loop-pagination, .loop-nav, .widget {
-//   margin-bottom: 40px;
-// }
-
-#sidebar-primary {
-width: 33.33%;
-max-width: 100%;
-display: inline-block;
-  margin: 0;
-  padding: 0;
-  text-align: left; /* 3 */
-  vertical-align: top; /* 4 */
 }
 
-.layout-2c-l .content-area, .layout-2c-r .content-area {
-width: 66.66%;
-display: inline-block;
-  margin: 0;
-  padding: 0;
-  text-align: left; /* 3 */
-  vertical-align: top; /* 4 */
-}
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 #comments {
@@ -97,11 +87,6 @@ display: inline-block;
         }
       }
   }
-}
-
-.comment-list {
-  //padding-right: 1.5rem;
-  //padding-left: 1.5rem;
 }
 
 li.comment, li.ping {
@@ -237,10 +222,42 @@ float: right;
 .comments-area, .entry {
   @include padding-space();
   @include margin-space(n n $base-spacing-unit-sm);
-  border-top: 1px solid $grey-300;
+  border-bottom: 1px solid $grey-300;
+  //position: relative;
 }
 
 .entry:last-of-type {
   @include padding-space();
   margin-bottom: 0;
   }
+
+.entry-summary {
+position: relative;
+}
+
+.read-more__fade {
+display: block;
+position: absolute;
+width: 100%;
+bottom: 0;
+height: 6rem;
+padding-top: 6rem;
+padding-right: 2rem;
+text-align: center;
+font-style: italic;
+background-image: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.7), #fff);
+
+a {
+color: $grey-500;
+font-weight: 700;
+}
+}
+
+.entry-byline {
+display: none;
+}
+
+
+.entry-footer {
+padding-top: $base-spacing-unit;
+}

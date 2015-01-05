@@ -24,8 +24,8 @@ add_action( 'after_setup_theme', 'scratch_custom_header_setup', 15 );
 function scratch_custom_header_setup() {
 
 	/* Adds support for WordPress' "custom-header" feature. */
-	add_theme_support( 
-		'custom-header', 
+	add_theme_support(
+		'custom-header',
 		array(
 			'default-image'          => '',
 			'random-default'         => false,
@@ -63,7 +63,7 @@ function scratch_custom_header_wp_head() {
 	if ( empty( $hex ) )
 		return;
 
-	$style = "body.custom-header #site-title a { color: #{$hex}; }";
+	$style = "body.custom-header .site-title a, .site-description { color: #{$hex}; }";
 
 	echo "\n" . '<style type="text/css" id="custom-header-css">' . trim( $style ) . '</style>' . "\n";
 }
@@ -107,7 +107,7 @@ function scratch_custom_header_admin_preview() { ?>
 <?php }
 
 /**
- * Callback function for outputting the custom header CSS to `admin_head` on "Appearance > Custom Header".  See 
+ * Callback function for outputting the custom header CSS to `admin_head` on "Appearance > Custom Header".  See
  * the `css/admin-custom-header.css` file for all the style rules specific to this screen.
  *
  * @since  1.0.0
@@ -121,7 +121,7 @@ function scratch_custom_header_admin_head() {
 	if ( empty( $hex ) )
 		return;
 
-	$style = "#site-title a { color: #{$hex}; }";
+	$style = ".site-title a, .site-description { color: #{$hex}; }";
 
 	echo "\n" . '<style type="text/css" id="custom-header-css">' . trim( $style ) . '</style>' . "\n";
 }

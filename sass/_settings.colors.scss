@@ -100,7 +100,8 @@ $yellow-flat-700:   #FFD600;
 
 // Brand
 
-$color-primary:         	$blue-500;
+$color-primary:         	$grey-400;
+$color-primary-dark:      darken($color-primary, 50);
 $color-secondary:       	$green-800;
 
 
@@ -113,9 +114,9 @@ $color-grey-ui: 			$grey-200;
 
 $color-text:            	$grey-900;
 
-$color-links:           	$color-primary;
-$color-links-hover:     	darken($color-links, 10);
-$color-links-visited:     	darken($color-links, 20);
+$color-links:           	$blue-500;
+$color-links-hover:     	lighten($color-links, 20);
+$color-links-visited:     	lighten($color-links, 20);
 
 
 

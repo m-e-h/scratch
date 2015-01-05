@@ -5,7 +5,7 @@
 ?>
 
 <article <?php hybrid_attr( 'post' ); ?>>
-
+<span class="entry-format"><?php hybrid_post_format_link(); ?></span>
 	<?php echo ( $audio = hybrid_media_grabber( array( 'type' => 'audio', 'split_media' => true, 'before' => '<div class="featured-media">', 'after' => '</div>' ) ) ); ?>
 
 <?php if ( is_single( get_the_ID() ) ) : // If viewing a single post. ?>
@@ -18,6 +18,11 @@
 		<?php the_content(); ?>
 		<?php wp_link_pages(); ?>
 	</div><!-- .entry-content -->
+
+	<footer class="entry-footer">
+	  <?php scratch_entry_meta(); ?>
+	  <?php scratch_post_terms(); ?>
+	</footer><!-- .entry-footer -->
 
 <?php else : // If not viewing a single post. ?>
 
@@ -42,10 +47,5 @@
 		<?php endif; // End excerpt/audio checks. ?>
 
 <?php endif; // End single post check. ?>
-
-	<footer class="entry-footer">
-	  <?php scratch_entry_meta(); ?>
-	  <?php scratch_post_terms(); ?>
-	</footer><!-- .entry-footer -->
 
 </article><!-- .entry -->

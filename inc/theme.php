@@ -48,6 +48,7 @@ function scratch_scripts() {
 	$suffix = hybrid_get_min_suffix();
 
 	wp_enqueue_script( 'scratch-navigation', trailingslashit( get_template_directory_uri() ) . 'js/navigation.js', array(), null, true );
+	wp_enqueue_script( 'scratch-main', trailingslashit( get_template_directory_uri() ) . 'js/main.js', array(), null, true );
 }
 
 function scratch_styles() {

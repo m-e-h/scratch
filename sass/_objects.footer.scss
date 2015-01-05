@@ -2,13 +2,6 @@
     #FOOTER
 \*------------------------------------*/
 
-#footer {
-
-  a {
-    color: inherit;
-  }
-}
-
 .site-info {
 line-height: 50px;
 color: rgba(255, 255, 255, 0.9);
@@ -25,6 +18,9 @@ a {
     width: 100%;
     text-align: left;
     background-color: $color-primary;
+      a {
+    color: inherit;
+  }
 }
 
     .sidebar__subsidiary {
@@ -79,10 +75,9 @@ a {
 }
 
 
-.entry-footer span, .entry-footer .entry-published {
+.entry-footer span, .entry-published {
 margin-right: $base-spacing-unit;
 &:before {
-  @include font-icon();
   margin-right: 5px;
 }
 
@@ -94,12 +89,15 @@ span {
 
 span.entry-author:before {
   content: $user;
+  @include font-icon();
 }
 
 .entry-published:before {
   content: $calendar;
+  @include font-icon();
 }
 
 span.comments-link:before {
   content: $comments;
+  @include font-icon();
 }

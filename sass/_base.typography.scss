@@ -142,14 +142,12 @@ big {
     #Site specific Type
 \*------------------------------------*/
 
-.site-title,
-h2 {
+.site-title {
   @include font-size(45px);
   font-weight: 300;
 }
 
-.site-description,
-h4 {
+.site-description {
   @include font-size(24px);
   font-weight: 300;
 }

@@ -220,13 +220,13 @@ float: right;
 }
 
 .comments-area, .entry {
-  @include padding-space();
+  @include padding-space(6px $base-spacing-unit-sm $base-spacing-unit-sm);
   @include margin-space(n n $base-spacing-unit-sm);
   border-bottom: 1px solid $grey-300;
   overflow: hidden;
 }
 
-.entry:last-of-type {
+.comments-area, .entry:last-of-type {
   @include padding-space();
   margin-bottom: 0;
   }
@@ -260,4 +260,69 @@ display: none;
 
 .entry-footer {
 padding-top: $base-spacing-unit;
+}
+
+
+
+.pagination {
+@include padding-space(6px n);
+text-align: center;
+}
+
+.page-numbers {
+border: 1px solid $color-grey-ui;
+border-radius: $base-radius;
+display: inline-block;
+font-size: 12px;
+font-size: 1.2rem;
+height: 2em;
+line-height: 2;
+margin: 0 0.3333em 0 0;
+text-align: center;
+width: 2em;
+&.current {
+  cursor: default;
+}
+&.dots {
+  border: 0;
+  cursor: default;
+}
+}
+
+.post-navigation {
+.nav-links {
+overflow: hidden;
+position: relative;
+font-size: 0;
+height: $base-spacing-unit-lg;
+
+&:before {
+content: "";
+border-left: 2px solid $color-grey-ui;
+height: 100%;
+position: absolute;
+top: 0;
+left: 50%;
+}
+}
+
+.nav-previous, .nav-next {
+  @include font-size($base-font-size, false);
+  display: inline-block;
+  width: 50%;
+  position: relative;
+  line-height: $base-spacing-unit-lg;
+
+  a {
+    line-height: $base-spacing-unit-lg;
+    width: 100%;
+  }
+}
+
+.nav-previous {
+text-align: center;
+}
+.nav-next {
+text-align: center;
+}
 }

@@ -809,16 +809,14 @@ big {
 /*------------------------------------*\
     #Site specific Type
 \*------------------------------------*/
-.site-title,
-h2 {
+.site-title {
     font-size: 45px;
     font-size: 2.8125rem;
     font-weight: 300; 
     line-height: 1.0666666667;
 }
 
-.site-description,
-h4 {
+.site-description {
     font-size: 24px;
     font-size: 1.5rem;
     font-weight: 300; 
@@ -1445,7 +1443,7 @@ body {
 .entry {
     overflow: hidden; 
     margin-bottom: 16px;
-    padding-top: 16px;
+    padding-top: 6px;
     padding-right: 16px;
     padding-bottom: 16px;
     padding-left: 16px;
@@ -1454,19 +1452,39 @@ body {
 @media only screen and (min-width: 48em) {
     .comments-area,
     .entry {
-        padding-top: 24px;
-        padding-right: 24px;
-        padding-bottom: 24px;
+        padding-top: 9px;
+    }
+}
+@media only screen and (min-width: 64em) {
+    .comments-area,
+    .entry {
+        padding-top: 15px;
+    }
+}
+@media only screen and (min-width: 48em) {
+    .comments-area,
+    .entry {
+        padding-right: 24px; 
         padding-left: 24px;
     }
 }
 @media only screen and (min-width: 64em) {
     .comments-area,
     .entry {
-        padding-top: 40px;
-        padding-right: 40px;
-        padding-bottom: 40px;
+        padding-right: 40px; 
         padding-left: 40px;
+    }
+}
+@media only screen and (min-width: 48em) {
+    .comments-area,
+    .entry {
+        padding-bottom: 24px;
+    }
+}
+@media only screen and (min-width: 64em) {
+    .comments-area,
+    .entry {
+        padding-bottom: 40px;
     }
 }
 @media only screen and (min-width: 48em) {
@@ -1482,6 +1500,7 @@ body {
     }
 }
 
+.comments-area,
 .entry:last-of-type {
     margin-bottom: 0; 
     padding-top: 16px;
@@ -1490,6 +1509,7 @@ body {
     padding-left: 16px;
 }
 @media only screen and (min-width: 48em) {
+    .comments-area,
     .entry:last-of-type {
         padding-top: 24px;
         padding-right: 24px;
@@ -1498,6 +1518,7 @@ body {
     }
 }
 @media only screen and (min-width: 64em) {
+    .comments-area,
     .entry:last-of-type {
         padding-top: 40px;
         padding-right: 40px;
@@ -1534,6 +1555,79 @@ body {
 
 .entry-footer {
     padding-top: 24px;
+}
+
+.pagination {
+    padding-top: 6px;
+    padding-bottom: 6px;
+    text-align: center;
+}
+@media only screen and (min-width: 48em) {
+    .pagination {
+        padding-top: 9px;
+        padding-bottom: 9px;
+    }
+}
+@media only screen and (min-width: 64em) {
+    .pagination {
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+}
+
+.page-numbers {
+    display: inline-block;
+    width: 2em; 
+    height: 2em;
+    margin: 0 0.3333em 0 0;
+    border: 1px solid #eee;
+    border-radius: 2px;
+    font-size: 12px;
+    font-size: 1.2rem;
+    line-height: 2;
+    text-align: center;
+}
+.page-numbers.current {
+    cursor: default;
+}
+.page-numbers.dots {
+    border: 0;
+    cursor: default;
+}
+
+.post-navigation .nav-links {
+    overflow: hidden;
+    position: relative;
+    height: 40px; 
+    font-size: 0;
+}
+.post-navigation .nav-links:before {
+    position: absolute;
+    top: 0;
+    left: 50%; 
+    height: 100%;
+    border-left: 2px solid #eee;
+    content: "";
+}
+.post-navigation .nav-previous,
+.post-navigation .nav-next {
+    display: inline-block;
+    position: relative;
+    width: 50%;
+    font-size: 16px;
+    font-size: 1rem;
+    line-height: 40px;
+}
+.post-navigation .nav-previous a,
+.post-navigation .nav-next a {
+    width: 100%; 
+    line-height: 40px;
+}
+.post-navigation .nav-previous {
+    text-align: center;
+}
+.post-navigation .nav-next {
+    text-align: center;
 }
 
 /*------------------------------------*\

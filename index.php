@@ -35,7 +35,10 @@ get_header(); ?>
   				if ( is_singular( 'post' ) ) :
   					the_post_navigation();
   				elseif ( is_home() || is_archive() || is_search() ) :
-  					the_posts_pagination();
+  								the_posts_pagination( array(
+				'prev_text'          => __( '<', 'scratch' ),
+				'next_text'          => __( '>', 'scratch' ),
+			) );
   				endif; // End nav-loop.
 			?>
 

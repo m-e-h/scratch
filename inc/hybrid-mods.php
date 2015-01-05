@@ -119,7 +119,7 @@ class Doc_Attributes {
   	return $attr;
   }
   
-  public function sidebar( $attr ) {
+  public function sidebar( $attr, $context ) {
   	if ( '1c' == get_theme_mod( 'theme_layout' ) ) :
     $attr['class']    .= $this->sidebar_1c;
     $attr['class']    .= "  sidebar__{$context}";

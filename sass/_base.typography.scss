@@ -13,16 +13,18 @@ h1 {
   letter-spacing: -0.02em;
 }
 
+.site-title,
 h2 {
   @include font-size(45px);
   font-weight: 300;
 }
 
-#site-description, h3 {
+h3 {
   @include font-size(34px);
   font-weight: 300;
 }
 
+.site-description, 
 h4 {
   @include font-size(24px);
   font-weight: 300;
@@ -71,6 +73,7 @@ body {
 }
 
 p {
+  font-size: 16px;
   @include font-size($base-font-size);
   font-weight: 400;
   letter-spacing: 0.04em;

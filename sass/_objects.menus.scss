@@ -168,15 +168,11 @@ vertical-align: text-bottom;
     flex-direction: row;
   }
 
-  .menu-item {
-    border: none;
 
-    &:hover > ul, &.focus > ul {
-      left: auto;
-      opacity: 1;
-      }
-  }
 
+
+
+}
   .sub-menu {
     background-color: #fff;
     float: left;
@@ -216,8 +212,16 @@ vertical-align: text-bottom;
     line-height: 1.2;
   }
 
-}
 
+    .menu-item {
+    border: none;
+
+    &:hover > ul, &.focus > ul {
+      left: auto;
+      opacity: 1;
+      }
+  }
+  
 .sub-menu .menu-item-has-children {
 
 &:hover > ul, &.focus > ul {

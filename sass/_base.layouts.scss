@@ -205,7 +205,7 @@ float: right;
 }
 
 .widget-title {
-  @include padding-space(0 $base-spacing-unit-sm);
+  @include padding-space(n $base-spacing-unit-sm);
   box-shadow: none;
   border-radius: $base-radius $base-radius 0 0;
   flex: 0 auto;
@@ -223,7 +223,7 @@ float: right;
   @include padding-space();
   @include margin-space(n n $base-spacing-unit-sm);
   border-bottom: 1px solid $grey-300;
-  //position: relative;
+  overflow: hidden;
 }
 
 .entry:last-of-type {

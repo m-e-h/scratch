@@ -1,6 +1,6 @@
-// /*------------------------------------*\
-//     #TYPOGRAPHY
-// \*------------------------------------*/
+/*------------------------------------*\
+    #TYPOGRAPHY
+\*------------------------------------*/
 
 h1, h2, h3, h4, h5, h6, p {
   margin: 0;
@@ -13,7 +13,6 @@ h1 {
   letter-spacing: -0.02em;
 }
 
-.site-title,
 h2 {
   @include font-size(45px);
   font-weight: 300;
@@ -24,7 +23,6 @@ h3 {
   font-weight: 300;
 }
 
-.site-description, 
 h4 {
   @include font-size(24px);
   font-weight: 300;
@@ -139,3 +137,28 @@ big {
   font-size: 125%;
 }
 
+
+/*------------------------------------*\
+    #Site specific Type
+\*------------------------------------*/
+
+.site-title,
+h2 {
+  @include font-size(45px);
+  font-weight: 300;
+}
+
+.site-description,
+h4 {
+  @include font-size(24px);
+  font-weight: 300;
+}
+
+h3.widget-title {
+padding-top: .5em;
+padding-bottom: .5em;
+//text-align: center;
+border-bottom: 1px solid $color-grey-ui;
+  @include font-size(24px);
+  font-weight: 300;
+}

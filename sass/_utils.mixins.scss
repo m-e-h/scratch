@@ -45,18 +45,15 @@ text-rendering: auto;
 }
 
 @mixin typo-blockquote($colorContrast: false) {
-  @include font-size($base-font-size + 8px, false);
+  @include font-size($base-font-size + 4px);
   font-weight: 300;
   font-style: italic;
-  line-height: 1;
   letter-spacing: 0.08em;
   &:before {
-    content: '“';
     opacity: 0.54;
   }
 
   &:after {
-    content: '”';
     opacity: 0.54;
   }
 

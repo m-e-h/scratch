@@ -1,12 +1,11 @@
 /*------------------------------------*\
-    #ARTICLES
+    #COMMENTS
 \*------------------------------------*/
 
-.widget, .entry {
+.comment-respond {
   background-color: #fff;
   border: 1px solid $grey-300;
   @include padding-space($base-spacing-unit-sm $base-spacing-unit-sm $base-spacing-unit-tiny);
   @include margin-space(n n $base-spacing-unit-sm);
   overflow: hidden;
 }
-

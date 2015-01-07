@@ -23,7 +23,17 @@
 	</footer><!-- .entry-footer -->
 
 <?php else : // If not viewing a single post. ?>
-		<?php get_the_image(); ?>
+
+	<?php
+	// Display a featured image if one has been set.
+	get_the_image(
+		array(
+			'size'   => 'scratch-full',
+			'before' => '<div class="featured-media image">',
+			'after'  => '</div>',
+		)
+	);
+	?>
 
 	<header class="entry-header">
 		<?php the_title( '<h2 ' . hybrid_get_attr( 'entry-title' ) . '><a href="' . get_permalink() . '" rel="bookmark" itemprop="url">', '</a></h2>' ); ?>

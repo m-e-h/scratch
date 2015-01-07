@@ -9,14 +9,14 @@
 ?>
 
 	</div><!-- #content -->
-	
+
   <footer <?php hybrid_attr( 'footer' ); ?>>
-    
-	<?php hybrid_get_sidebar( 'subsidiary' ); ?>
-	
+
+	<?php hybrid_get_sidebar( 'footer-widgets' ); ?>
+
 		<div class="site-info">
 			<?php printf(
-					__( 'Copyright &#169; %1$s %2$s. Powered by %3$s and %4$s.', 'saga' ), 
+					__( 'Copyright &#169; %1$s %2$s. Powered by %3$s and %4$s.', 'saga' ),
 					date_i18n( 'Y' ), hybrid_get_site_link(), hybrid_get_wp_link(), hybrid_get_theme_link()
 						); ?>
 		</div><!-- .site-info -->

@@ -7,6 +7,8 @@
 
 /* Register custom image sizes. */
 add_action( 'init', 'scratch_image_sizes', 5 );
+/* Add a custom excerpt length. */
+add_filter( 'excerpt_length', 'scratch_excerpt_length' );
 
 /* Register custom menus. */
 add_action( 'init', 'scratch_menus', 5 );
@@ -22,7 +24,15 @@ add_action( 'wp_enqueue_scripts', 'scratch_styles', 5 );
 
 
 function scratch_image_sizes() {
-	set_post_thumbnail_size( 150, 150, true );
+	// Set the 'post-thumbnail' size.
+	set_post_thumbnail_size( 175, 130, true );
+
+	// Add the 'scratch-full' image size.
+	add_image_size( 'scratch-full', 1025, 500, true );
+}
+
+function scratch_excerpt_length( $length ) {
+	return 60;
 }
 
 function scratch_menus() {
@@ -37,8 +47,8 @@ function scratch_sidebars() {
 	) );
 
 	hybrid_register_sidebar( array(
-		'id'          => 'subsidiary',
-		'name'        => _x( 'Subsidiary', 'sidebar', 'scratch' ),
+			'id'          => 'footer-widgets',
+			'name'        => _x( 'Footer Widgets', 'sidebar', 'scratch' ),
 		'description' => __( 'Typically located in the footer.', 'scratch' )
 	) );
 }

@@ -23,7 +23,9 @@ get_header(); ?>
 				<?php hybrid_get_content_template(); // Loads the content/*.php template. ?>
 
 				<?php
-  				  // If comments are open or we have at least one comment, load up the comment template
+					if ( is_singular( 'post' ) ) :
+    					scratch_loop_nav();
+    				endif;
     				if ( is_singular() && ( comments_open() || get_comments_number() )) :
     					comments_template();
     				endif;
@@ -32,13 +34,8 @@ get_header(); ?>
 			<?php endwhile; // End loop. ?>
 
 			<?php
-  				if ( is_singular( 'post' ) ) :
-  					the_post_navigation();
-  				elseif ( is_home() || is_archive() || is_search() ) :
-  								the_posts_pagination( array(
-				'prev_text'          => __( '<', 'scratch' ),
-				'next_text'          => __( '>', 'scratch' ),
-			) );
+  				if ( is_home() || is_archive() || is_search() ) :
+  				scratch_loop_nav();
   				endif; // End nav-loop.
 			?>
 
@@ -52,4 +49,5 @@ get_header(); ?>
 	</div><!-- #primary -->
 
 <?php hybrid_get_sidebar( 'primary' ); ?>
-<?php get_footer(); ?>
+<?php
+get_footer();

@@ -107,12 +107,13 @@ $color-secondary:       	$green-800;
 
 // Accents
 
-$color-grey-ui: 			$grey-200;
+$color-grey-ui: 			$grey-300;
 
 
 // Text
 
 $color-text:            	$grey-900;
+$color-text-light:        $grey-600;
 
 $color-links:           	$blue-500;
 $color-links-hover:     	lighten($color-links, 20);
@@ -129,7 +130,7 @@ $color-header: 				$color-primary;
 $btn-text:        			$color-text;
 $btn-bg:  					$color-grey-ui;
 $btn-bg-hover:  			lighten($btn-bg, 5);
-$btn-bg-active:  			darken($btn-bg, 10);
+$btn-bg-active:  			darken($btn-bg, 5);
 $btn-primary-bg:  			$color-primary;
 $btn-primary-text:  		#fff;
 

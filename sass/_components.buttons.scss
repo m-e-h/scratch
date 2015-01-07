@@ -2,58 +2,39 @@
     #BUTTONS
 \*------------------------------------*/
 
-.btn,
 button,
 input[type="button"],
 input[type="reset"],
-input[type="submit"] {
-    color: $btn-text;
-    background-color: $btn-bg;
-    border-radius: $base-radius;
-    @include typo-button();
-    text-decoration: none;
-    text-align: center;
-    line-height: $base-spacing-unit-lg;
-    height: $base-spacing-unit-lg;
-    padding: 0 $base-spacing-unit;
-    margin: 0;
-    display: inline-block;
-    appearance: none;
-    cursor: pointer;
-    border: none;
-    outline: none;
-    overflow: hidden;
-    transition-property: all;
-    transition-duration: .3s;
+input[type="submit"],
+.button {
+  background-color: $btn-bg;
+  border: 0;
+  border-radius: $base-radius;
+  color: $btn-text;
+  cursor: pointer;
+  padding: $base-spacing-unit-sm $base-spacing-unit;
+  width: auto;
+  display: inline-block;
+  outline: 0;
+  transition: all $base-transition-speed ease-in-out;
 
-    &::-moz-focus-inner {
-      border: 0;
-    }
-
-    &:hover {
-        background-color: $btn-bg-hover;
-    }
-
-    &:focus:not(:active) {
-        background-color: $btn-bg-active;
-    }
-
-    &:active {
-        background-color: $btn-bg-active;
-    }
-
-
+  &:hover {
+  background-color: $btn-bg-hover;
+}
+  &:focus, &:active {
+  background-color: $btn-bg-active;
+}
 
 }
 
-.btn-sm {
-    @extend .btn;
-    @include typo-button-sm();
-    border-radius: $base-radius / 2;
-    line-height: $base-spacing-unit;
-    height: $base-spacing-unit;
-    padding: 0 $base-spacing-unit-sm;
+.form-submit {
+  margin: 0;
 }
+
+
+
+
+
 
 .entry-terms a, .post-format-link {
 display: inline-block;
@@ -115,6 +96,7 @@ height: .5em;
 border-radius: 500rem;
 }
 }
+
 
 .post-format-link {
 position: relative;

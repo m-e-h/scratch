@@ -1,9 +1,16 @@
 /*------------------------------------*\
-    #LAYOUTS
+    #PAGE
 \*------------------------------------*/
 
+.site  {
+  word-wrap:   break-word;
+  word-break:  normal;
+  hyphens: auto;
+}
 
-
+.content {
+  @include margin-space(n n $base-spacing-unit-sm);
+}
 
 // ------------------------------------*\
 //     ##Layout 1 Column
@@ -209,14 +216,6 @@ float: right;
   box-shadow: none;
   border-radius: $base-radius $base-radius 0 0;
   flex: 0 auto;
-}
-
-.content {
-  @include margin-space(n n $base-spacing-unit-sm);
-  background-color: #fff;
-  @include md {
-  border-radius: $base-radius;
-}
 }
 
 .comments-area, .entry {

@@ -8,40 +8,41 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 h1 {
-  @include font-size(56px);
+  @include font-size($base-font-size * 2.5);
   font-weight: 300;
   letter-spacing: -0.02em;
 }
 
 h2 {
-  @include font-size(45px);
+  @include font-size($base-font-size * 2.25);
   font-weight: 300;
 }
 
 h3 {
-  @include font-size(34px);
+  @include font-size($base-font-size * 1.667);
   font-weight: 300;
 }
 
 h4 {
-  @include font-size(24px);
+  @include font-size($base-font-size * 1.5);
   font-weight: 300;
 }
 
 h5 {
-  @include font-size(20px);
+  @include font-size($base-font-size * 1.111);
   font-weight: 400;
   letter-spacing: 0.02em;
 }
 
 h6 {
-  @include font-size(16px);
+  @include font-size($base-font-size);
   font-weight: 300;
   letter-spacing: 0.04em;
 }
 
 
 h1, h2, h3, h4, h5, h6 {
+  margin: 0 0 $base-spacing-unit-tiny;
 
   a {
     text-decoration: none;
@@ -71,16 +72,17 @@ body {
 }
 
 p {
-  font-size: 16px;
   @include font-size($base-font-size);
   font-weight: 400;
   letter-spacing: 0.04em;
   margin-bottom: $base-spacing-unit;
 }
 
-blockquote {
-  @include typo-blockquote();
-  margin: 0 $base-spacing-unit;
+blockquote, blockquote p {
+  @include font-size($base-font-size * 1.5);
+  font-weight: 300;
+  font-style: italic;
+  letter-spacing: 0.08em;
 }
 
 dt {
@@ -112,6 +114,7 @@ i {
 }
 
 address {
+  font-style: italic;
   margin: 0 0 $base-spacing-unit;
 }
 
@@ -129,6 +132,23 @@ ins {
   text-decoration: none;
 }
 
+sup,
+sub {
+  font-size: 75%;
+  height: 0;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sup {
+  bottom: 1ex;
+}
+
+sub {
+  top: 0.5ex;
+}
+
 small {
   font-size: 75%;
 }
@@ -143,13 +163,11 @@ big {
 \*------------------------------------*/
 
 .site-title {
-  @include font-size(45px);
-  font-weight: 300;
+  font-weight: 400;
 }
 
 .site-description {
-  @include font-size(24px);
-  font-weight: 300;
+  @include font-size($base-font-size * 1.5);
 }
 
 h3.widget-title {

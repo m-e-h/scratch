@@ -4,21 +4,32 @@
 
 pre {
   background: $grey-800;
-  font-family: "Courier 10 Pitch", Courier, monospace;
+  border: 1px solid $grey-900;
+  font-family: Consolas, Monaco, "Andale Mono", "DejaVu Sans Mono", monospace;
   @include font-size(15px);
   margin-bottom: $base-spacing-unit;
   max-width: 100%;
   overflow: auto;
-  padding: $base-spacing-unit;
-  color: #fff;
+  border-radius: $base-radius;
+  padding: 3% 10% 3% 5%;
+  color: $grey-50;
+  position: relative;
+  tab-size: 4;
 }
+
+
 
 code,
 kbd,
 tt,
 var {
-  font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+  font-family: Consolas, Monaco, "Andale Mono", "DejaVu Sans Mono", monospace;
   @include font-size(15px);
-  background: $grey-800;
-  color: $grey-300;
+}
+
+.form-allowed-tags {
+  background-color: $grey-50;
+  color: $grey-700;
+  border-radius: $base-radius;
+  @include padding-space();
 }

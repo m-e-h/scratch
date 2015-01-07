@@ -2,79 +2,125 @@
     #MEDIA
 \*------------------------------------*/
 
-/**
- * Makes images fit within it's fluid parent wrapper while maintaining
- * aspect ratio.
- */
+embed,
+iframe,
+img,
+object,
+video,
+.wp-caption {
+  max-width: 100%;
+}
+
 img {
-    max-width: 100%;
-    height: auto;
-    display: block;
+  height: auto;
+  margin: 0;
+  max-width: 100%;
 }
 
-.thumbnail {
-  margin: 0 $base-spacing-unit-sm;
+a:hover img,
+a:focus img {
+  opacity: 0.9;
+  -webkit-transition: opacity 0.2s ease-in-out;
+  transition: opacity 0.2s ease-in-out;
 }
 
-.portrait.thumbnail {
-max-width: 25%;
-min-width: 100px;
-float: left;
-margin-left: 0;
+.featured-content img,
+.gallery img {
+  width: auto;
 }
 
-.landscape.thumbnail {
-max-width: 50%;
-float: right;
-min-width: 150px;
-margin-right: 0;
-}
-
-figure {
-    margin: 0;
-}
-
-.gallery {
+.gallery-row {
   font-size: 0;
 
   >* {
-    font-size: 16px;
-    font-size: 1rem;
+    @include font-size($base-font-size);
   }
 }
 
 .gallery-item {
-  margin: $base-spacing-unit 0;
-  font-size: 16px;
-  font-size: 1rem;
+  @include font-size($base-font-size);
+  margin: 0;
+  display: inline-block;
   }
 
-.gallery-icon img {
-  width:     auto;
-  height:    auto;
-  margin:    0 auto;
-  }
-
-/**
- * Remove the gap between audio, canvas, iframes,
- * images, videos and the bottom of their containers:
- * https://github.com/h5bp/html5-boilerplate/issues/440
- */
-
-audio,
-canvas,
-iframe,
-img,
-svg,
-video {
-    vertical-align: middle;
+.gallery-icon {
+  padding: 0 $base-spacing-unit-sm $base-spacing-unit-sm 0;
 }
 
-/* Make sure embeds and iframes fit their containers */
-embed,
-iframe,
-object {
-	max-width: 100%;
+.gallery-icon a {
+  display: block;
+  line-height: 0;
+}
+
+.gallery-icon img {
+  width:     100%;
+  margin:    0 auto;
+  border-radius: $base-radius;
+  }
+
+.gallery {
+  margin-bottom: $base-spacing-unit;
+}
+
+.gallery-item {
+  display: inline-block;
+  text-align: center;
+  vertical-align: top;
+  width: 100%;
+}
+
+.gallery-columns-2 .gallery-item {
+  max-width: 50%;
+}
+
+.gallery-columns-3 .gallery-item {
+  max-width: 33.33%;
+}
+
+.gallery-columns-4 .gallery-item {
+  max-width: 25%;
+}
+
+.gallery-columns-5 .gallery-item {
+  max-width: 20%;
+}
+
+.gallery-columns-6 .gallery-item {
+  max-width: 16.66%;
+}
+
+.gallery-columns-7 .gallery-item {
+  max-width: 14.28%;
+}
+
+.gallery-columns-8 .gallery-item {
+  max-width: 12.5%;
+}
+
+.gallery-columns-9 .gallery-item {
+  max-width: 11.11%;
+}
+
+.gallery-caption {
+  display: block;
+}
+
+.wp-caption {
+  margin-bottom: 1.5em;
+  max-width: 100%;
+}
+
+.wp-caption img[class*="wp-image-"] {
+  display: block;
+  margin: 0 auto;
+}
+
+.wp-caption-text {
+  text-align: center;
+}
+
+.wp-caption .wp-caption-text {
+  margin: 0.8075em 0;
 }
 
 /**

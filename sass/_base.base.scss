@@ -1,5 +1,5 @@
 /*------------------------------------*\
-    #PAGE
+    #BASE
 \*------------------------------------*/
 
 
@@ -9,12 +9,6 @@
     ##Box-Sizing
 \*------------------------------------*/
 
-/**
- * Set the global `box-sizing` state to `border-box`.
- *
- * css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice
- * paulirish.com/2012/box-sizing-border-box-ftw
- */
 html {
     box-sizing: border-box;
 }
@@ -32,18 +26,6 @@ html {
 
 
 
-
-/*------------------------------------*\
-    ##H5BP
-\*------------------------------------*/
-
-/*! HTML5 Boilerplate v4.3.0 | MIT License | http://h5bp.com/ */
-
-/**
- * What follows is the result of much research on cross-browser styling.
- * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
- * Kroc Camen, and the H5BP dev community and team.
- */
 
 /*------------------------------------*\
     ###Base styles

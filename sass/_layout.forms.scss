@@ -117,3 +117,30 @@ label > .label-body {
   font-weight: normal;
   margin-left: $base-spacing-unit-sm;
 }
+
+.search-form {
+position: relative;
+}
+
+.widget_search {
+padding: $base-spacing-unit-tiny;
+}
+
+input[type=search] {
+font-size: $base-font-size;
+margin: 0;
+padding: $base-spacing-unit-tiny;
+width: 100%;
+appearance: none;
+}
+
+input[type="submit"].search-submit {
+border-bottom-left-radius: 0;
+border-top-left-radius: 0;
+outline: 0;
+padding: 0 $base-spacing-unit-sm;
+position: absolute;
+top: 0;
+right: 0;
+bottom: 0;
+}

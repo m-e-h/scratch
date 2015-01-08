@@ -1212,16 +1212,6 @@ big {
     line-height: 1;
 }
 
-h3.widget-title {
-    padding-top: 0.5em;
-    padding-bottom: 0.5em;
-    border-bottom: 1px solid #e0e0e0;
-    font-size: 24px;
-    font-size: 1.5rem;
-    font-weight: 300; 
-    line-height: 1;
-}
-
 /*------------------------------------*\
     #LINKS
 \*------------------------------------*/
@@ -1943,10 +1933,90 @@ span.comments-link:before {
     speak: none;
 }
 
+.widget {
+    overflow: hidden; 
+    margin-bottom: 16px;
+    padding-top: 11.84px;
+    padding-right: 16px;
+    padding-bottom: 11.84px;
+    padding-left: 16px;
+    border: 1px solid #e0e0e0;
+    border-radius: 2px;
+    background-color: #fff;
+}
+@media only screen and (min-width: 48em) {
+    .widget {
+        padding-top: 17.76px;
+    }
+}
+@media only screen and (min-width: 64em) {
+    .widget {
+        padding-top: 29.6px;
+    }
+}
+@media only screen and (min-width: 48em) {
+    .widget {
+        padding-right: 24px; 
+        padding-left: 24px;
+    }
+}
+@media only screen and (min-width: 64em) {
+    .widget {
+        padding-right: 40px; 
+        padding-left: 40px;
+    }
+}
+@media only screen and (min-width: 48em) {
+    .widget {
+        padding-bottom: 17.76px;
+    }
+}
+@media only screen and (min-width: 64em) {
+    .widget {
+        padding-bottom: 29.6px;
+    }
+}
+@media only screen and (min-width: 48em) {
+    .widget {
+        margin-bottom: 24px;
+    }
+}
+@media only screen and (min-width: 64em) {
+    .widget {
+        margin-bottom: 40px;
+    }
+}
+
+.widget-title {
+    margin-bottom: 11.84px;
+    padding-bottom: 11.84px;
+    border-bottom: 1px solid #e0e0e0;
+    line-height: 1;
+}
+@media only screen and (min-width: 48em) {
+    .widget-title {
+        padding-bottom: 17.76px;
+    }
+}
+@media only screen and (min-width: 64em) {
+    .widget-title {
+        padding-bottom: 29.6px;
+    }
+}
+@media only screen and (min-width: 48em) {
+    .widget-title {
+        margin-bottom: 17.76px;
+    }
+}
+@media only screen and (min-width: 64em) {
+    .widget-title {
+        margin-bottom: 29.6px;
+    }
+}
+
 /*------------------------------------*\
     #ARTICLES
 \*------------------------------------*/
-.widget,
 .entry {
     overflow: hidden; 
     margin-bottom: 16px;
@@ -1955,54 +2025,47 @@ span.comments-link:before {
     padding-bottom: 11.84px;
     padding-left: 16px;
     border: 1px solid #e0e0e0;
+    border-radius: 2px;
     background-color: #fff;
 }
 @media only screen and (min-width: 48em) {
-    .widget,
     .entry {
         padding-top: 24px;
     }
 }
 @media only screen and (min-width: 64em) {
-    .widget,
     .entry {
         padding-top: 40px;
     }
 }
 @media only screen and (min-width: 48em) {
-    .widget,
     .entry {
         padding-right: 24px; 
         padding-left: 24px;
     }
 }
 @media only screen and (min-width: 64em) {
-    .widget,
     .entry {
         padding-right: 40px; 
         padding-left: 40px;
     }
 }
 @media only screen and (min-width: 48em) {
-    .widget,
     .entry {
         padding-bottom: 17.76px;
     }
 }
 @media only screen and (min-width: 64em) {
-    .widget,
     .entry {
         padding-bottom: 29.6px;
     }
 }
 @media only screen and (min-width: 48em) {
-    .widget,
     .entry {
         margin-bottom: 24px;
     }
 }
 @media only screen and (min-width: 64em) {
-    .widget,
     .entry {
         margin-bottom: 40px;
     }
@@ -2011,7 +2074,7 @@ span.comments-link:before {
 /*------------------------------------*\
     #COMMENTS
 \*------------------------------------*/
-.comment-respond {
+.comments-area {
     overflow: hidden; 
     margin-bottom: 16px;
     padding-top: 16px;
@@ -2019,47 +2082,48 @@ span.comments-link:before {
     padding-bottom: 11.84px;
     padding-left: 16px;
     border: 1px solid #e0e0e0;
+    border-radius: 2px;
     background-color: #fff;
 }
 @media only screen and (min-width: 48em) {
-    .comment-respond {
+    .comments-area {
         padding-top: 24px;
     }
 }
 @media only screen and (min-width: 64em) {
-    .comment-respond {
+    .comments-area {
         padding-top: 40px;
     }
 }
 @media only screen and (min-width: 48em) {
-    .comment-respond {
+    .comments-area {
         padding-right: 24px; 
         padding-left: 24px;
     }
 }
 @media only screen and (min-width: 64em) {
-    .comment-respond {
+    .comments-area {
         padding-right: 40px; 
         padding-left: 40px;
     }
 }
 @media only screen and (min-width: 48em) {
-    .comment-respond {
+    .comments-area {
         padding-bottom: 17.76px;
     }
 }
 @media only screen and (min-width: 64em) {
-    .comment-respond {
+    .comments-area {
         padding-bottom: 29.6px;
     }
 }
 @media only screen and (min-width: 48em) {
-    .comment-respond {
+    .comments-area {
         margin-bottom: 24px;
     }
 }
 @media only screen and (min-width: 64em) {
-    .comment-respond {
+    .comments-area {
         margin-bottom: 40px;
     }
 }
@@ -2519,6 +2583,34 @@ label > .label-body {
     display: inline-block;
     margin-left: 16px; 
     font-weight: normal;
+}
+
+.search-form {
+    position: relative;
+}
+
+.widget_search {
+    padding: 11.84px;
+}
+
+input[type=search] {
+    width: 100%;
+    margin: 0;
+    padding: 11.84px;
+    font-size: 16px;
+
+    appearance: none;
+}
+
+input[type="submit"].search-submit {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0; 
+    padding: 0 16px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    outline: 0;
 }
 
 /*------------------------------------*\

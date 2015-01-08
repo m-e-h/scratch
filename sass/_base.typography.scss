@@ -170,11 +170,3 @@ big {
   @include font-size($base-font-size * 1.5);
 }
 
-h3.widget-title {
-padding-top: .5em;
-padding-bottom: .5em;
-//text-align: center;
-border-bottom: 1px solid $color-grey-ui;
-  @include font-size(24px);
-  font-weight: 300;
-}

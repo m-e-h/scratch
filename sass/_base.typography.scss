@@ -109,7 +109,8 @@ strong {
 dfn,
 cite,
 em,
-i {
+i,
+var {
   font-style: italic;
 }
 
@@ -118,11 +119,19 @@ address {
   margin: 0 0 $base-spacing-unit;
 }
 
+pre,
+code,
+kbd,
+tt,
+var {
+  font-family: Consolas, Monaco, "Andale Mono", "DejaVu Sans Mono", monospace;
+  @include font-size(15px);
+}
 
-
+abbr[title],
 abbr,
 acronym {
-  border-bottom: 1px dotted $color-grey-ui;
+  border-bottom: 1px dotted rgba(0,0,0,0.3);
   cursor: help;
 }
 
@@ -130,6 +139,8 @@ mark,
 ins {
   background: $yellow-100;
   text-decoration: none;
+  display: inline-block;
+  padding: 0 0.125em;
 }
 
 sup,
@@ -157,6 +168,10 @@ big {
   font-size: 125%;
 }
 
+s, strike, del {
+text-decoration: line-through;
+color: mix($color-text, $color-text-light);
+}
 
 /*------------------------------------*\
     #Site specific Type

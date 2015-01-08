@@ -116,8 +116,8 @@ $color-text:            	$grey-900;
 $color-text-light:        $grey-600;
 
 $color-links:           	$blue-500;
-$color-links-hover:     	lighten($color-links, 20);
-$color-links-visited:     	lighten($color-links, 20);
+$color-links-hover:     	darken($color-links, 15);
+$color-links-visited:     	mix($color-links, $grey-600);
 
 
 

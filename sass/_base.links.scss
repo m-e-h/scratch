@@ -18,10 +18,10 @@ a {
 	}
 }
 
-p {
-a {
-  display: inline-block;
-  border-bottom: 1px dashed;
+.entry-content a, .entry-summary a, .comment-content a {
+border-bottom: 1px solid rgba($color-links, 0.2);
+transition: all .2s linear;
+&:hover {
+	border-bottom: 1px solid rgba($color-links-hover, 0.4);
 }
 }
-

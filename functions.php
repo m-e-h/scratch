@@ -73,7 +73,7 @@ function scratch_setup() {
 
 /* Set the content width based on the theme's design and stylesheet. */
 if ( ! isset( $content_width ) ) {
-	$content_width = 660;
+	$content_width = 1200;
 }
 
 

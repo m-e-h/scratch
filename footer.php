@@ -8,9 +8,13 @@
  */
 ?>
 
-	</div><!-- #content -->
+	</div><!-- #container -->
+
+	<?php tha_footer_before(); ?>
 
   <footer <?php hybrid_attr( 'footer' ); ?>>
+
+  <?php tha_footer_top(); ?>
 
 	<?php hybrid_get_sidebar( 'footer-widgets' ); ?>
 
@@ -20,9 +24,16 @@
 					date_i18n( 'Y' ), hybrid_get_site_link(), hybrid_get_wp_link(), hybrid_get_theme_link()
 						); ?>
 		</div><!-- .site-info -->
+
+	<?php tha_footer_bottom(); ?>
+
 	</footer><!-- #footer -->
+
+	<?php tha_footer_after(); ?>
+
 </div><!-- #page -->
 
+<?php tha_body_bottom(); ?>
 <?php wp_footer(); ?>
 
 </body>

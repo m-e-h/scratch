@@ -3,8 +3,11 @@
  * @package Scratch
  */
 ?>
+<?php tha_entry_before(); ?>
 
 <article <?php hybrid_attr( 'post' ); ?>>
+
+<?php tha_entry_top(); ?>
 
 <?php if ( is_single( get_the_ID() ) ) : ?>
 
@@ -29,6 +32,8 @@
 		<?php the_title( '<h2 ' . hybrid_get_attr( 'entry-title' ) . '><a href="' . get_permalink() . '" rel="bookmark" itemprop="url">', '</a></h2>' ); ?>
 	</header><!-- .entry-header -->
 
+	<?php tha_entry_top(); ?>
+
 	<div <?php hybrid_attr( 'entry-summary' ); ?>>
 		<?php get_the_image(); ?>
 		<?php the_excerpt(); ?>
@@ -36,4 +41,8 @@
 
 <?php endif; // End single post check. ?>
 
+<?php tha_entry_bottom(); ?>
+
 </article><!-- .entry -->
+
+<?php tha_entry_after(); ?>

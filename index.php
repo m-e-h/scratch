@@ -8,7 +8,12 @@
 get_header(); ?>
 
 	<div id="primary" class="content-area">
+
+	  <?php tha_content_before(); ?>
+
 		<main <?php hybrid_attr( 'content' ); ?>>
+
+		<?php tha_content_top(); ?>
 
 		<?php if ( !is_front_page() && !is_singular() && !is_404() ) : ?>
 
@@ -45,7 +50,12 @@ get_header(); ?>
 
 		<?php endif; // End check for posts. ?>
 
+		<?php tha_content_bottom(); ?>
+
 		</main><!-- #main -->
+
+		<?php tha_content_after(); ?>
+
 	</div><!-- #primary -->
 
 <?php hybrid_get_sidebar( 'primary' ); ?>

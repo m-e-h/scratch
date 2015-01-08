@@ -9,13 +9,14 @@
 $scratch_dir = trailingslashit( get_template_directory() );
 
 /* Load the Hybrid Core framework and theme files. */
-require_once( $scratch_dir . 'library/hybrid.php'        );
-require_once( $scratch_dir . 'inc/custom-background.php' );
-require_once( $scratch_dir . 'inc/custom-header.php'     );
-require_once( $scratch_dir . 'inc/customizer.php'        );
-require_once( $scratch_dir . 'inc/template-tags.php'     );
-require_once( $scratch_dir . 'inc/theme.php'             );
-require_once( $scratch_dir . 'inc/hybrid-mods.php'       );
+require_once( $scratch_dir . 'library/hybrid.php'           );
+require_once( $scratch_dir . 'inc/tha-theme-hooks.php.php'  );
+require_once( $scratch_dir . 'inc/custom-background.php'    );
+require_once( $scratch_dir . 'inc/custom-header.php'        );
+require_once( $scratch_dir . 'inc/customizer.php'           );
+require_once( $scratch_dir . 'inc/template-tags.php'        );
+require_once( $scratch_dir . 'inc/theme.php'                );
+require_once( $scratch_dir . 'inc/hybrid-mods.php'          );
 
 /* Launch the Hybrid Core framework. */
 new Hybrid();
@@ -56,11 +57,11 @@ function scratch_setup() {
 
 	/* Theme layouts. */
 	add_theme_support( 'theme-layouts', array(
-			'1c'  	=> __( '1 Column', 'scratch' ),
-			'2c-l' 	=> __( '2 Columns: Content / Sidebar', 'scratch' ),
-			'2c-r' 	=> __( '2 Columns: Sidebar / Content', 'scratch' )
+			'1c'    => __( 'Single Column', 'platform' ),
+			'2c-l'  => __( 'Sidebar Right', 'platform' ),
+			'2c-r'  => __( 'Sidebar Left', 'platform' )
 		),
-		array( 'default' => is_rtl() ? '2c-r' :'2c-l' )
+		array( 'default' => '2c-l' )
 	);
 
 	/* Post Formats. */

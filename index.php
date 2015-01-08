@@ -27,14 +27,12 @@ get_header(); ?>
 
 				<?php hybrid_get_content_template(); // Loads the content/*.php template. ?>
 
-				<?php
-					if ( is_singular( 'post' ) ) :
-    					scratch_loop_nav();
-    				endif;
-    				if ( is_singular() && ( comments_open() || get_comments_number() )) :
-    					comments_template();
-    				endif;
-				?>
+			<?php
+			if ( is_singular() ) :
+			  scratch_loop_nav();
+			  comments_template( '', true );
+			endif; // End check for single post.
+			?>
 
 			<?php endwhile; // End loop. ?>
 

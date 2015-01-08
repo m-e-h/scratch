@@ -52,7 +52,9 @@ transform: translate(0,0);
 }
 
 .menu-item-has-children > a:after {
-  content: "\f0d7";
+    content: $plus-circle;
+    @include font-icon();
+    color: $grey-500;
   right: 5%;
   top: 36%;
   font-size: .8em;
@@ -62,6 +64,10 @@ font: normal 10px/1 FontAwesome;
 position: absolute;
 vertical-align: text-bottom;
 }
+
+.menu-item-has-children > a.active:after {
+  content: $minus-circle;
+  }
 
 .sub-menu {
   margin: 0;
@@ -142,7 +148,7 @@ vertical-align: text-bottom;
     left: -999em;
     z-index: 99999;
     opacity: 0;
-    border:1px solid $color-grey-ui;
+    border: 1px solid $color-grey-ui;
     //@include shadow-z1();
     transition: opacity 0.2s ease-out;
 
@@ -155,7 +161,7 @@ vertical-align: text-bottom;
       height: auto;
       line-height: 50px;
       &:hover, &:focus {
-        background-color: $color-grey-ui;
+       // background-color: $grey-200;
       }
     }
   }
@@ -175,6 +181,9 @@ vertical-align: text-bottom;
 .sub-menu .sub-menu.active {
 top: 0;
 position: relative;
+@include md {
+  position: absolute;
+  }
 }
 
 /* Small menu */
@@ -216,28 +225,21 @@ position: relative;
 
   .sub-menu {
     width: auto;
+    @include sm-only {
+    border-left: 0;
+    border-right: 0;
+  }
     }
 
     .menu-item {
     border: none;
     display: inline-block;
-
-    &:hover > ul, &.focus > ul {
-      left: auto;
-      opacity: 1;
-      }
   }
 
-.sub-menu .menu-item-has-children {
-
-&:hover > ul, &.focus > ul {
+.sub-menu .menu-item-has-children.active > ul {
   left: 100%;
   margin-left: 0;
   top: 0;
-  }
-  > a:after {
-    content: "\f0da";
-  }
 }
 
 }

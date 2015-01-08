@@ -6,7 +6,8 @@
   background-color: #fff;
   border: 1px solid $grey-300;
   border-radius: $base-radius;
-  @include padding-space($base-spacing-unit-sm $base-spacing-unit-sm $base-spacing-unit-tiny);
+  position: relative;
+  @include padding-space($base-spacing-unit-tiny $base-spacing-unit-sm);
   @include margin-space(n n $base-spacing-unit-sm);
   overflow: hidden;
 }

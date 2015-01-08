@@ -2,3 +2,52 @@
     #ICONS
 \*------------------------------------*/
 
+
+  /* Links */
+  a[href^="mailto:"]::before { content: '\f410'; }
+  a[href^="tel:"]::before    { content: '\f437'; }
+
+  /* Posts */
+  .format-standard .post-format-link::before { content: $android; }
+  .format-aside .post-format-link::before    { content: $indent; }
+  .format-audio .post-format-link::before    { content: $volume-up; }
+  .format-chat .post-format-link::before     { content: $comments; }
+  .format-gallery .post-format-link::before  { content: $file-photo-o; }
+  .image-sizes::before,
+  .format-image .post-format-link::before    { content: $photo; }
+  .format-link .post-format-link::before     { content: $link; }
+  .format-quote .post-format-link::before    { content: $quote-left; }
+  .format-status .post-format-link::before   { content: $line-chart; }
+  .format-video .post-format-link::before    { content: $youtube-play; }
+
+
+
+
+.post-format-link {
+position: relative;
+margin: 0;
+font-size: 0;
+color: #fff;
+background-color: rgba($color-text, 0.4);
+width: 50px;
+height: 50px;
+text-align: center;
+vertical-align: top;
+display: inline-block;
+border-radius: $base-radius 0 $base-radius 0;
+}
+
+
+span.entry-format {
+position: absolute;
+z-index: 100;
+bottom: 0;
+right: 0;
+}
+
+.post-format-link::before {
+  @include font-icon();
+  color: #fff;
+  font-size: 27px;
+  line-height: 50px;
+}

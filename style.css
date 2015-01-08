@@ -1345,13 +1345,28 @@ ol ul {
 
 .menu-item-has-children > a:after {
     display: inline-block;
+    display: inline-block;
     position: absolute;
     top: 36%;
     right: 5%;
+    color: #9e9e9e;
     font: normal 10px/1 FontAwesome;
+    font-family: FontAwesome;
+    font-size: inherit;
     font-size: 0.8em;
+    font-weight: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
     vertical-align: text-bottom; 
-    content: "\f0d7";
+    text-decoration: none;
+    content: "\f055";
+    text-rendering: auto;
+
+    speak: none;
+}
+
+.menu-item-has-children > a.active:after {
+    content: "\f056";
 }
 
 .sub-menu {
@@ -1448,10 +1463,6 @@ ol ul {
     line-height: 50px; 
     letter-spacing: 0.04em;
 }
-.sub-menu a:hover,
-.sub-menu a:focus {
-    background-color: #e0e0e0;
-}
 
 .sub-menu.active {
     left: auto;
@@ -1468,6 +1479,11 @@ ol ul {
 .sub-menu .sub-menu.active {
     position: relative; 
     top: 0;
+}
+@media only screen and (min-width: 48em) {
+    .sub-menu .sub-menu.active {
+        position: absolute;
+    }
 }
 
 /* Small menu */
@@ -1540,25 +1556,22 @@ ol ul {
     .sub-menu {
         width: auto;
     }
+    @media only screen and (max-width: 47em) {
+        .sub-menu {
+            border-right: 0; 
+            border-left: 0;
+        }
+    }
 
     .menu-item {
         display: inline-block; 
         border: none;
     }
-    .menu-item:hover > ul,
-    .menu-item.focus > ul {
-        left: auto;
-        opacity: 1;
-    }
 
-    .sub-menu .menu-item-has-children:hover > ul,
-    .sub-menu .menu-item-has-children.focus > ul {
+    .sub-menu .menu-item-has-children.active > ul {
         top: 0; 
         left: 100%;
         margin-left: 0;
-    }
-    .sub-menu .menu-item-has-children > a:after {
-        content: "\f0da";
     }
 }
 
@@ -1965,7 +1978,7 @@ span.comments-link:before {
 
 .widget {
     overflow: hidden; 
-    margin-bottom: 16px;
+    margin-bottom: 11.84px;
     padding-top: 11.84px;
     padding-right: 16px;
     padding-bottom: 11.84px;
@@ -2008,39 +2021,39 @@ span.comments-link:before {
 }
 @media only screen and (min-width: 48em) {
     .widget {
-        margin-bottom: 24px;
+        margin-bottom: 17.76px;
     }
 }
 @media only screen and (min-width: 64em) {
     .widget {
-        margin-bottom: 40px;
+        margin-bottom: 29.6px;
     }
 }
 
 .widget-title {
-    margin-bottom: 11.84px;
-    padding-bottom: 11.84px;
+    margin-bottom: 5.92px;
+    padding-bottom: 5.92px;
     border-bottom: 1px solid #e0e0e0;
     line-height: 1;
 }
 @media only screen and (min-width: 48em) {
     .widget-title {
-        padding-bottom: 17.76px;
+        padding-bottom: 8.88px;
     }
 }
 @media only screen and (min-width: 64em) {
     .widget-title {
-        padding-bottom: 29.6px;
+        padding-bottom: 14.8px;
     }
 }
 @media only screen and (min-width: 48em) {
     .widget-title {
-        margin-bottom: 17.76px;
+        margin-bottom: 8.88px;
     }
 }
 @media only screen and (min-width: 64em) {
     .widget-title {
-        margin-bottom: 29.6px;
+        margin-bottom: 14.8px;
     }
 }
 
@@ -2049,8 +2062,9 @@ span.comments-link:before {
 \*------------------------------------*/
 .entry {
     overflow: hidden; 
+    position: relative;
     margin-bottom: 16px;
-    padding-top: 16px;
+    padding-top: 11.84px;
     padding-right: 16px;
     padding-bottom: 11.84px;
     padding-left: 16px;
@@ -2060,12 +2074,14 @@ span.comments-link:before {
 }
 @media only screen and (min-width: 48em) {
     .entry {
-        padding-top: 24px;
+        padding-top: 17.76px;
+        padding-bottom: 17.76px;
     }
 }
 @media only screen and (min-width: 64em) {
     .entry {
-        padding-top: 40px;
+        padding-top: 29.6px;
+        padding-bottom: 29.6px;
     }
 }
 @media only screen and (min-width: 48em) {
@@ -2078,16 +2094,6 @@ span.comments-link:before {
     .entry {
         padding-right: 40px; 
         padding-left: 40px;
-    }
-}
-@media only screen and (min-width: 48em) {
-    .entry {
-        padding-bottom: 17.76px;
-    }
-}
-@media only screen and (min-width: 64em) {
-    .entry {
-        padding-bottom: 29.6px;
     }
 }
 @media only screen and (min-width: 48em) {
@@ -2687,8 +2693,7 @@ input[type="submit"]:active,
     margin: 0;
 }
 
-.entry-terms a,
-.post-format-link {
+.entry-terms a {
     display: inline-block;
     margin: 0 0.125em;
     padding: 0.6em 0.8em;
@@ -2749,39 +2754,6 @@ input[type="submit"]:active,
     content: "";
 }
 
-.post-format-link {
-    position: relative;
-    left: -3.65rem;
-    margin: 0;
-    padding-left: 2rem;
-    border-color: rgba(0, 0, 0, 0.15); 
-    border-radius: 0 0.2857rem 0.2857rem 0;
-    background-color: #e0e0e0;
-}
-.post-format-link:hover,
-.post-format-link:focus,
-.post-format-link:visited {
-    color: #9e9e9e;
-}
-.post-format-link:after {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 0;
-    height: 0; 
-    border-width: 0 1.2em 1.2em 0;
-    border-style: solid;
-    border-color: transparent;
-    border-right-color: inherit;
-    background-color: transparent !important;
-    content: "";
-}
-
-span.entry-format {
-    position: absolute;
-    margin-top: -40px;
-}
-
 /*------------------------------------*\
     #BLOCKQUOTES
 \*------------------------------------*/
@@ -2809,8 +2781,9 @@ blockquote cite::before {
 .breadcrumbs {
     margin-bottom: 16px;
     padding: 8px 15px;
+    border: 1px solid #e0e0e0;
     border-radius: 2px;
-    background-color: #f5f5f5;
+    background-color: #fff;
     list-style: none;
     cursor: default;
 }
@@ -3160,11 +3133,100 @@ a:focus img {
 .featured-media img {
     display: block;
     margin: 0 auto;
+    border-radius: 2px 2px 0 0;
 }
 
 /*------------------------------------*\
     #ICONS
 \*------------------------------------*/
+/* Links */
+a[href^="mailto:"]::before {
+    content: "\f410";
+}
+
+a[href^="tel:"]::before {
+    content: "\f437";
+}
+
+/* Posts */
+.format-standard .post-format-link::before {
+    content: "\f17b";
+}
+
+.format-aside .post-format-link::before {
+    content: "\f03c";
+}
+
+.format-audio .post-format-link::before {
+    content: "\f028";
+}
+
+.format-chat .post-format-link::before {
+    content: "\f086";
+}
+
+.format-gallery .post-format-link::before {
+    content: "\f1c5";
+}
+
+.image-sizes::before,
+.format-image .post-format-link::before {
+    content: "\f03e";
+}
+
+.format-link .post-format-link::before {
+    content: "\f0c1";
+}
+
+.format-quote .post-format-link::before {
+    content: "\f10d";
+}
+
+.format-status .post-format-link::before {
+    content: "\f201";
+}
+
+.format-video .post-format-link::before {
+    content: "\f16a";
+}
+
+.post-format-link {
+    display: inline-block;
+    position: relative;
+    width: 50px;
+    height: 50px;
+    margin: 0;
+    border-radius: 2px 0 2px 0; 
+    color: #fff;
+    background-color: rgba(33, 33, 33, 0.4);
+    font-size: 0;
+    text-align: center;
+    vertical-align: top;
+}
+
+span.entry-format {
+    position: absolute;
+    z-index: 100;
+    right: 0; 
+    bottom: 0;
+}
+
+.post-format-link::before {
+    display: inline-block;
+    color: #fff;
+    font-family: FontAwesome;
+    font-size: inherit;
+    font-size: 27px;
+    font-weight: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    line-height: 50px; 
+    text-decoration: none;
+    text-rendering: auto;
+
+    speak: none;
+}
+
 /*------------------------------------*\
     #SHARED https://github.com/paulrobertlloyd/barebones
 \*------------------------------------*/

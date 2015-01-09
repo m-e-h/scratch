@@ -55,23 +55,28 @@ span.comments-link:before {
 
 
 
-    .sidebar__footer-widgets {
+    .sidebar.sidebar__footer-widgets {
       display: block;
       font-size: 0;
       margin: 0;
       padding: 0;
       text-align: left;
       width: 100%;
-      //@include padding-space($base-spacing-unit-sm n n);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      @include padding-space($base-spacing-unit-sm n);
 
         > * {
           @include font-size($base-font-size);
         }
         .widget {
-          display: inline-block!important;
-          margin: 0;
+          display: inline-block;
+          margin: 0!important;
           text-align: left;
           vertical-align: top;
+          min-width: 320px;
+          max-width: 700px;
         }
     }
 
@@ -85,12 +90,14 @@ span.comments-link:before {
   .sidebar-col-2 {
       .widget {
           width: 50%;
+          flex: 0 45%;
       }
   }
 
   .sidebar-col-3 {
       .widget {
           width: 33.33%;
+          flex: 0 30%;
       }
   }
 }

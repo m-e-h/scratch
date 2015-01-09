@@ -3,9 +3,10 @@
  * @package Scratch
  */
 ?>
+<?php tha_entry_before(); ?>
 
 <article <?php hybrid_attr( 'post' ); ?>>
-<span class="entry-format"><?php hybrid_post_format_link(); ?></span>
+
 	<?php echo ( $audio = hybrid_media_grabber( array( 'type' => 'audio', 'split_media' => true, 'before' => '<div class="featured-media">', 'after' => '</div>' ) ) ); ?>
 
 <?php if ( is_single( get_the_ID() ) ) : // If viewing a single post. ?>

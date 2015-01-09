@@ -3,9 +3,10 @@
  * @package Scratch
  */
 ?>
+<?php tha_entry_before(); ?>
 
 <article <?php hybrid_attr( 'post' ); ?>>
-<span class="entry-format"><?php hybrid_post_format_link(); ?></span>
+
 
 	<?php
 		// Display a featured image if we can find something to display.

@@ -3,7 +3,7 @@
 \*------------------------------------*/
 
 .menu__primary {
-  z-index: 1;
+  z-index: 5;
   position: fixed;
   top: 0;
   bottom: 0;
@@ -216,11 +216,9 @@ position: relative;
   }
 
   .menu__primary--items {
-    //display: flex;
-    max-width: 1400px;
+    max-width: $site-width;
     margin: 0 auto;
     @include padding-space(0 $base-spacing-unit-sm);
-    //flex-direction: row;
   }
 
   .sub-menu {

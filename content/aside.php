@@ -3,9 +3,10 @@
  * @package Scratch
  */
 ?>
+<?php tha_entry_before(); ?>
 
 <article <?php hybrid_attr( 'post' ); ?>>
-<span class="entry-format"><?php hybrid_post_format_link(); ?></span>
+
 <?php if ( is_single( get_the_ID() ) ) : // If viewing a single post. ?>
 
 	<div <?php hybrid_attr( 'entry-content' ); ?>>

@@ -22,6 +22,8 @@ add_action( 'wp_enqueue_scripts', 'scratch_scripts', 5 );
 /* Add custom styles. */
 add_action( 'wp_enqueue_scripts', 'scratch_styles', 5 );
 
+add_action( 'tha_entry_before', 'scratch_do_format_icon' );
+
 
 function scratch_image_sizes() {
 	// Set the 'post-thumbnail' size.
@@ -72,4 +74,31 @@ function scratch_styles() {
 		wp_enqueue_style( 'parent', trailingslashit( get_template_directory_uri() ) . "style{$suffix}.css" );
 
 	wp_enqueue_style( 'style', get_stylesheet_uri() );
+}
+
+/**
+ * Filter the hybrid_post_format_link to remove the text
+ */
+function scratch_post_format_link() {
+	echo scratch_get_post_format_link();
+}
+function scratch_get_post_format_link() {
+	$format = get_post_format();
+	$url    = empty( $format ) ? get_permalink() : get_post_format_link( $format );
+	return sprintf( '<a href="%s" class="post-format-link"><span class="%s format-icon">', esc_url( $url ), get_post_format_string( $format ) );
+}
+
+if ( ! function_exists( 'scratch_format_svg' ) ) :
+function scratch_format_svg() {
+$format = get_post_format();
+get_template_part( 'images/svg/svg', $format );
+}
+endif; // End check for logo function.
+
+function scratch_do_format_icon() {
+
+	scratch_post_format_link(); ?>
+	<span class="format-icon--wrap"><?php scratch_format_svg(); ?></span>
+	</span></a>
+	<?php
 }

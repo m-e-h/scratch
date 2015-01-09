@@ -9,6 +9,7 @@
 }
 
 .content {
+    position: relative;
     padding-top: 60px;
   @include margin-space(n n $base-spacing-unit-sm);
 
@@ -162,7 +163,7 @@ float: right;
         @include padding-space($base-spacing-unit-sm $base-spacing-unit-sm 0);
 
         @include md {
-            max-width: 1400px;
+            max-width: $site-width;
             min-height: initial;
             display: block;
             font-size: 0;

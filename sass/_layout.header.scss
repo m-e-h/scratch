@@ -80,7 +80,7 @@ body.open {
   .site-branding {
     display: block;
     height: auto;
-    max-width: 1400px;
+    max-width: $site-width;
   @include padding-space($base-spacing-unit-sm);
     box-sizing: border-box;
     background-color: $color-primary;

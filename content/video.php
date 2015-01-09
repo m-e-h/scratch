@@ -3,9 +3,10 @@
  * @package Scratch
  */
 ?>
+<?php tha_entry_before(); ?>
 
 <article <?php hybrid_attr( 'post' ); ?>>
-<span class="entry-format"><?php hybrid_post_format_link(); ?></span>
+
 	<?php echo ( $video = hybrid_media_grabber( array( 'width' => 1100, 'type' => 'video', 'split_media' => true, 'before' => '<div class="FlexEmbed"><div class="FlexEmbed-ratio FlexEmbed-ratio--16by9"></div>', 'after' => '</div>' ) ) ); ?>
 
 <?php if ( is_single( get_the_ID() ) ) : ?>

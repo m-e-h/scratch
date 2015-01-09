@@ -21,8 +21,8 @@ fill: $grey-700;
 }
 
 .format-icon--wrap {
-background-color: rgba($blue-600, 0.95);
-@include shadow-z1($blue-600);
+background-color: rgba($format-standard, 0.95);
+@include shadow-z1($format-standard);
 height: 100%;
 display: inline-block;
 padding: 5px;
@@ -34,37 +34,64 @@ height: 65px;
 width: 65px;
 transition: all .2s ease-in-out;
 &:hover {
-  @include shadow-z3($blue-600);
-  background-color: rgba($blue-600, 0.8);
+  @include shadow-z3($format-standard);
+  background-color: rgba($format-standard, 0.8);
 }
+}
+.entry.format-standard {
+  border-color: lighten($format-standard, 20);
 }
 
 
 .Image .format-icon--wrap {
-background-color: rgba($green-600, 0.95);
-@include shadow-z1($green-600);
+background-color: rgba($format-image, 0.95);
+@include shadow-z1($format-image);
 &:hover {
-  @include shadow-z3($green-600);
-  background-color: rgba($green-600, 0.8);
+  @include shadow-z3($format-image);
+  background-color: rgba($format-image, 0.8);
   }
 }
+.entry.format-image {
+  border-color: lighten($format-image, 20);
+}
+
 
 .Gallery .format-icon--wrap {
-background-color: rgba($yellow-600, 0.95);
-@include shadow-z1($yellow-600);
+background-color: rgba($format-gallery, 0.95);
+@include shadow-z1($format-gallery);
 &:hover {
-  @include shadow-z3($yellow-600);
-  background-color: rgba($yellow-600, 0.8);
+  @include shadow-z3($format-gallery);
+  background-color: rgba($format-gallery, 0.8);
   }
 }
+.entry.format-gallery {
+  border-color: lighten($format-gallery, 20);
+}
+
 
 .Video .format-icon--wrap {
-background-color: rgba($red-600, 0.95);
-@include shadow-z1($red-600);
+background-color: rgba($format-video, 0.95);
+@include shadow-z1($format-video);
 &:hover {
-  @include shadow-z3($red-600);
-  background-color: rgba($red-600, 0.8);
+  @include shadow-z3($format-video);
+  background-color: rgba($format-video, 0.8);
   }
+}
+.entry.format-video {
+  border-color: lighten($format-video, 20);
+}
+
+
+.Quote .format-icon--wrap {
+background-color: rgba($format-quote, 0.95);
+@include shadow-z1($format-quote);
+&:hover {
+  @include shadow-z3($format-quote);
+  background-color: rgba($format-quote, 0.8);
+  }
+}
+.entry.format-quote {
+  border-color: lighten($format-quote, 20);
 }
 
 

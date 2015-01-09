@@ -23,56 +23,7 @@ a {
   }
 }
 
-    .sidebar__subsidiary {
-    @extend .grid;
-    display: flex;
-    flex-wrap: wrap;
-    @include padding-space($base-spacing-unit-sm n n);
-        .widget {
-          display: inline-block;
-          *display: inline;
-          display: flex;
-          margin: 0;
-          text-align: left;
-          vertical-align: top;
 
-
-
-          > * {
-            background-color: rgba(51, 51, 51, 0.2);
-            color: #fff;
-          }
-
-          .widget-title {
-            background-color: rgba(51, 51, 51, 0.5);
-          }
-
-        }
-    }
-
-.sidebar-col-1 {
-    .widget {
-    }
-}
-
-
-
-
-
-.sidebar-col-2 {
-    .widget {
-        @extend .sm-1-2;
-    }
-}
-
-
-
-
-.sidebar-col-3 {
-    .widget {
-        @extend .md-1-3;
-    }
-}
 
 
 .entry-footer span, .entry-published {
@@ -100,4 +51,46 @@ span.entry-author:before {
 span.comments-link:before {
   content: $comments;
   @include font-icon();
+}
+
+
+
+    .sidebar__footer-widgets {
+      display: block;
+      font-size: 0;
+      margin: 0;
+      padding: 0;
+      text-align: left;
+      width: 100%;
+      //@include padding-space($base-spacing-unit-sm n n);
+
+        > * {
+          @include font-size($base-font-size);
+        }
+        .widget {
+          display: inline-block!important;
+          margin: 0;
+          text-align: left;
+          vertical-align: top;
+        }
+    }
+
+@include md {
+  .sidebar-col-1 {
+      .widget {
+        width: 100%;
+      }
+  }
+
+  .sidebar-col-2 {
+      .widget {
+          width: 50%;
+      }
+  }
+
+  .sidebar-col-3 {
+      .widget {
+          width: 33.33%;
+      }
+  }
 }

@@ -402,7 +402,6 @@ th {
     }
 
     .sm-1-2,
-    .sidebar-col-2 .widget,
     .sm-6-12 {
         width: 50%;
 
@@ -552,7 +551,6 @@ th {
     }
 
     .md-1-3,
-    .sidebar-col-3 .widget,
     .md-4-12 {
         width: 33.3333%;
 
@@ -1587,8 +1585,7 @@ ol ul {
  *    elements.
  * 3. Ensure consistent default alignment.
  */
-.grid,
-.sidebar__subsidiary {
+.grid {
     display: block;
     /* 3 */
     width: 100%; 
@@ -1601,8 +1598,7 @@ ol ul {
     /* 1 */
     text-align: left;
 }
-.grid > *,
-.sidebar__subsidiary > * {
+.grid > * {
     font-size: 16px;
     font-size: 1rem;
     line-height: 1.5;
@@ -1880,47 +1876,6 @@ body.open {
     color: inherit;
 }
 
-.sidebar__subsidiary {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    padding-top: 16px; 
-
-    -webkit-flex-wrap: wrap;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-}
-@media only screen and (min-width: 48em) {
-    .sidebar__subsidiary {
-        padding-top: 24px;
-    }
-}
-@media only screen and (min-width: 64em) {
-    .sidebar__subsidiary {
-        padding-top: 40px;
-    }
-}
-.sidebar__subsidiary .widget {
-    display: inline-block;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    margin: 0;
-    text-align: left;
-    vertical-align: top; 
-
-    *display: inline;
-}
-.sidebar__subsidiary .widget > * {
-    color: #fff; 
-    background-color: rgba(51, 51, 51, 0.2);
-}
-.sidebar__subsidiary .widget .widget-title {
-    background-color: rgba(51, 51, 51, 0.5);
-}
-
 .entry-footer span,
 .entry-published {
     margin-right: 24px;
@@ -1976,8 +1931,43 @@ span.comments-link:before {
     speak: none;
 }
 
+.sidebar__footer-widgets {
+    display: block;
+    width: 100%; 
+    margin: 0;
+    padding: 0;
+    font-size: 0;
+    text-align: left;
+}
+.sidebar__footer-widgets > * {
+    font-size: 16px;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+.sidebar__footer-widgets .widget {
+    display: inline-block !important;
+    margin: 0;
+    text-align: left;
+    vertical-align: top;
+}
+
+@media only screen and (min-width: 48em) {
+    .sidebar-col-1 .widget {
+        width: 100%;
+    }
+
+    .sidebar-col-2 .widget {
+        width: 50%;
+    }
+
+    .sidebar-col-3 .widget {
+        width: 33.33%;
+    }
+}
+
 .widget {
-    overflow: hidden; 
+    overflow: hidden;
+    width: 100%; 
     margin-bottom: 11.84px;
     padding-top: 11.84px;
     padding-right: 16px;
@@ -2061,7 +2051,7 @@ span.comments-link:before {
     #ARTICLES
 \*------------------------------------*/
 .entry {
-    overflow: hidden; 
+    overflow: hidden;
     position: relative;
     margin-top: 0;
     margin-bottom: 16px;
@@ -2069,10 +2059,10 @@ span.comments-link:before {
     padding-right: 16px;
     padding-bottom: 11.84px;
     padding-left: 16px;
-    border: 1px solid #e0e0e0;
-    border-top: 5px solid #616161;
+    border-top: 6px solid #9e9e9e;
     border-radius: 0 0 2px 2px;
     background-color: #fff;
+    box-shadow: 0 1px 1.5px 0 rgba(0, 0, 0, 0.12), 0 1px 1px 0 rgba(0, 0, 0, 0.24);
 }
 @media only screen and (min-width: 48em) {
     .entry {
@@ -2708,41 +2698,70 @@ input[type="submit"].search-submit {
     padding: 5px;
     border: 4px solid #616161;
     border-radius: 50%;
-    background-color: rgba(30, 136, 229, 0.95);
-    box-shadow: 0 1px 1.5px 0 rgba(30, 136, 229, 0.12), 0 1px 1px 0 rgba(30, 136, 229, 0.24);
+    background-color: rgba(121, 134, 203, 0.95);
+    box-shadow: 0 1px 1.5px 0 rgba(121, 134, 203, 0.12), 0 1px 1px 0 rgba(121, 134, 203, 0.24);
     -webkit-transition: all 0.2s ease-in-out;
     transition: all 0.2s ease-in-out;
 }
 .format-icon--wrap:hover {
-    background-color: rgba(30, 136, 229, 0.8); 
-    box-shadow: 0 10px 10px 0 rgba(30, 136, 229, 0.19), 0 6px 3px 0 rgba(30, 136, 229, 0.23);
+    background-color: rgba(121, 134, 203, 0.8); 
+    box-shadow: 0 10px 10px 0 rgba(121, 134, 203, 0.19), 0 6px 3px 0 rgba(121, 134, 203, 0.23);
+}
+
+.entry.format-standard {
+    border-color: #c2c8e8;
 }
 
 .Image .format-icon--wrap {
-    background-color: rgba(67, 160, 71, 0.95);
-    box-shadow: 0 1px 1.5px 0 rgba(67, 160, 71, 0.12), 0 1px 1px 0 rgba(67, 160, 71, 0.24);
+    background-color: rgba(77, 182, 172, 0.95);
+    box-shadow: 0 1px 1.5px 0 rgba(77, 182, 172, 0.12), 0 1px 1px 0 rgba(77, 182, 172, 0.24);
 }
 .Image .format-icon--wrap:hover {
-    background-color: rgba(67, 160, 71, 0.8); 
-    box-shadow: 0 10px 10px 0 rgba(67, 160, 71, 0.19), 0 6px 3px 0 rgba(67, 160, 71, 0.23);
+    background-color: rgba(77, 182, 172, 0.8); 
+    box-shadow: 0 10px 10px 0 rgba(77, 182, 172, 0.19), 0 6px 3px 0 rgba(77, 182, 172, 0.23);
+}
+
+.entry.format-image {
+    border-color: #95d4ce;
 }
 
 .Gallery .format-icon--wrap {
-    background-color: rgba(253, 216, 53, 0.95);
-    box-shadow: 0 1px 1.5px 0 rgba(253, 216, 53, 0.12), 0 1px 1px 0 rgba(253, 216, 53, 0.24);
+    background-color: rgba(255, 241, 118, 0.95);
+    box-shadow: 0 1px 1.5px 0 rgba(255, 241, 118, 0.12), 0 1px 1px 0 rgba(255, 241, 118, 0.24);
 }
 .Gallery .format-icon--wrap:hover {
-    background-color: rgba(253, 216, 53, 0.8); 
-    box-shadow: 0 10px 10px 0 rgba(253, 216, 53, 0.19), 0 6px 3px 0 rgba(253, 216, 53, 0.23);
+    background-color: rgba(255, 241, 118, 0.8); 
+    box-shadow: 0 10px 10px 0 rgba(255, 241, 118, 0.19), 0 6px 3px 0 rgba(255, 241, 118, 0.23);
+}
+
+.entry.format-gallery {
+    border-color: #fffbdc;
 }
 
 .Video .format-icon--wrap {
-    background-color: rgba(229, 57, 53, 0.95);
-    box-shadow: 0 1px 1.5px 0 rgba(229, 57, 53, 0.12), 0 1px 1px 0 rgba(229, 57, 53, 0.24);
+    background-color: rgba(229, 115, 115, 0.95);
+    box-shadow: 0 1px 1.5px 0 rgba(229, 115, 115, 0.12), 0 1px 1px 0 rgba(229, 115, 115, 0.24);
 }
 .Video .format-icon--wrap:hover {
-    background-color: rgba(229, 57, 53, 0.8); 
-    box-shadow: 0 10px 10px 0 rgba(229, 57, 53, 0.19), 0 6px 3px 0 rgba(229, 57, 53, 0.23);
+    background-color: rgba(229, 115, 115, 0.8); 
+    box-shadow: 0 10px 10px 0 rgba(229, 115, 115, 0.19), 0 6px 3px 0 rgba(229, 115, 115, 0.23);
+}
+
+.entry.format-video {
+    border-color: #f5c9c9;
+}
+
+.Quote .format-icon--wrap {
+    background-color: rgba(129, 199, 132, 0.95);
+    box-shadow: 0 1px 1.5px 0 rgba(129, 199, 132, 0.12), 0 1px 1px 0 rgba(129, 199, 132, 0.24);
+}
+.Quote .format-icon--wrap:hover {
+    background-color: rgba(129, 199, 132, 0.8); 
+    box-shadow: 0 10px 10px 0 rgba(129, 199, 132, 0.19), 0 6px 3px 0 rgba(129, 199, 132, 0.23);
+}
+
+.entry.format-quote {
+    border-color: #c8e6c9;
 }
 
 .format-audio .featured-media {

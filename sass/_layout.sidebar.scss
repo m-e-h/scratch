@@ -8,6 +8,7 @@
   @include padding-space($base-spacing-unit-tiny $base-spacing-unit-sm $base-spacing-unit-tiny);
   @include margin-space(n n $base-spacing-unit-tiny);
   overflow: hidden;
+  width: 100%;
 }
 
 .widget-title {

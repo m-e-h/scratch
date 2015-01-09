@@ -24,6 +24,8 @@ add_action( 'wp_enqueue_scripts', 'scratch_styles', 5 );
 
 add_action( 'tha_entry_before', 'scratch_do_format_icon' );
 
+add_filter( 'hybrid_attr_sidebar', 'scratch_sidebar_footer_widgets_class', 10, 2 );
+
 
 function scratch_image_sizes() {
 	// Set the 'post-thumbnail' size.
@@ -101,4 +103,22 @@ function scratch_do_format_icon() {
 	<span class="format-icon--wrap"><?php scratch_format_svg(); ?></span>
 	</span></a>
 	<?php
+}
+
+
+
+function scratch_sidebar_footer_widgets_class( $attr, $context ) {
+	if ( 'footer-widgets' === $context ) {
+		global $sidebars_widgets;
+		if ( is_array( $sidebars_widgets ) && !empty( $sidebars_widgets[ $context ] ) ) {
+			$count = count( $sidebars_widgets[ $context ] );
+			if ( 1 === $count )
+				$attr['class'] .= ' sidebar-col-1';
+			elseif ( !( $count % 3 ) || $count % 2 )
+				$attr['class'] .= ' sidebar-col-3';
+			elseif ( !( $count % 2 ) )
+				$attr['class'] .= ' sidebar-col-2';
+		}
+	}
+	return $attr;
 }

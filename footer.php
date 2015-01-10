@@ -16,7 +16,9 @@
 
   <?php tha_footer_top(); ?>
 
-	<?php hybrid_get_sidebar( 'footer-widgets' ); ?>
+	  <?php hybrid_get_sidebar( 'footer-widgets' ); ?>
+
+	  <?php hybrid_get_menu( 'social' ); // Loads the menu/social.php template. ?>
 
 		<div class="site-info">
 			<?php printf(

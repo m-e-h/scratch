@@ -41,6 +41,7 @@ function scratch_excerpt_length( $length ) {
 
 function scratch_menus() {
 	register_nav_menu( 'primary', _x( 'Primary', 'nav menu location', 'scratch' ) );
+	register_nav_menu( 'social',  _x( 'Social',  'nav menu location', 'scratch' ) );
 }
 
 function scratch_sidebars() {

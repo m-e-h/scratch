@@ -9,11 +9,11 @@
 
 <?php tha_entry_top(); ?>
 
-<?php if ( is_single( get_the_ID() ) ) : ?>
-
 	<header class="entry-header">
-		<h1 <?php hybrid_attr( 'entry-title' ); ?>><?php single_post_title(); ?></h1>
+		<?php get_template_part( 'partials/entry', 'title' ); ?>
 	</header><!-- .entry-header -->
+
+<?php if ( is_single( get_the_ID() ) ) : ?>
 
 	<div <?php hybrid_attr( 'entry-content' ); ?>>
 		<?php get_the_image(); ?>
@@ -28,15 +28,11 @@
 
 <?php else : // If not viewing a single post. ?>
 
-	<header class="entry-header">
-		<?php the_title( '<h2 ' . hybrid_get_attr( 'entry-title' ) . '><a href="' . hybrid_get_the_post_format_url() . '">', is_rtl() ? ' <span class="meta-nav">&larr;</span>' : ' <span class="meta-nav">&rarr;</span>' . '</a></h2>' ); ?>
-	</header><!-- .entry-header -->
-
 <?php endif; // End single post check. ?>
 
 <?php tha_entry_bottom(); ?>
 
 </article><!-- .entry -->
 
-<?php 
+<?php
 tha_entry_after();

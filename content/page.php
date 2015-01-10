@@ -38,5 +38,5 @@
 
 </article><!-- .entry -->
 
-<?php 
+<?php
 tha_entry_after();

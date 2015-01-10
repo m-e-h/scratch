@@ -22,7 +22,7 @@ add_action( 'wp_enqueue_scripts', 'scratch_scripts', 5 );
 /* Add custom styles. */
 add_action( 'wp_enqueue_scripts', 'scratch_styles', 5 );
 
-add_action( 'tha_entry_before', 'scratch_do_format_icon' );
+//add_action( 'tha_entry_before', 'scratch_do_format_icon' );
 
 add_filter( 'hybrid_attr_sidebar', 'scratch_sidebar_footer_widgets_class', 10, 2 );
 

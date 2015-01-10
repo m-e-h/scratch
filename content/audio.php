@@ -7,6 +7,8 @@
 
 <article <?php hybrid_attr( 'post' ); ?>>
 
+<?php tha_entry_top(); ?>
+
 	<?php echo ( $audio = hybrid_media_grabber( array( 'type' => 'audio', 'split_media' => true, 'before' => '<div class="featured-media">', 'after' => '</div>' ) ) ); ?>
 
 <?php if ( is_single( get_the_ID() ) ) : // If viewing a single post. ?>
@@ -49,4 +51,9 @@
 
 <?php endif; // End single post check. ?>
 
+<?php tha_entry_bottom(); ?>
+
 </article><!-- .entry -->
+
+<?php 
+tha_entry_after();

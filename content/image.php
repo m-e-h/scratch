@@ -7,6 +7,8 @@
 
 <article <?php hybrid_attr( 'post' ); ?>>
 
+<?php tha_entry_top(); ?>
+
 
 	<?php
 		// Display a featured image if we can find something to display.
@@ -50,4 +52,9 @@
 
 <?php endif; // End single post check. ?>
 
+<?php tha_entry_bottom(); ?>
+
 </article><!-- .entry -->
+
+<?php 
+tha_entry_after();

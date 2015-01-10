@@ -7,6 +7,8 @@
 
 <article <?php hybrid_attr( 'post' ); ?>>
 
+<?php tha_entry_top(); ?>
+
 	<?php echo ( $video = hybrid_media_grabber( array( 'width' => 1100, 'type' => 'video', 'split_media' => true, 'before' => '<div class="FlexEmbed"><div class="FlexEmbed-ratio FlexEmbed-ratio--16by9"></div>', 'after' => '</div>' ) ) ); ?>
 
 <?php if ( is_single( get_the_ID() ) ) : ?>
@@ -47,4 +49,9 @@
 	  <?php scratch_post_terms(); ?>
 	</footer><!-- .entry-footer -->
 
+<?php tha_entry_bottom(); ?>
+
 </article><!-- .entry -->
+
+<?php 
+tha_entry_after();

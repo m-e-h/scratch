@@ -43,4 +43,5 @@
 
 </article><!-- .entry -->
 
-<?php tha_entry_after(); ?>
+<?php 
+tha_entry_after();

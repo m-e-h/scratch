@@ -7,6 +7,8 @@
 
 <article <?php hybrid_attr( 'post' ); ?>>
 
+<?php tha_entry_top(); ?>
+
 <?php if ( is_single( get_the_ID() ) ) : ?>
 
 	<?php if ( get_option( 'show_avatars' ) ) : // If avatars are enabled. ?>
@@ -43,4 +45,9 @@
 
 <?php endif; // End single post check. ?>
 
+<?php tha_entry_bottom(); ?>
+
 </article><!-- .entry -->
+
+<?php 
+tha_entry_after();

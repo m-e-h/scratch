@@ -6,10 +6,14 @@
   padding: 8px 15px;
   @include margin-space(n n $base-spacing-unit-sm);
   list-style: none;
-  background-color: $grey-100;
+  background-color: #fff;
+  border: 1px solid $grey-300;
   border-radius: $base-radius;
   cursor: default;
 
+  @include sm-only {
+    margin-top: $base-spacing-unit-sm;
+  }
   &>span {
   display: inline-block;
   }

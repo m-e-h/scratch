@@ -32,7 +32,7 @@ textarea {
     &:focus {
     outline: thin dotted \9; /* IE6-9 */
     border-color: lighten($color-links, 20);
-    outline: 0; 
+    outline: 0;
     }
 
     &[disabled] {
@@ -98,22 +98,49 @@ select[multiple] {
 label,
 legend {
   display: block;
-  font-weight: 600;
-  margin-bottom: $base-spacing-unit-sm; 
+  font-weight: 500;
+  color: $color-text-light;
 }
 
 fieldset {
   border-width: 0;
-  padding: 0; 
+  padding: 0;
 }
 
 input[type="checkbox"],
 input[type="radio"] {
-  display: inline; 
+  display: inline;
 }
 
 label > .label-body {
   display: inline-block;
   font-weight: normal;
-  margin-left: $base-spacing-unit-sm; 
+  margin-left: $base-spacing-unit-sm;
+}
+
+.search-form {
+position: relative;
+}
+
+.widget_search {
+padding: $base-spacing-unit-tiny;
+}
+
+input[type=search] {
+font-size: $base-font-size;
+margin: 0;
+padding: $base-spacing-unit-tiny;
+width: 100%;
+appearance: none;
+}
+
+input[type="submit"].search-submit {
+border-bottom-left-radius: 0;
+border-top-left-radius: 0;
+outline: 0;
+padding: 0 $base-spacing-unit-sm;
+position: absolute;
+top: 0;
+right: 0;
+bottom: 0;
 }

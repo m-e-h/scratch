@@ -1,0 +1,26 @@
+
+
+.featured-media {
+background: $grey-700;
+display: block;
+margin: -20px -20px 26px;
+overflow: hidden;
+}
+
+.featured-media > a {
+display: block;
+line-height: 0;
+}
+
+@include md {
+.featured-media {
+margin-left: -40px;
+margin-right: -40px;
+margin-top: -40px;
+}
+}
+
+.featured-media img {
+display: block;
+margin: 0 auto;
+}

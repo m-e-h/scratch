@@ -98,24 +98,65 @@ $yellow-flat-400:   #FFEA00;
 $yellow-flat-700:   #FFD600;
 
 
+// Indigo
+
+$indigo-50:         #E8EAF6;
+$indigo-100:        #C5CAE9;
+$indigo-200:        #9FA8DA;
+$indigo-300:        #7986CB;
+$indigo-400:        #5C6BC0;
+$indigo-500:        #3F51B5;
+$indigo-600:        #3949AB;
+$indigo-700:        #303F9F;
+$indigo-800:        #283593;
+$indigo-900:        #1A237E;
+
+$indigo-flat-100:     #8C9EFF;
+$indigo-flat-200:     #536DFE;
+$indigo-flat-400:     #3D5AFE;
+$indigo-flat-700:     #304FFE;
+
+
+// Teal
+$teal-50 :        #E0F2F1;
+$teal-100:        #B2DFDB;
+$teal-200:        #80CBC4;
+$teal-300:        #4DB6AC;
+$teal-400:        #26A69A;
+$teal-500:        #009688;
+$teal-600:        #00897B;
+$teal-700:        #00796B;
+$teal-800:        #00695C;
+$teal-900:        #004D40;
+
+$teal-flat-100:       #A7FFEB;
+$teal-flat-200:       #64FFDA;
+$teal-flat-400:       #1DE9B6;
+$teal-flat-700:       #00BFA5;
+
+
+$black:             #000000;
+$white:             #ffffff;
 // Brand
 
-$color-primary:         	$blue-500;
+$color-primary:         	$grey-400;
+$color-primary-dark:      darken($color-primary, 50);
 $color-secondary:       	$green-800;
 
 
 // Accents
 
-$color-grey-ui: 			$grey-200;
+$color-grey-ui: 			$grey-300;
 
 
 // Text
 
 $color-text:            	$grey-900;
+$color-text-light:        $grey-600;
 
-$color-links:           	$color-primary;
-$color-links-hover:     	darken($color-links, 10);
-$color-links-visited:     	darken($color-links, 20);
+$color-links:           	$blue-500;
+$color-links-hover:     	darken($color-links, 15);
+$color-links-visited:     	mix($color-links, $grey-600);
 
 
 
@@ -128,7 +169,7 @@ $color-header: 				$color-primary;
 $btn-text:        			$color-text;
 $btn-bg:  					$color-grey-ui;
 $btn-bg-hover:  			lighten($btn-bg, 5);
-$btn-bg-active:  			darken($btn-bg, 10);
+$btn-bg-active:  			darken($btn-bg, 5);
 $btn-primary-bg:  			$color-primary;
 $btn-primary-text:  		#fff;
 
@@ -160,3 +201,14 @@ $color-grey-lightest: 		$grey-50;
 
 
 $color-white: 				#fff;
+
+
+
+// Formats
+
+$format-standard:     $indigo-300;
+$format-image:        $teal-300;
+$format-gallery:       $yellow-300;
+$format-video:        $red-300;
+$format-quote:        $green-300;
+$format-audio:        $green-300;

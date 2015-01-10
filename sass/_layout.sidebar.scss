@@ -1,0 +1,19 @@
+
+
+
+.widget {
+  background-color: #fff;
+  border: 1px solid $grey-300;
+  border-radius: $base-radius;
+  @include padding-space($base-spacing-unit-tiny $base-spacing-unit-sm $base-spacing-unit-tiny);
+  @include margin-space(n n $base-spacing-unit-tiny);
+  overflow: hidden;
+  width: 100%;
+}
+
+.widget-title {
+	@include padding-space(n n $base-spacing-unit-tiny / 2);
+	@include margin-space(n n $base-spacing-unit-tiny / 2);
+	border-bottom: 1px solid $color-grey-ui;
+	line-height: 1;
+}

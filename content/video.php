@@ -3,6 +3,7 @@
  * @package Scratch
  */
 ?>
+<?php tha_entry_before(); ?>
 
 <article <?php hybrid_attr( 'post' ); ?>>
 
@@ -45,5 +46,5 @@
 	  <?php scratch_entry_meta(); ?>
 	  <?php scratch_post_terms(); ?>
 	</footer><!-- .entry-footer -->
-	
+
 </article><!-- .entry -->

@@ -36,10 +36,17 @@ gulp.task('composer', function () {
 // Optimize Images
 gulp.task('images', function () {
   return gulp.src('images/**/*')
-    .pipe($.cache($.imagemin({
+    .pipe($.imagemin({
       progressive: true,
-      interlaced: true
-    })))
+      interlaced: true,
+      removeUselessStrokeAndFill: true,
+      removeEmptyAttrs: true
+    }))
+    .pipe(gulp.dest('images'))
+    .pipe($.if('*.svg', $.rename({
+			prefix: 'svg-',
+			extname: '.php'
+		})))
     .pipe(gulp.dest('images'));
 });
 

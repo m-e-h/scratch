@@ -45,18 +45,15 @@ text-rendering: auto;
 }
 
 @mixin typo-blockquote($colorContrast: false) {
-  @include font-size($base-font-size + 8px, false);
+  @include font-size($base-font-size + 4px);
   font-weight: 300;
   font-style: italic;
-  line-height: 1;
   letter-spacing: 0.08em;
   &:before {
-    content: '“';
     opacity: 0.54;
   }
 
   &:after {
-    content: '”';
     opacity: 0.54;
   }
 
@@ -118,20 +115,20 @@ text-rendering: auto;
 
 
 
-@mixin shadow-z1() {
-  box-shadow: 0 1px 1.5px 0 rgba(0,0,0,0.12), 0 1px 1px 0 rgba(0,0,0,0.24);
+@mixin shadow-z1($color:$black) {
+  box-shadow: 0 1px 1.5px 0 rgba($color,0.12), 0 1px 1px 0 rgba($color,0.24);
 }
-@mixin shadow-z2() {
-  box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 5px 0 rgba(0,0,0,0.23);
+@mixin shadow-z2($color:$black) {
+  box-shadow: 0 2px 5px 0 rgba($color,0.16), 0 2px 5px 0 rgba($color,0.23);
 }
-@mixin shadow-z3() {
-  box-shadow: 0 10px 10px 0 rgba(0,0,0,0.19), 0 6px 3px 0 rgba(0,0,0,0.23);
+@mixin shadow-z3($color:$black) {
+  box-shadow: 0 10px 10px 0 rgba($color,0.19), 0 6px 3px 0 rgba($color,0.23);
 }
-@mixin shadow-z4() {
-  box-shadow: 0 14px 14px 0 rgba(0,0,0,0.25), 0 10px 5px 0 rgba(0,0,0,0.22);
+@mixin shadow-z4($color:$black) {
+  box-shadow: 0 14px 14px 0 rgba($color,0.25), 0 10px 5px 0 rgba($color,0.22);
 }
-@mixin shadow-z5() {
-  box-shadow: 0 19px 19px 0 rgba(0,0,0,0.30), 0 15px 6px 0 rgba(0,0,0,0.22);
+@mixin shadow-z5($color:$black) {
+  box-shadow: 0 19px 19px 0 rgba($color,0.30), 0 15px 6px 0 rgba($color,0.22);
 }
 
 $animation-curve-fast-out-slow-in: cubic-bezier(0.4, 0, 0.2, 1);

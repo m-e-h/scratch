@@ -9,14 +9,15 @@
 $scratch_dir = trailingslashit( get_template_directory() );
 
 /* Load the Hybrid Core framework and theme files. */
-require_once( $scratch_dir . 'library/hybrid.php'           );
-require_once( $scratch_dir . 'inc/tha-theme-hooks.php'  );
-require_once( $scratch_dir . 'inc/custom-background.php'    );
-require_once( $scratch_dir . 'inc/custom-header.php'        );
-require_once( $scratch_dir . 'inc/customizer.php'           );
-require_once( $scratch_dir . 'inc/template-tags.php'        );
-require_once( $scratch_dir . 'inc/theme.php'                );
-require_once( $scratch_dir . 'inc/hybrid-mods.php'          );
+require_once( $scratch_dir . 'library/hybrid.php'             );
+require_once( $scratch_dir . 'inc/vendor/tha-theme-hooks.php' );
+require_once( $scratch_dir . 'inc/custom-background.php'      );
+require_once( $scratch_dir . 'inc/custom-header.php'          );
+require_once( $scratch_dir . 'inc/customizer.php'             );
+require_once( $scratch_dir . 'inc/template-tags.php'          );
+require_once( $scratch_dir . 'inc/theme-registers.php'        );
+require_once( $scratch_dir . 'inc/template-actions.php'       );
+require_once( $scratch_dir . 'inc/hybrid-mods.php'            );
 
 /* Launch the Hybrid Core framework. */
 new Hybrid();

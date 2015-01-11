@@ -68,65 +68,8 @@ function scratch_loop_nav() {
 endif;
 
 
-if ( ! function_exists( 'scratch_comments_nav' ) ) :
-/**
- * Displays comment pagination.
- */
-function scratch_comments_nav() {
-
-if ( get_option( 'page_comments' ) && 1 < get_comment_pages_count() ) : ?>
-
-	<nav class="comments-nav" role="navigation" aria-labelledby="comments-nav-title">
-
-		<h3 id="comments-nav-title" class="screen-reader-text"><?php _e( 'Comments Navigation', 'scratch' ); ?></h3>
-
-		<?php previous_comments_link( _x( '&larr; Previous', 'comments navigation', 'scratch' ) ); ?>
-
-		<span class="page-numbers"><?php
-			// Translators: Comments page numbers. 1 is current page and 2 is total pages.
-			printf( __( 'Page %1$s of %2$s', 'scratch' ), get_query_var( 'cpage' ) ? absint( get_query_var( 'cpage' ) ) : 1, get_comment_pages_count() );
-		?></span>
-
-		<?php next_comments_link( _x( 'Next &rarr;', 'comments navigation', 'scratch' ) ); ?>
-
-	</nav><!-- .comments-nav -->
-
-	<?php
-
-endif;
-}
-endif;
 
 
-if ( ! function_exists( 'scratch_comments_error' ) ) :
-/**
- * Displays when comments are closed.
- */
-function scratch_comments_error() {
-
-if ( pings_open() && ! comments_open() ) : ?>
-
-	<p class="comments-closed pings-open">
-		<?php
-			// Translators: The two %s are placeholders for HTML. The order can't be changed.
-			printf( __( 'Comments are closed, but %strackbacks%s and pingbacks are open.', 'scratch' ), '<a href="' . esc_url( get_trackback_url() ) . '">', '</a>' );
-		?>
-	</p><!-- .comments-closed .pings-open -->
-	<?php
-
-endif;
-
-if ( ! comments_open() ) : ?>
-
-	<p class="comments-closed">
-		<?php _e( 'Comments are closed.', 'scratch' ); ?>
-	</p><!-- .comments-closed -->
-
-	<?php
-
-endif;
-}
-endif;
 
 
 if ( ! function_exists( 'scratch_entry_meta' ) ) :
@@ -148,6 +91,8 @@ function scratch_entry_meta() {  ?>
 	edit_post_link( esc_html__( 'Edit', 'scratch' ), '<span class="edit-link">', '</span>' );
 }
 endif;
+
+
 if ( ! function_exists( 'scratch_post_terms' ) ) :
 /**
  * Loop Title and Description

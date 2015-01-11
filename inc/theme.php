@@ -24,7 +24,7 @@ add_action( 'wp_enqueue_scripts', 'scratch_styles', 5 );
 
 //add_action( 'tha_entry_before', 'scratch_do_format_icon' );
 
-add_filter( 'hybrid_attr_sidebar', 'scratch_sidebar_footer_widgets_class', 10, 2 );
+add_filter( 'hybrid_attr_sidebar', 'scratch_footer_widgets_class', 10, 2 );
 
 
 function scratch_image_sizes() {
@@ -108,7 +108,7 @@ function scratch_do_format_icon() {
 
 
 
-function scratch_sidebar_footer_widgets_class( $attr, $context ) {
+function scratch_footer_widgets_class( $attr, $context ) {
 	if ( 'footer-widgets' === $context ) {
 		global $sidebars_widgets;
 		if ( is_array( $sidebars_widgets ) && !empty( $sidebars_widgets[ $context ] ) ) {

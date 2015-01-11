@@ -29,6 +29,9 @@ add_action( 'after_setup_theme', 'scratch_setup', 5 );
  */
 function scratch_setup() {
 
+	/* Let WordPress manage the document title. */
+	add_theme_support( 'title-tag' );
+
 	/* Enable custom template hierarchy. */
 	add_theme_support( 'hybrid-core-template-hierarchy' );
 
@@ -75,6 +78,12 @@ function scratch_setup() {
 if ( ! isset( $content_width ) ) {
 	$content_width = 1200;
 }
+
+
+/* Remove unwanted default Hybrid head elements. */
+remove_action( 'wp_head', 'hybrid_doctitle',      0 );
+remove_action( 'wp_head', 'hybrid_meta_template', 1 );
+remove_action( 'wp_head', 'hybrid_link_pingback', 3 );
 
 
 

@@ -51,14 +51,6 @@ function scratch_setup() {
 	/*  Post Thumbnails on posts and pages. */
 	add_theme_support( 'post-thumbnails' );
 
-	/**
-	 * Let WordPress manage the document title.
-	 * By adding theme support, we declare that this theme does not use a
-	 * hard-coded <title> tag in the document head, and expect WordPress to
-	 * provide it for us.
-	 */
-	//add_theme_support( 'title-tag' );
-
 	/* Theme layouts. */
 	add_theme_support( 'theme-layouts', array(
 			'1c'    => __( 'Single Column', 'platform' ),

@@ -4,14 +4,13 @@
 
 .entry {
   background-color: #fff;
-  //border: 1px solid $grey-300;
-  border-top: 6px solid $grey-500;
-  border-radius: 0 0 $base-radius $base-radius;
+  border: 1px solid $grey-300;
+  border-radius: $base-radius;
   position: relative;
   @include padding-space($base-spacing-unit-sm $base-spacing-unit-sm $base-spacing-unit-tiny);
   @include margin-space(0 n $base-spacing-unit-sm);
   overflow: hidden;
-  @include shadow-z1();
+  //@include shadow-z1();
   &:first-of-type {
 
 }

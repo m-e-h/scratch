@@ -19,7 +19,7 @@ function scratch_custom_background_setup() {
 	add_theme_support(
 		'custom-background',
 		array(
-			'default-color'    => 'ffffff',
+			'default-color'    => 'f5f5f5',
 			'default-image'    => '',
 			'wp-head-callback' => 'scratch_custom_background_callback',
 		)

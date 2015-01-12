@@ -9,6 +9,17 @@
 
 <?php tha_entry_top(); ?>
 
+	<?php
+	// Display a featured image if one has been set.
+	get_the_image(
+		array(
+			'size'   => 'scratch-full',
+			'before' => '<div class="featured-media image">',
+			'after'  => '</div>',
+		)
+	);
+	?>
+
 	<header class="entry-header">
 		<?php get_template_part( 'partials/entry', 'title' ); ?>
 	</header><!-- .entry-header -->
@@ -26,17 +37,6 @@
 	</footer><!-- .entry-footer -->
 
 <?php else : // If not viewing a single post. ?>
-
-	<?php
-	// Display a featured image if one has been set.
-	get_the_image(
-		array(
-			'size'   => 'scratch-full',
-			'before' => '<div class="featured-media image">',
-			'after'  => '</div>',
-		)
-	);
-	?>
 
 	<div <?php hybrid_attr( 'entry-summary' ); ?>>
 		<?php the_excerpt(); ?>

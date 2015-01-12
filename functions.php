@@ -13,6 +13,7 @@ require_once( $scratch_dir . 'library/hybrid.php'             );
 require_once( $scratch_dir . 'inc/vendor/tha-theme-hooks.php' );
 require_once( $scratch_dir . 'inc/custom-background.php'      );
 require_once( $scratch_dir . 'inc/custom-header.php'          );
+require_once( $scratch_dir . 'inc/custom-colors.php'          );
 require_once( $scratch_dir . 'inc/customizer.php'             );
 require_once( $scratch_dir . 'inc/template-tags.php'          );
 require_once( $scratch_dir . 'inc/general.php'                );

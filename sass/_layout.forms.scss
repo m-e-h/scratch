@@ -22,7 +22,8 @@ textarea {
     box-sizing: border-box;
     display: inline-block;
     width: 100%;
-    border: 1px solid $color-grey-ui;
+    background-color: $grey-200;
+    border: 1px solid $grey-300;
     height: $base-spacing-unit-lg;
     padding: 7px 10px; /* The 6px vertically centers text on FF, ignored by Webkit */
     border-radius: $base-radius;
@@ -33,6 +34,7 @@ textarea {
     outline: thin dotted \9; /* IE6-9 */
     border-color: lighten($color-links, 20);
     outline: 0;
+    background-color: #fff;
     }
 
     &[disabled] {

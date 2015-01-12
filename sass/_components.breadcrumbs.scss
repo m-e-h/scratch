@@ -4,16 +4,13 @@
 
 .breadcrumbs {
   padding: 8px 15px;
-  @include margin-space(n n $base-spacing-unit-sm);
+  @include margin-space($base-spacing-unit-tiny *-.4 n $base-spacing-unit-tiny);
   list-style: none;
-  background-color: #fff;
-  border: 1px solid $grey-300;
+  background-color: $color-grey-ui;
+  //border: 1px solid $grey-300;
   border-radius: $base-radius;
   cursor: default;
 
-  @include sm-only {
-    margin-top: $base-spacing-unit-sm;
-  }
   &>span {
   display: inline-block;
   }

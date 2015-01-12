@@ -23,6 +23,7 @@ code {
   display: inline-block;
   border-radius: $base-radius;
   border: 1px solid $grey-900;
+  tab-size: 4;
 }
 
 kbd {
@@ -35,24 +36,11 @@ kbd {
 }
 
 .form-allowed-tags {
-  background-color: $grey-100;
-  color: $grey-700;
-  border-radius: $base-radius;
+  color: $color-text-light;
   code {
-  @include font-size(15px);
-  margin-bottom: 0;
-  max-width: 100%;
-  overflow: auto;
-  padding: 3% 10% 3% 5%;
-  color: $grey-50;
-  position: relative;
-  tab-size: 4;
-  transform: translate(-250px, 0);
-  transition: transform 0.3s ease-out;
-  position: fixed;
-  }
-  &:hover code {
-    transform: translate(0, 0);
-    position: absolute;
+    color: $color-text-light;
+    border: 0;
+    background-color: $grey-50;
+    @include padding-space($base-spacing-unit-sm / 2);
   }
 }

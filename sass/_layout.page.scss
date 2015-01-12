@@ -9,8 +9,7 @@
 }
 
 .content {
-    position: relative;
-    padding-top: 60px;
+  position: relative;
   @include margin-space(n n $base-spacing-unit-sm);
 
   @include md {
@@ -20,6 +19,12 @@
   @include lg {
     margin-right: $base-spacing-unit-lg;
   }
+}
+
+.wrap {
+  max-width: $site-width;
+  margin: 0 auto;
+  @include padding-space(n $base-spacing-unit-sm);
 }
 
 // ------------------------------------*\
@@ -38,7 +43,7 @@
 .layout-2c-l {
   @include lg {
     .sidebar__primary {
-      width: 33.33%;
+      width: 30%;
       max-width: 100%;
       display: inline-block;
       margin: 0;
@@ -48,7 +53,7 @@
     }
 
     .content-area {
-      width: 66.66%;
+      width: 70%;
       display: inline-block;
       margin: 0;
       padding: 0;
@@ -85,84 +90,12 @@
 
 
 
-
-
-
-
-
-
-
-#comments {
-  .depth-1 {
-    &> article > .comment-meta {
-      text-align: left;
-
-      &> .avatar {
-          float: left;
-          margin-right: 1.5rem;
-          margin-left: 0;
-        }
-      }
-  }
-}
-
-li.comment, li.ping {
-clear: both;
-}
-
-li.ping, .comment-content {
-border: 0;
-background: $grey-100;
-border-radius: 2px;
-position: relative;
-}
-
-li.ping:before, .comment-content:before {
-position: absolute;
-top: -20px;
-width: 0;
-height: 0;
-border-right: 13px solid transparent;
-border-bottom: 26px solid #f5f5f5;
-border-left: 13px solid transparent;
-content: "";
-}
-
-.comment.odd > article > .comment-content:before {
-right: 15px;
-}
-
-.comment.odd > article > .comment-meta {
-text-align: right;
-}
-
-.comment.odd > article > .comment-meta > .avatar {
-float: right;
-}
-
-.comment-reply-link, .comment-reply-login {
-  border-radius: 0 0 2px 2px;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   .site-container {
+        margin-top: 60px;
         @include padding-space($base-spacing-unit-sm $base-spacing-unit-sm 0);
 
         @include md {
+            //padding-top: $base-spacing-unit;
             max-width: $site-width;
             min-height: initial;
             display: block;
@@ -170,6 +103,9 @@ float: right;
             text-align: left;
             margin: 0 auto;
         }
+        // @include lg {
+        //   padding-top: $base-spacing-unit-lg;
+        // }
     >* {
       @include font-size($base-font-size, false);
     }
@@ -178,38 +114,6 @@ float: right;
   body {
     overflow-y: scroll;
   }
-
-.loop-meta {
-  border-radius: $base-radius $base-radius 0 0;
-  @include padding-space();
-  @include margin-space(n n $base-spacing-unit-sm);
-  background-color: #fff;
-}
-
-
-
-
-.entry-summary {
-position: relative;
-}
-
-.read-more__fade {
-display: block;
-position: absolute;
-width: 100%;
-bottom: 0;
-height: 6rem;
-padding-top: 6rem;
-padding-right: 2rem;
-text-align: center;
-font-style: italic;
-background-image: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.7), #fff);
-
-a {
-//color: $grey-500;
-font-weight: 500;
-}
-}
 
 .entry-byline {
 display: none;
@@ -222,65 +126,4 @@ padding-top: $base-spacing-unit;
 
 
 
-.pagination {
-@include padding-space(6px n);
-text-align: center;
-}
 
-.page-numbers {
-border: 1px solid $color-grey-ui;
-border-radius: $base-radius;
-display: inline-block;
-font-size: 12px;
-font-size: 1.2rem;
-height: 2em;
-line-height: 2;
-margin: 0 0.3333em 0 0;
-text-align: center;
-width: 2em;
-&.current {
-  cursor: default;
-}
-&.dots {
-  border: 0;
-  cursor: default;
-}
-}
-
-.post-navigation {
-.nav-links {
-overflow: hidden;
-position: relative;
-font-size: 0;
-height: $base-spacing-unit-lg;
-
-&:before {
-content: "";
-border-left: 2px solid $color-grey-ui;
-height: 100%;
-position: absolute;
-top: 0;
-left: 50%;
-}
-}
-
-.nav-previous, .nav-next {
-  @include font-size($base-font-size, false);
-  display: inline-block;
-  width: 50%;
-  position: relative;
-  line-height: $base-spacing-unit-lg;
-
-  a {
-    line-height: $base-spacing-unit-lg;
-    width: 100%;
-  }
-}
-
-.nav-previous {
-text-align: center;
-}
-.nav-next {
-text-align: center;
-}
-}

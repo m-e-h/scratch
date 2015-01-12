@@ -101,7 +101,7 @@ jQuery( document ).ready( function() {
 	} ); // wp.customize
 
 	/*
-	 * Handles the Primary color for the theme.  This color is used for various elements and at different 
+	 * Handles the Primary color for the theme.  This color is used for various elements and at different
 	 * shades. It must set an rgba color value to handle the "shades".
 	 */
 	wp.customize( 'color_primary', function( value ) {
@@ -112,7 +112,7 @@ jQuery( document ).ready( function() {
 
 			/* special case: hover */
 
-			jQuery( '.entry-title a, .mejs-button button' ).
+			jQuery( '.mejs-button button' ).
 				hover(
 					function() {
 						jQuery( this ).css( 'color', to );
@@ -126,7 +126,6 @@ jQuery( document ).ready( function() {
 			); // .hover
 
 			jQuery( '.wp-playlist-light .wp-playlist-item, .mejs-overlay-button' ).
-				not( '#header a, #footer a, .entry-title a, .entry-author a, .wp-playlist a, .mejs-button button, .loop-pagination a, .comment-reply-link, .comment-reply-login' ).
 				hover(
 					function() {
 						jQuery( this ).css( 'color', to );
@@ -137,7 +136,7 @@ jQuery( document ).ready( function() {
 					}
 			); // .hover
 
-			jQuery( "input[type='submit'], input[type='reset'], input[type='button'], button, .comment-reply-link, .page-links a" ).
+			jQuery( "input[type='submit'], input[type='reset'], input[type='button'], button, .comment-reply-link" ).
 				not( '.menu-toggle button, .mejs-button button' ).
 				hover(
 					function() {
@@ -154,8 +153,7 @@ jQuery( document ).ready( function() {
 			jQuery( 'label.focus, legend, pre, .form-allowed-tags code, .required, .line-through' ).
 				css( 'color', to );
 
-			jQuery( 'a, .mejs-overlay-button' ).
-				not( '#header a, #footer a, .entry-title a, .entry-author a, .wp-playlist a, .loop-pagination a, .comment-reply-link, .comment-reply-login' ).
+			jQuery( '.mejs-overlay-button' ).
 				css( 'color', 'rgba( ' + rgb + ', 0.75 )' );
 
 			/* background color */
@@ -163,11 +161,11 @@ jQuery( document ).ready( function() {
 			jQuery( '.mejs-time-rail .mejs-time-loaded' ).
 				css( 'background-color', to );
 
-			jQuery( ".page-links a, input[type='submit'], input[type='reset'], input[type='button'], button, .comment-reply-link" ).
+			jQuery( "input[type='submit'], input[type='reset'], input[type='button'], button, .comment-reply-link" ).
 				not( '.menu-toggle button, .mejs-button button' ).
 				css( 'background-color', 'rgba( ' + rgb + ', 0.75 )' );
 
-			jQuery( 'legend, pre, .form-allowed-tags code' ).
+			jQuery( '.site-header, .site-branding, legend, pre, .form-allowed-tags code' ).
 				css( 'background-color', 'rgba( ' + rgb + ', 0.1 )' );
 
 			/* border color */

@@ -3,21 +3,14 @@
 .featured-media {
 background: $grey-700;
 display: block;
-margin: -20px -20px 26px;
+@include margin-space($base-spacing-unit-sm *-1 $base-spacing-unit-sm *-1 $base-spacing-unit-tiny);
 overflow: hidden;
+border-radius: $base-radius $base-radius 0 0
 }
 
 .featured-media > a {
 display: block;
 line-height: 0;
-}
-
-@include md {
-.featured-media {
-margin-left: -40px;
-margin-right: -40px;
-margin-top: -40px;
-}
 }
 
 .featured-media img {

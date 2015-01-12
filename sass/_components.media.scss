@@ -44,7 +44,7 @@ img {
   }
 
 .gallery-icon {
-  padding: 0 $base-spacing-unit-sm $base-spacing-unit-sm 0;
+
 }
 
 .gallery-icon a {
@@ -64,9 +64,11 @@ img {
 
 .gallery-item {
   display: inline-block;
-  text-align: center;
+  //text-align: center;
   vertical-align: top;
   width: 100%;
+  position: relative;
+  padding: 0 $base-spacing-unit-sm $base-spacing-unit-sm 0;
 }
 
 .gallery-columns-2 .gallery-item {
@@ -121,6 +123,34 @@ img {
 
 .wp-caption .wp-caption-text {
   margin: 0.8075em 0;
+}
+
+
+
+
+.gallery-item .gallery-caption {
+background: rgba(28,30,31,.5);
+color: #fff;
+font-size: 14px;
+line-height: 1.65;
+max-height: 50%;
+opacity: 0;
+overflow: hidden;
+padding: 10px;
+position: absolute;
+-webkit-transition: all,.2s ease-in-out;
+transition: all,.2s ease-in-out;
+visibility: hidden;
+width: 100%;
+}
+
+
+.gallery-item:hover .gallery-caption {
+opacity: 1;
+-ms-transform: translate(0,-100%);
+-webkit-transform: translate(0,-100%);
+transform: translate(0,-100%);
+visibility: visible;
 }
 
 /**

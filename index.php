@@ -27,20 +27,15 @@ get_header(); ?>
 
 				<?php hybrid_get_content_template(); // Loads the content/*.php template. ?>
 
-			<?php
-			if ( is_singular() ) :
-			  scratch_loop_nav();
-			  comments_template( '', true );
-			endif; // End check for single post.
-			?>
+				<?php get_template_part( 'partials/post', 'navigation' ); ?>
+
+				<?php if ( is_singular() ) :
+				  comments_template( '', true );
+				endif; // End check for single post. ?>
 
 			<?php endwhile; // End loop. ?>
 
-			<?php
-  				if ( is_home() || is_archive() || is_search() ) :
-  				scratch_loop_nav();
-  				endif; // End nav-loop.
-			?>
+			<?php get_template_part( 'partials/posts', 'pagination' ); ?>
 
 		<?php else : //If no content found. ?>
 

@@ -1,7 +1,7 @@
 <?php
 /**
- * Handles the custom colors feature for the theme.  This feature allows the theme or child theme author to 
- * set a custom color by default.  However the user can overwrite this default color via the theme customizer 
+ * Handles the custom colors feature for the theme.  This feature allows the theme or child theme author to
+ * set a custom color by default.  However the user can overwrite this default color via the theme customizer
  * to a color of their choosing.
  *
  * @package    Scratch
@@ -47,7 +47,7 @@ final class Scratch_Custom_Colors {
 
 		/* Delete the cached data for this feature. */
 		add_action( 'update_option_theme_mods_' . get_stylesheet(), array( $this, 'cache_delete' ) );
-		
+
 		/* Visual editor colors */
 		add_action( 'wp_ajax_scratch_editor_styles',         array( $this, 'editor_styles_callback' ) );
 		add_action( 'wp_ajax_no_priv_scratch_editor_styles', array( $this, 'editor_styles_callback' ) );
@@ -127,32 +127,26 @@ final class Scratch_Custom_Colors {
 		$rgb = join( ', ', hybrid_hex_to_rgb( $hex ) );
 		/* === Color === */
 		$style .= "
-				a:hover .entry-subtitle,
-				a:focus .entry-subtitle,
-				.wp-playlist-light .wp-playlist-item:hover, 
+				.wp-playlist-light .wp-playlist-item:hover,
 				.wp-playlist-light .wp-playlist-item:focus,
-				.mejs-button button:hover, 
+				.mejs-button button:hover,
 				.mejs-button button:focus,
-				.mejs-overlay-button:hover, 
+				.mejs-overlay-button:hover,
 				.mejs-overlay-button:focus,
-				label.focus,
-				legend,
-				pre,
-				.form-allowed-tags code,
 				.required,
 				.line-through
 				{ color: #{$hex}; }
 			";
 		$style .= "
-				a,
 				.format-quote blockquote::before,
 				.format-quote blockquote::after,
 				.mejs-overlay-button
 				{ color: rgba( {$rgb}, 0.75 ); }
 			";
 		/* === Background Color === */
-		$style .= "::selection { background-color: #{$hex}; }";
 		$style .= "
+				.site-header,
+				.site-branding,
 				input[type='submit']:hover,
 				input[type='submit']:focus,
 				input[type='reset']:hover,
@@ -163,13 +157,10 @@ final class Scratch_Custom_Colors {
 				button:focus,
 				.comment-reply-link:hover,
 				.comment-reply-link:focus,
-				.page-links a:hover,
-				.page-links a:focus,
-				.mejs-time-rail .mejs-time-loaded 
+				.mejs-time-rail .mejs-time-loaded
 				{ background-color: #{$hex}; }
 			";
 		$style .= "
-				.page-links a,
 				input[type='submit'],
 				input[type='reset'],
 				input[type='button'],
@@ -177,16 +168,12 @@ final class Scratch_Custom_Colors {
 				.comment-reply-link
 				{ background-color: rgba( {$rgb}, 0.75 ); }
 			";
-		$style .= "legend, pre, .form-allowed-tags code { background-color: rgba( {$rgb}, 0.1 ); }";
-		/* === Border Color === */
-		$style .= "a:focus img { border-color: #{$hex}; }";
-		$style .= "legend, pre, .form-allowed-tags code { border-color: rgba( {$rgb}, 0.15 ); }";
 		/* === Border Bottom Color === */
 		$style .= "ins, u { border-bottom-color: #{$hex}; }";
 		$style .= "
 				blockquote.alignright,
 				blockquote.alignleft,
-				blockquote.aligncenter 
+				blockquote.aligncenter
 				{ border-bottom-color: rgba( {$rgb}, 0.25 ); }
 			";
 		/* === Border Top Color === */
@@ -196,7 +183,7 @@ final class Scratch_Custom_Colors {
 	}
 
 	/**
-	 * Registers the customize settings and controls.  We're tagging along on WordPress' built-in 
+	 * Registers the customize settings and controls.  We're tagging along on WordPress' built-in
 	 * 'Colors' section.
 	 *
 	 * @since  1.0.0

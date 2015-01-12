@@ -179,9 +179,16 @@ color: mix($color-text, $color-text-light);
 
 .site-title {
   font-weight: 400;
+  a {
+    line-height: 60px;
+  }
 }
 
 .site-description {
   @include font-size($base-font-size * 1.5);
 }
 
+.entry-summary p {
+@include font-size(18px);
+font-weight: 300;
+}

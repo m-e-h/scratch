@@ -5,7 +5,7 @@
 .site-info {
 line-height: 50px;
 color: rgba(255, 255, 255, 0.9);
-background-color: rgba(51, 51, 51, 0.2);
+background-color: rgba($grey-900, 0.2);
 
 a {
     color: inherit;
@@ -17,7 +17,7 @@ a {
     margin: 0;
     width: 100%;
     text-align: left;
-    background-color: $color-primary;
+    background-color: $footer-bg;
       a {
     color: inherit;
   }
@@ -58,21 +58,21 @@ span.comments-link:before {
     .sidebar.sidebar__footer-widgets {
       display: block;
       font-size: 0;
-      margin: 0;
-      padding: 0;
+      margin: 0 auto;
       text-align: left;
       width: 100%;
       display: flex;
       flex-wrap: wrap;
-      justify-content: space-around;
-      @include padding-space($base-spacing-unit-sm n);
+      justify-content: space-between;
+      @include padding-space($base-spacing-unit-sm n n);
 
         > * {
           @include font-size($base-font-size);
         }
         .widget {
+          background-color: $footer-widget-bg;
+          border: 0;
           display: inline-block;
-          margin: 0!important;
           text-align: left;
           vertical-align: top;
           min-width: 320px;

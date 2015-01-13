@@ -3,14 +3,15 @@
 \*------------------------------------*/
 
 .breadcrumbs {
-  padding: 8px 15px;
+  text-transform: uppercase;
   overflow: hidden;
-  @include margin-space($base-spacing-unit-tiny *-.4 n $base-spacing-unit-tiny);
+  @include margin-space($base-spacing-unit-tiny *-.3 n $base-spacing-unit-tiny);
   list-style: none;
-  background-color: $color-grey-ui;
-  //border: 1px solid $grey-300;
   border-radius: $base-radius;
   cursor: default;
+  font-weight: 500;
+  @include font-size($base-font-size - 1);
+
 
   &>span {
   display: inline-block;
@@ -18,17 +19,23 @@
 
   a {
   text-decoration: none;
-  color: $grey-600;
+  color: $color-text;
+  font-weight: inherit;
+  opacity: .7;
+  transition: opacity 0.2s ease;
+  &:hover {
+    opacity: 1;
+  }
   }
 
   .sep {
     padding: 0 5px;
-    color: $grey-500;
+    color: $grey-700;
   }
 
   .trail-end {
-    font-weight: bold;
-    color: $grey-700;
+    font-weight: 500;
+    color: $color-text-light;
 
   }
 }

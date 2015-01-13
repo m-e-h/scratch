@@ -89,18 +89,6 @@ dt {
   font-weight: 700;
 }
 
-.wp-caption-text {
-  @include typo-caption();
-}
-
-.entry-meta {
-  @include typo-menu($colorContrast:true);
-}
-
-.menu-item {
-  @include typo-menu();
-}
-
 b,
 strong {
   font-weight: bold;
@@ -177,6 +165,27 @@ color: mix($color-text, $color-text-light);
     #Site specific Type
 \*------------------------------------*/
 
+.btn,
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"],
+.button {
+  @include typo-button();
+}
+
+.wp-caption-text {
+  @include typo-caption();
+}
+
+.entry-meta {
+  @include typo-menu($colorContrast:true);
+}
+
+.menu-item {
+  @include typo-menu();
+}
+
 .site-title {
   font-weight: 400;
   a {
@@ -202,9 +211,6 @@ font-weight: 300;
 .entry-summary,
 .page-content,
 .comment-content {
-  -webkit-hyphens: auto;
-  -moz-hyphens: auto;
-  -ms-hyphens: auto;
   hyphens: auto;
   word-wrap: break-word;
 }

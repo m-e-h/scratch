@@ -47,8 +47,7 @@ get_header(); ?>
 
         </article><!-- .error-404 -->
 
-<?php
-tha_entry_after();
+<?php tha_entry_after(); ?>
 
 		<?php tha_content_bottom(); ?>
 

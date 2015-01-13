@@ -9,6 +9,8 @@
   @include margin-space(n n $base-spacing-unit-sm);
   overflow: hidden;
   width: 100%;
+  hyphens: auto;
+  word-wrap: break-word;
 }
 
 .widget-title {

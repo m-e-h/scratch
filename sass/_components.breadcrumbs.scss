@@ -4,6 +4,7 @@
 
 .breadcrumbs {
   padding: 8px 15px;
+  overflow: hidden;
   @include margin-space($base-spacing-unit-tiny *-.4 n $base-spacing-unit-tiny);
   list-style: none;
   background-color: $color-grey-ui;

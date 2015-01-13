@@ -52,22 +52,26 @@ transform: translate(0,0);
 }
 
 .menu-item-has-children > a:after {
-    content: $caret-down;
-    @include font-icon();
-    color: $grey-500;
+  content: $caret-right;
+  @include font-icon();
+  color: $grey-500;
   right: 5%;
   top: 36%;
   font-size: .8em;
-
   display: inline-block;
-font: normal 10px/1 FontAwesome;
-position: absolute;
-vertical-align: text-bottom;
+  font: normal 10px/1 FontAwesome;
+  position: absolute;
+  vertical-align: text-bottom;
 }
 
 .menu-item-has-children > a.active:after {
-  //content: $caret-up;
+  content: $caret-down;
+}
+@include lg {
+  .menu-item-has-children .menu-item-has-children > a.active:after {
+    content: $caret-right;
   }
+}
 
 .sub-menu {
   margin: 0;
@@ -160,6 +164,8 @@ vertical-align: text-bottom;
       letter-spacing: 0.04em;
       height: auto;
       line-height: 50px;
+      display: inline-block;
+width: 100%;
       &:hover, &:focus {
        // background-color: $grey-200;
       }
@@ -181,6 +187,13 @@ vertical-align: text-bottom;
 .sub-menu .sub-menu.active {
 top: 0;
 position: relative;
+
+.menu-item {
+  background-color: $grey-50;
+  @include md {
+    background-color: $white;
+  }
+}
 @include md {
   position: absolute;
   }

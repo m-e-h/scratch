@@ -192,3 +192,19 @@ color: mix($color-text, $color-text-light);
 @include font-size(18px);
 font-weight: 300;
 }
+
+.breadcrumbs,
+.post-title,
+.author-description,
+.type-attachment .entry-title,
+.entry-caption,
+.entry-content,
+.entry-summary,
+.page-content,
+.comment-content {
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
+  word-wrap: break-word;
+}

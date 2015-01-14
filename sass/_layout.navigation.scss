@@ -27,28 +27,63 @@ transform: translate(0,0);
   list-style-type: none;
 }
 
+
+
+
+
+
+@include md{
+  .menu__primary {
+    position: relative;
+    width: 100%;
+    height: auto;
+    margin-top: 0;
+    transform: translate(0,0);
+    transition: none;
+    overflow-y: visible;
+  }
+
+  .menu__primary--items {
+    max-width: $site-width;
+    margin: 0 auto;
+    @include padding-space(0 $base-spacing-unit-sm);
+  }
+
+}
+
+
 .menu-item {
-  border-bottom-style: solid;
-  border-width: 1px;
-  border-color: #fff;
   padding: 0;
-  position: relative;
+
+  &:first-child {
+margin-left: 0;
+}
 
   a {
     display: block;
-    text-decoration: none;
+    padding: 0 20px;
     color: #fff;
     background-color: transparent;
     transition: background-color .2s ease-out;
     white-space: nowrap;
-    height: 60px;
-    padding: 17px 20px;
-    line-height: 1.4;
+    line-height: 60px;
 
     &:hover{
       background-color: rgba(216, 216, 216, 0.5);
     }
   }
+
+display: block;
+width: 100%;
+margin-left: 0;
+margin-right: 0;
+box-sizing: border-box;
+
+@include md {
+display: inline-block;
+float: none;
+width:auto;
+}
 }
 
 .menu-item-has-children > a:after {
@@ -56,27 +91,18 @@ transform: translate(0,0);
   @include font-icon();
   color: $grey-500;
   color: currentcolor;
-  right: 5%;
-  top: 36%;
+  padding-left: 5px;
   font-size: .8em;
   display: inline-block;
   font: normal 10px/1 FontAwesome;
-  position: absolute;
-  vertical-align: text-bottom;
+  vertical-align: middle;
+  width: 5px;
 }
 
 .menu-item-has-children > a.active:after {
   content: $caret-down;
 }
-@include lg {
-  .menu-item-has-children .menu-item-has-children > a.active:after {
-    content: $caret-right;
-  }
-}
 
-.sub-menu {
-  margin: 0;
-}
 .menu-toggle {
   width: 60px;
   height: 60px;
@@ -139,66 +165,6 @@ transform: translate(0,0);
   background-color: rgba(255, 255, 255, 0.4);
 }
 
-  .sub-menu {
-    background-color: #fff;
-    float: left;
-    border-radius: $base-radius;
-
-    display: inline-block;
-    min-width: 124px;
-    width: 100%;
-    //margin: 0 0 0 -1px;
-    position: absolute;
-    top: 60px;
-    left: -999em;
-    z-index: 99999;
-    opacity: 0;
-    border: 1px solid $color-grey-ui;
-    //@include shadow-z1();
-    transition: opacity 0.2s ease-out;
-
-    a {
-      color: $color-text;
-      padding: 0 20px;
-      font: inherit;
-      font-weight: 400;
-      letter-spacing: 0.04em;
-      height: auto;
-      line-height: 50px;
-      display: inline-block;
-width: 100%;
-      &:hover, &:focus {
-       // background-color: $grey-200;
-      }
-    }
-  }
-
-.sub-menu.active{
-      left: auto;
-      opacity: 1;
-      }
-
-  .sub-menu li {
-    border: 0;
-    display: block;
-    height: auto;
-    line-height: 1.2;
-  }
-
-.sub-menu .sub-menu.active {
-top: 0;
-position: relative;
-
-.menu-item {
-  background-color: $grey-50;
-  @include md {
-    background-color: $white;
-  }
-}
-@include md {
-  position: absolute;
-  }
-}
 
 /* Small menu */
 .menu-toggle {
@@ -213,46 +179,33 @@ position: relative;
     font-size: 1em;
   }
 
-  .menu-toggle,
-  .menu__primary.toggled .nav-menu {
+  //.menu__primary.toggled .nav-menu,
+  .menu-toggle {
     display: inline-block;
   }
 }
-@include md{
-  .menu__primary {
-    position: relative;
-    width: 100%;
-    height: auto;
-    margin-top: 0;
-    transform: translate(0,0);
-    transition: none;
-    overflow-y: visible;
-  }
 
-  .menu__primary--items {
-    max-width: $site-width;
-    margin: 0 auto;
-    @include padding-space(0 $base-spacing-unit-sm);
-  }
+.sub-menu {
+position: absolute;
+display: none;
+visibility: hidden;
+right: 0;
+width: 100%;
+margin: 0;
+text-align: left;
+background-color: #f4f4f4;
+z-index: 1000;
 
-  .sub-menu {
-    width: auto;
-    @include sm-only {
-    border-left: 0;
-    border-right: 0;
-  }
-    }
-
-    .menu-item {
-    border: none;
-    display: inline-block;
-  }
-
-.sub-menu .menu-item-has-children.active > ul {
-  left: 100%;
-  margin-left: 0;
-  top: 0;
+a {
+  color: $color-text;
 }
 
+&.active {
+display: block;
+visibility: visible;
 }
 
+@include sm-only {
+position: relative;
+}
+}

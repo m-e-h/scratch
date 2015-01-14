@@ -1360,35 +1360,91 @@ ol ul {
     list-style-type: none;
 }
 
+@media only screen and (min-width: 48em) {
+    .menu__primary {
+        overflow-y: visible; 
+        position: relative;
+        width: 100%;
+        height: auto;
+        margin-top: 0;
+        -webkit-transition: none;
+        transition: none;
+        -webkit-transform: translate(0, 0);
+        -ms-transform: translate(0, 0);
+        transform: translate(0, 0);
+    }
+
+    .menu__primary--items {
+        max-width: 1280px;
+        margin: 0 auto;
+        padding-top: 0;
+        padding-right: 16px; 
+        padding-bottom: 0;
+        padding-left: 16px;
+    }
+    @media only screen and (min-width: 48em) {
+        .menu__primary--items {
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+    }
+    @media only screen and (min-width: 64em) {
+        .menu__primary--items {
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+    }
+    @media only screen and (min-width: 48em) {
+        .menu__primary--items {
+            padding-right: 24px; 
+            padding-left: 24px;
+        }
+    }
+    @media only screen and (min-width: 64em) {
+        .menu__primary--items {
+            padding-right: 40px; 
+            padding-left: 40px;
+        }
+    }
+}
+
 .menu-item {
-    position: relative; 
+    display: block;
+    box-sizing: border-box; 
+    width: 100%;
+    margin-right: 0;
+    margin-left: 0;
     padding: 0;
-    border-width: 1px;
-    border-color: #fff;
-    border-bottom-style: solid;
+}
+.menu-item:first-child {
+    margin-left: 0;
 }
 .menu-item a {
     display: block;
-    height: 60px;
-    padding: 17px 20px;
+    padding: 0 20px;
     color: #fff;
     background-color: transparent;
-    line-height: 1.4; 
+    line-height: 60px; 
     white-space: nowrap;
-    text-decoration: none;
     -webkit-transition: background-color 0.2s ease-out;
     transition: background-color 0.2s ease-out;
 }
 .menu-item a:hover {
     background-color: rgba(216, 216, 216, 0.5);
 }
+@media only screen and (min-width: 48em) {
+    .menu-item {
+        display: inline-block;
+        float: none;
+        width: auto;
+    }
+}
 
 .menu-item-has-children > a:after {
     display: inline-block;
     display: inline-block;
-    position: absolute;
-    top: 36%;
-    right: 5%;
+    width: 5px; 
+    padding-left: 5px;
     color: #9e9e9e;
     color: currentcolor;
     font: normal 10px/1 FontAwesome;
@@ -1398,7 +1454,7 @@ ol ul {
     font-weight: normal;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    vertical-align: text-bottom; 
+    vertical-align: middle;
     text-decoration: none;
     content: "\f0da";
     text-rendering: auto;
@@ -1408,16 +1464,6 @@ ol ul {
 
 .menu-item-has-children > a.active:after {
     content: "\f0d7";
-}
-
-@media only screen and (min-width: 64em) {
-    .menu-item-has-children .menu-item-has-children > a.active:after {
-        content: "\f0da";
-    }
-}
-
-.sub-menu {
-    margin: 0;
 }
 
 .menu-toggle {
@@ -1485,64 +1531,6 @@ ol ul {
     background-color: rgba(255, 255, 255, 0.4);
 }
 
-.sub-menu {
-    display: inline-block;
-    float: left;
-    position: absolute;
-    z-index: 99999;
-    top: 60px;
-    left: -999em;
-    width: 100%;
-    min-width: 124px;
-    border: 1px solid #e0e0e0;
-    border-radius: 2px;
-    opacity: 0;
-    background-color: #fff;
-    -webkit-transition: opacity 0.2s ease-out;
-    transition: opacity 0.2s ease-out;
-}
-.sub-menu a {
-    display: inline-block;
-    width: 100%; 
-    height: auto;
-    padding: 0 20px;
-    color: #212121;
-    font: inherit;
-    font-weight: 400;
-    line-height: 50px;
-    letter-spacing: 0.04em;
-}
-
-.sub-menu.active {
-    left: auto;
-    opacity: 1;
-}
-
-.sub-menu li {
-    display: block;
-    height: auto;
-    border: 0;
-    line-height: 1.2;
-}
-
-.sub-menu .sub-menu.active {
-    position: relative; 
-    top: 0;
-}
-.sub-menu .sub-menu.active .menu-item {
-    background-color: #fafafa;
-}
-@media only screen and (min-width: 48em) {
-    .sub-menu .sub-menu.active .menu-item {
-        background-color: #fff;
-    }
-}
-@media only screen and (min-width: 48em) {
-    .sub-menu .sub-menu.active {
-        position: absolute;
-    }
-}
-
 /* Small menu */
 .menu-toggle {
     display: none;
@@ -1557,78 +1545,32 @@ ol ul {
         font-size: 1em;
     }
 
-    .menu-toggle,
-    .menu__primary.toggled .nav-menu {
+    .menu-toggle {
         display: inline-block;
     }
 }
 
-@media only screen and (min-width: 48em) {
-    .menu__primary {
-        overflow-y: visible; 
-        position: relative;
-        width: 100%;
-        height: auto;
-        margin-top: 0;
-        -webkit-transition: none;
-        transition: none;
-        -webkit-transform: translate(0, 0);
-        -ms-transform: translate(0, 0);
-        transform: translate(0, 0);
-    }
-
-    .menu__primary--items {
-        max-width: 1280px;
-        margin: 0 auto;
-        padding-top: 0;
-        padding-right: 16px; 
-        padding-bottom: 0;
-        padding-left: 16px;
-    }
-    @media only screen and (min-width: 48em) {
-        .menu__primary--items {
-            padding-top: 0;
-            padding-bottom: 0;
-        }
-    }
-    @media only screen and (min-width: 64em) {
-        .menu__primary--items {
-            padding-top: 0;
-            padding-bottom: 0;
-        }
-    }
-    @media only screen and (min-width: 48em) {
-        .menu__primary--items {
-            padding-right: 24px; 
-            padding-left: 24px;
-        }
-    }
-    @media only screen and (min-width: 64em) {
-        .menu__primary--items {
-            padding-right: 40px; 
-            padding-left: 40px;
-        }
-    }
-
+.sub-menu {
+    display: none;
+    visibility: hidden;
+    position: absolute;
+    z-index: 1000; 
+    right: 0;
+    width: 100%;
+    margin: 0;
+    background-color: #f4f4f4;
+    text-align: left;
+}
+.sub-menu a {
+    color: #212121;
+}
+.sub-menu.active {
+    display: block;
+    visibility: visible;
+}
+@media only screen and (max-width: 47em) {
     .sub-menu {
-        width: auto;
-    }
-    @media only screen and (max-width: 47em) {
-        .sub-menu {
-            border-right: 0; 
-            border-left: 0;
-        }
-    }
-
-    .menu-item {
-        display: inline-block; 
-        border: none;
-    }
-
-    .sub-menu .menu-item-has-children.active > ul {
-        top: 0; 
-        left: 100%;
-        margin-left: 0;
+        position: relative;
     }
 }
 
